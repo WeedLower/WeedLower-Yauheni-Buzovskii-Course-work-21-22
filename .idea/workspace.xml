@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="z">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/proxy.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/proxy.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +50,9 @@
       </map>
     </option>
   </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/src/main/ng/frontend/package.json" />
+  </component>
   <component name="ProjectId" id="230Nd2SgbdnZaYlIhfAZvC5lGed" />
   <component name="ProjectViewState">
     <option name="abbreviatePackageNames" value="true" />
@@ -71,6 +75,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="ts.external.directory.path" value="C:\Users\evg32\OneDrive\Рабочий стол\ItraCourse Project 21-22\src\main\ng\frontend\node_modules\typescript\lib" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -78,7 +83,7 @@
       <command value="mvn spring-boot:run" />
     </option>
   </component>
-  <component name="RunManager" selected="Maven.backend [clean]">
+  <component name="RunManager" selected="npm.start">
     <configuration name="backend [clean]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -121,8 +126,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/src/main/ng/frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
         <item itemvalue="Maven.backend [clean]" />
       </list>
@@ -138,7 +154,7 @@
       <updated>1640867129559</updated>
       <workItem from="1640867131072" duration="2055000" />
       <workItem from="1640883683181" duration="18917000" />
-      <workItem from="1642506130333" duration="5045000" />
+      <workItem from="1642506130333" duration="6535000" />
     </task>
     <task id="LOCAL-00001" summary="z">
       <created>1642506216551</created>
@@ -168,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642510462951</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="z">
+      <created>1642511473386</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1642511473386</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -15,7 +15,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "outputPath": "../../resources/static",
             "index": "src/index.html",
