@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bccc264-219b-4ba4-9260-20202be10aec" name="Changes" comment="start">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,15 +13,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
-        <option value="TypeScript File" />
       </list>
     </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -50,68 +42,35 @@
       </map>
     </option>
   </component>
-  <component name="ProjectId" id="231YeUprWBxeU11PA1Yy0CHRyxG" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
   </component>
+  <component name="ProjectId" id="230Nd2SgbdnZaYlIhfAZvC5lGed" />
   <component name="ProjectViewState">
     <option name="abbreviatePackageNames" value="true" />
     <option name="autoscrollToSource" value="true" />
-    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
     <option name="sortByType" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="postgresql" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/" value="PostgreSQL" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2021.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.example.api.service" />
-      <recent name="com.example.api.model" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\evg32\OneDrive\Рабочий стол\ItraCourse Project 21-22\backend\src\main\ng" />
-      <recent name="C:\Users\evg32\OneDrive\Рабочий стол\ItraCourse Project 21-22\frontend" />
-      <recent name="C:\Users\evg32\OneDrive\Рабочий стол\ItraCourse Project 21-22" />
-      <recent name="C:\Users\evg32\OneDrive\Рабочий стол\ItraCourse Project 21-22\frontend\src\app\modules\profile" />
-      <recent name="C:\Users\evg32\OneDrive\Рабочий стол\ItraCourse Project 21-22\frontend\src\app\modules\profile\profile" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.example.backend" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="configurationTypes">
-      <set>
-        <option value="SpringBootApplicationConfigurationType" />
-      </set>
-    </option>
-  </component>
-  <component name="RunManager" selected="npm.Angular CLI Server (frontend)">
-    <configuration name="Angular Application (frontend)" type="JavascriptDebugType" uri="http://localhost:4200">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.backend.BackendApplication" />
@@ -119,273 +78,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Angular CLI Server (frontend)" type="js.build_tools.npm">
-      <package-json value="$PROJECT_DIR$/api/src/main/ng/frontend/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="JavaScript Debug.Angular Application (frontend)" />
-      <item itemvalue="npm.Angular CLI Server (frontend)" />
-      <item itemvalue="Spring Boot.BackendApplication" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="npm.Angular CLI Server (frontend)" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1bccc264-219b-4ba4-9260-20202be10aec" name="Changes" comment="" />
-      <created>1640903157782</created>
+      <changelist id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="" />
+      <created>1640867129559</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1640903157782</updated>
-      <workItem from="1640903159390" duration="1457000" />
-      <workItem from="1640942128282" duration="4347000" />
-      <workItem from="1641195122182" duration="33571000" />
-      <workItem from="1641230104681" duration="128000" />
-      <workItem from="1641230250925" duration="5000" />
-      <workItem from="1641299396855" duration="8650000" />
-      <workItem from="1641316254575" duration="19235000" />
-      <workItem from="1641337864405" duration="2987000" />
-      <workItem from="1641375148505" duration="33946000" />
-      <workItem from="1641416705524" duration="5770000" />
-      <workItem from="1641457242827" duration="17551000" />
-      <workItem from="1641487572084" duration="14316000" />
-      <workItem from="1641541473683" duration="9252000" />
-      <workItem from="1641577444506" duration="5824000" />
-      <workItem from="1641588288233" duration="9766000" />
-      <workItem from="1641648030779" duration="11087000" />
-      <workItem from="1641667069736" duration="20253000" />
-      <workItem from="1641811510698" duration="30538000" />
-      <workItem from="1641859844203" duration="481000" />
-      <workItem from="1641885877041" duration="18354000" />
-      <workItem from="1641928911621" duration="6804000" />
-      <workItem from="1641980067222" duration="9857000" />
-      <workItem from="1642005879400" duration="1521000" />
-      <workItem from="1642016567442" duration="9214000" />
-      <workItem from="1642032239241" duration="24000" />
-      <workItem from="1642032274238" duration="17000" />
-      <workItem from="1642066869223" duration="899000" />
-      <workItem from="1642078420939" duration="11287000" />
-      <workItem from="1642154028326" duration="643000" />
-      <workItem from="1642156163381" duration="449000" />
-      <workItem from="1642156656596" duration="3824000" />
-      <workItem from="1642163617811" duration="26790000" />
-      <workItem from="1642273603871" duration="4200000" />
-      <workItem from="1642284578232" duration="4117000" />
-      <workItem from="1642362102092" duration="9964000" />
-      <workItem from="1642411872175" duration="1249000" />
-      <workItem from="1642416463658" duration="10870000" />
-      <workItem from="1642435866462" duration="1485000" />
-      <workItem from="1642487922581" duration="4140000" />
-      <workItem from="1642497489134" duration="1633000" />
-      <workItem from="1642499221377" duration="4388000" />
-      <workItem from="1642504138524" duration="1769000" />
+      <updated>1640867129559</updated>
+      <workItem from="1640867131072" duration="2055000" />
+      <workItem from="1640883683181" duration="18917000" />
     </task>
-    <task id="LOCAL-00001" summary="first">
-      <created>1640903307814</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1640903307815</updated>
-    </task>
-    <task id="LOCAL-00002" summary="first">
-      <created>1640903360375</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1640903360375</updated>
-    </task>
-    <task id="LOCAL-00003" summary="xz">
-      <created>1640904060221</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1640904060221</updated>
-    </task>
-    <task id="LOCAL-00004" summary="dvizhems9">
-      <created>1641200712742</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1641200712742</updated>
-    </task>
-    <task id="LOCAL-00005" summary="dvizhems9">
-      <created>1641302390133</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1641302390133</updated>
-    </task>
-    <task id="LOCAL-00006" summary="na kazhdom shagu problems">
-      <created>1641305431710</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1641305431710</updated>
-    </task>
-    <task id="LOCAL-00007" summary="problems chut menshe">
-      <created>1641502846458</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1641502846458</updated>
-    </task>
-    <task id="LOCAL-00008" summary="peredelivaem">
-      <created>1641664258839</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1641664258839</updated>
-    </task>
-    <task id="LOCAL-00009" summary="peredelal">
-      <created>1641679849378</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1641679849378</updated>
-    </task>
-    <task id="LOCAL-00010" summary="comments">
-      <created>1641910441796</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1641910441797</updated>
-    </task>
-    <task id="LOCAL-00011" summary="comments">
-      <created>1641929296905</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1641929296905</updated>
-    </task>
-    <task id="LOCAL-00012" summary="did poling">
-      <created>1641989615263</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1641989615263</updated>
-    </task>
-    <task id="LOCAL-00013" summary="add likes">
-      <created>1642099875678</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1642099875678</updated>
-    </task>
-    <task id="LOCAL-00014" summary="add TAGS and tagsa cloud">
-      <created>1642200502109</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1642200502109</updated>
-    </task>
-    <task id="LOCAL-00015" summary="admin page">
-      <created>1642443014709</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1642443014709</updated>
-    </task>
-    <task id="LOCAL-00016" summary="admin page">
-      <created>1642494323783</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1642494323783</updated>
-    </task>
-    <task id="LOCAL-00017" summary="start">
-      <created>1642504919214</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1642504919214</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="main" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="first" />
-    <MESSAGE value="xz" />
-    <MESSAGE value="dvizhems9" />
-    <MESSAGE value="na kazhdom shagu problems" />
-    <MESSAGE value="problems chut menshe" />
-    <MESSAGE value="peredelivaem" />
-    <MESSAGE value="peredelal" />
-    <MESSAGE value="comments" />
-    <MESSAGE value="did poling" />
-    <MESSAGE value="add likes" />
-    <MESSAGE value="add TAGS and tagsa cloud" />
-    <MESSAGE value="admin page" />
-    <MESSAGE value="start" />
-    <option name="LAST_COMMIT_MESSAGE" value="start" />
-    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/controller/ItemsController.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/backend/src/main/java/com/example/backend/service/ItemsService.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/api/api/src/main/java/com/example/api/service/ItemService.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="com.example.backend.entity.CollectionsEntity" memberName="user" />
-      </pinned-members>
-    </pin-to-top-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
