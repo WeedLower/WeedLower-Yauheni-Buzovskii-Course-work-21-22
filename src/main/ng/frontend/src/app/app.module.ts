@@ -80,8 +80,6 @@ import {AdminPageComponent} from "./modules/admin/admin-page/admin-page.componen
         MatBadgeModule,
         MatChipsModule,
         MatAutocompleteModule
-
-
     ],
     declarations: [
         AppComponent,

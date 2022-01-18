@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../../../service/auth/auth.service";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {Role} from "../../../../model/role";
 
 @Component({
   selector: 'app-header-block',

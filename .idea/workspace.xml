@@ -6,7 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="z">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/proxy.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/proxy.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/bars/footer-block/footer-block.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/bars/header-block/header-block.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/bars/header-block/header-block/header-block.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/bars/header-block/header-block/header-block.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/login-page/login-page/login-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/login-page/login-page/login-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/main-page/main-page/main-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/main-page/main-page/main-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/3rdpartylicenses.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/styles/_app-typography.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/styles/app-color-palette.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/styles/app-theme.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/polyfills.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/runtime.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,11 +96,15 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn clean install" />
       <command value="mvn spring-boot:run" />
+      <command value="mvn spring-boot:start" />
+      <command value="mvn clean install" />
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.BackendApplication">
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
     <configuration name="backend [clean]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -152,7 +175,8 @@
       <updated>1640867129559</updated>
       <workItem from="1640867131072" duration="2055000" />
       <workItem from="1640883683181" duration="18917000" />
-      <workItem from="1642506130333" duration="8033000" />
+      <workItem from="1642506130333" duration="14850000" />
+      <workItem from="1642521164813" duration="1438000" />
     </task>
     <task id="LOCAL-00001" summary="z">
       <created>1642506216551</created>
@@ -203,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642513188810</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="z">
+      <created>1642514309198</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1642514309198</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,9 +250,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="z" />
     <option name="LAST_COMMIT_MESSAGE" value="z" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="commentsEntity" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
