@@ -1,0 +1,17 @@
+<header>
+    <mat-toolbar color="primary">
+        <h2><a mat-button routerLink="">Collections</a></h2>
+        <span class="example-spacer"></span>
+        <mat-form-field color="primary" floatLabel="never">
+            <input matInput  placeholder="Search..."/>
+        </mat-form-field>
+        <button mat-icon-button matSuffix matTooltip="New feed" matTooltipPosition="left">
+            <mat-icon>search</mat-icon>
+        </button>
+        <a mat-button *ngIf="current==true && roleCurrent==false" routerLink="/profile">{{name.toUpperCase()}}</a>
+        <a mat-button *ngIf="roleCurrent==true" routerLink="/admin">Admin</a>
+        <a mat-button *ngIf="current==false" routerLink="/login">Login</a>
+        <a mat-button *ngIf="current==true" (click)="logOut()" >LogOut</a>
+    </mat-toolbar>
+</header>
+

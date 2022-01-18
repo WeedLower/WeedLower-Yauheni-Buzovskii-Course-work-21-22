@@ -1,0 +1,31 @@
+<title>Login</title>
+<app-header-block></app-header-block>
+<div id="login_form">
+    <form class="example-form"  [formGroup]="formControl">
+        <h2>Authorization</h2>
+        <p>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" type="email" required name="email" [(ngModel)]="user.email" autocomplete="on" >
+            </mat-form-field>
+        </p>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password"
+                   [(ngModel)]="user.password" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            </button>
+        </mat-form-field>
+
+        <h4 *ngIf="auth.authError" class="text-center wdi-red">Wrong email or password! Please try again</h4>
+    </form>
+    <button mat-raised-button color="primary"
+            [disabled]="!formControl.valid" (click)="onSubmit()">Signin</button>
+    <p></p>
+    <a mat-raised-button color="primary" routerLink="/reg">Registration</a>
+</div>
+
+
+
+

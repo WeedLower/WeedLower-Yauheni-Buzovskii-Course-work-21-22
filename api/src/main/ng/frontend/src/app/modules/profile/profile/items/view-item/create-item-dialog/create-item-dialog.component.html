@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Create Comment</h1>
+<div mat-dialog-content>
+    <p>Your comment</p>
+    <mat-form-field [formGroup]="formControl">
+        <input matInput formControlName="mes" [(ngModel)]="data.mes" required>
+    </mat-form-field>
+</div>
+<button mat-button (click)="onNoClick()">No Thanks</button>
+<button mat-button  [disabled]="!formControl.valid" [mat-dialog-close]="data.mes" cdkFocusInitial>Create</button>
+

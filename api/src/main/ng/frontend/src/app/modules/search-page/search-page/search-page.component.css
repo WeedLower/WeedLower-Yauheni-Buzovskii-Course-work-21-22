@@ -1,0 +1,21 @@
+
+
+.search{
+    display: flex;
+    flex-direction: row;
+}
+
+.tags{
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+}
+
+.example-card{
+    min-width: 17%;
+    max-width: 25%;
+    max-height: 200px;
+    margin: 0.2%;
+    text-align: left;
+    display: inline-block;
+}

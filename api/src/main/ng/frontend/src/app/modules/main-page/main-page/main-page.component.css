@@ -1,0 +1,42 @@
+
+h1{
+    text-align: center;
+}
+
+.example-chip-list {
+    width: 100%;
+}
+.example-card{
+    min-width: 17%;
+    max-width: 25%;
+    max-height: 200px;
+    margin: 0.2%;
+    text-align: left;
+    display: inline-block;
+}
+.example-card2{
+    display: inline-block;
+    min-width: 17%;
+    max-width: 20%;
+    max-height: 200px;
+    text-align: left;
+    margin: 0.2%;
+}
+
+.last-item{
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+}
+
+.biggest{
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+}
+
+.tag-cloud{
+    text-align: center;
+    width: 100%;
+    display: inline;
+}

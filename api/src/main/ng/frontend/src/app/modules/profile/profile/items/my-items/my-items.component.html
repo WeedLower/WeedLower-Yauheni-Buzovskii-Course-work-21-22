@@ -1,0 +1,51 @@
+<title>MyCollections</title>
+<app-header-block></app-header-block>
+
+<h1>Collection:{{collection.name}}</h1>
+
+<button mat-raised-button color="primary" (click)="openDialog()">Create</button>
+<button mat-raised-button color="warn" (click)="delete()">Delete</button>
+<p></p>
+
+<table *ngIf="item.data.length!=0" mat-table class="mat-elevation-z8" [dataSource]="item" matSort (matSortChange)="announceSortChange($event)">
+    <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()">
+            </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(row) : null"
+                          [checked]="selection.isSelected(row)">
+            </mat-checkbox>
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> No. </th>
+        <td mat-cell *matCellDef="let i"> {{i.id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name"> Name </th>
+        <td mat-cell *matCellDef="let i"> {{i.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="tags">
+        <th mat-header-cell *matHeaderCellDef> Tags </th>
+        <td mat-cell *matCellDef="let i">{{i.tagSet}}</td>
+    </ng-container>
+    <ng-container matColumnDef="view">
+    <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let i"><button id="view" mat-raised-button (click)="viewItem(i.id)">View</button></td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        (click)="selection.toggle(row)">
+    </tr>
+</table>
+
+<h3 *ngIf="item.data.length==0">Create first item</h3>
+
+
+
+

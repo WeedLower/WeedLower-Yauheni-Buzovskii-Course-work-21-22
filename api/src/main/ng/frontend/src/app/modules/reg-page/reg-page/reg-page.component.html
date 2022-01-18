@@ -1,0 +1,46 @@
+<title>Registration</title>
+<app-header-block></app-header-block>
+<div id="login_form" >
+    <form class="example-form" [formGroup]="formControl">
+        <h2>Registration</h2>
+        <p>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name" [(ngModel)]="newUser.name">
+                <mat-error>Error</mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field class="example-full-width" appearance="fill" >
+                <mat-label>Surname</mat-label>
+                <input matInput formControlName="surname" [(ngModel)]="newUser.surname">
+                <mat-error>Error</mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" [(ngModel)]="newUser.email">
+                <mat-error>Error</mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" [(ngModel)]="newUser.password">
+                <mat-error>Error</mat-error>
+            </mat-form-field>
+        </p>
+        <div *ngIf="!formControl.valid">
+            <hr>
+            <p><b>All fields should be filled</b></p>
+
+        </div>
+    </form>
+    <a mat-raised-button color="primary" [disabled]="!formControl.valid" (click)="ifExistsByEmail(newUser.email)">Signup</a>
+
+    <h4 *ngIf="this.notification" class="text-center wdi-red">Email should be unique!</h4>
+</div>
+
+
+

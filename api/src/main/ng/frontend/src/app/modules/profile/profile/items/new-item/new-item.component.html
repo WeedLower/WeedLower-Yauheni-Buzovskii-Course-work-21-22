@@ -1,0 +1,37 @@
+<title>New Item</title>
+<app-header-block></app-header-block>
+<button mat-raised-button color="primary" [disabled]="!formGroup.valid" (click)="create()">Create</button>
+<form class="example-form" [formGroup]="formGroup">
+<p>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name item</mat-label>
+        <input matInput formControlName="name" name="name" [(ngModel)]="newItem.name" required>
+    </mat-form-field>
+</p>
+    <mat-form-field class="example-chip-list" appearance="fill">
+        <mat-label>Tags</mat-label>
+        <mat-chip-list #chipList aria-label="Tag selection">
+            <mat-chip
+                    *ngFor="let tag of tagString"
+                    (removed)="remove(tag)">
+                {{tag}}
+                <button matChipRemove>
+                    <mat-icon>cancel</mat-icon>
+                </button>
+            </mat-chip>
+            <input
+                    placeholder="New tag..."
+                    #tagInput
+                    [formControl]="formControl"
+                    [matAutocomplete]="auto"
+                    [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+            <mat-option *ngFor="let tag of filtredString | async" [value]="tag">
+                {{tag}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</form>
