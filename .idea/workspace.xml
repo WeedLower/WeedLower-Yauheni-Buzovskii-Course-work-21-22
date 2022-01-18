@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="z">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/proxy.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/proxy.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +151,7 @@
       <updated>1640867129559</updated>
       <workItem from="1640867131072" duration="2055000" />
       <workItem from="1640883683181" duration="18917000" />
-      <workItem from="1642506130333" duration="6535000" />
+      <workItem from="1642506130333" duration="6849000" />
     </task>
     <task id="LOCAL-00001" summary="z">
       <created>1642506216551</created>
@@ -191,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642511473386</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="z">
+      <created>1642512851589</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1642512851589</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
