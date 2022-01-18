@@ -1,0 +1,59 @@
+<title>Admin</title>
+<app-header-block></app-header-block>
+<h1>All users</h1>
+
+<a mat-raised-button color="accent" (click)="block()">Block</a>
+<a mat-raised-button color="primary" (click)="unblock()">Unblock</a>
+<a mat-raised-button color="warn" (click)="delete()">DELETE</a>
+<a mat-raised-button color="primary" (click)="setAdmin()">Set Admin</a>
+<a mat-raised-button color="warn" (click)="setUser()">Set User</a>
+<table mat-table [dataSource]="users" class="mat-elevation-z8">
+    <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()">
+            </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(row) : null"
+                          [checked]="selection.isSelected(row)">
+            </mat-checkbox>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let i"> {{i.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let i"> {{i.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let i"> {{i.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef> Role </th>
+        <td mat-cell *matCellDef="let i"> {{i.role}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Block? </th>
+        <td mat-cell *matCellDef="let i"> {{i.status}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="view">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let i"><button id="view" mat-raised-button (click)="viewUser(i.id)">View</button></td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        (click)="selection.toggle(row)">
+    </tr>
+</table>

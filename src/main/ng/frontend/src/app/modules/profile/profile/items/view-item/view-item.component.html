@@ -1,0 +1,31 @@
+<title>{{itemMod.name}}</title>
+<app-header-block></app-header-block>
+<div class="main-block">
+    <h1>Name:{{itemMod.name}}</h1>
+    <button mat-icon-button matBadge="{{itemMod.likes}}" matBadgeColor="warn" matRipp color="warn" [disabled]="statusUser==false || statusLikes==true || itemMod.meLiked==null || itemMod.meLiked==true"  (click)="like()">
+        <mat-icon>favorite</mat-icon>
+    </button>
+</div>
+
+<h1>Comments</h1>
+<button mat-raised-button  color="warn" *ngIf="statusUser==true" (click)="openDialog()">Comment</button>
+
+<div class="comment-block">
+        <cdk-virtual-scroll-viewport itemSize="100" class="viewport" [scrollTop]="">
+           <mat-card class="example-card" *cdkVirtualFor="let c of comments" >
+            <mat-card-title>Comment: {{c.comment}}</mat-card-title>
+            <mat-divider inset></mat-divider>
+            <mat-card-content>
+                <h3>User: {{c.user.name}}</h3>
+            </mat-card-content>
+            <mat-card-footer>
+                <mat-progress-bar mode="determinate" value="100" color="accent"></mat-progress-bar>
+            </mat-card-footer>
+        </mat-card>
+        </cdk-virtual-scroll-viewport>
+</div>
+
+
+
+
+
