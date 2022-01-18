@@ -34,3 +34,5 @@ build/
 /src/main/ng/frontend/node_modules/
 
 /src/main/ng/frontend/.angular/
+/src/main/resources/static/
+/src/main/ng/frontend/node/
