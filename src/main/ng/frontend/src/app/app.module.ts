@@ -41,7 +41,6 @@ import {MatRippleModule} from "@angular/material/core";
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import {A11yModule} from "@angular/cdk/a11y";
 import {MatBadgeModule} from "@angular/material/badge";
-import {TagCloudModule} from "angular-tag-cloud-module";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {AdminPageComponent} from "./modules/admin/admin-page/admin-page.component";
@@ -79,7 +78,6 @@ import {AdminPageComponent} from "./modules/admin/admin-page/admin-page.componen
         ScrollingModule,
         A11yModule,
         MatBadgeModule,
-        TagCloudModule,
         MatChipsModule,
         MatAutocompleteModule
 

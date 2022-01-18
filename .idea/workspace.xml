@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="z">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +138,7 @@
       <updated>1640867129559</updated>
       <workItem from="1640867131072" duration="2055000" />
       <workItem from="1640883683181" duration="18917000" />
-      <workItem from="1642506130333" duration="4097000" />
+      <workItem from="1642506130333" duration="5045000" />
     </task>
     <task id="LOCAL-00001" summary="z">
       <created>1642506216551</created>
@@ -161,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642509363383</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="z">
+      <created>1642510462951</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1642510462951</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
