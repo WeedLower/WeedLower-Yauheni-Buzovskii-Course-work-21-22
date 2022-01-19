@@ -40,9 +40,7 @@ export class AuthService {
     return this.http.get<UserModel>("/api/users/auth/user");
   }
 
-  // public logout(): void{
-  //   return this.http.get("/logout");
-  // }
+
 
   public signIn(authUser: UserModel):void{
     this.getToken(authUser).subscribe(data =>{
@@ -75,5 +73,18 @@ export class AuthService {
     this.router.navigate(['/']);
     setTimeout(location.reload.bind(location), 100);
     // this.logout();
+  }
+
+  check():void {
+    if(this.user.id!=null){
+      console.log(this.user.id);
+      this.getStatus(this.user.id).subscribe(data =>{
+        data==true? this.logOut() : console.log(data);
+      })
+    }
+  }
+
+  private getStatus(id):Observable<boolean> {
+   return this.http.get<boolean>("/api/users/check/"+id);
   }
 }

@@ -1,11 +1,13 @@
 package com.example.backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.validation.constraints.NotBlank;
 import javax.persistence.*;
+import java.util.List;
 
 
 @Getter
@@ -45,6 +47,12 @@ public class UserEntity {
     @Column(name = "status")
     private boolean status;
 
+    @Column(name = "changed")
+    private boolean changed;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE)
+    private List<CollectionsEntity> collections;
 
 
 }

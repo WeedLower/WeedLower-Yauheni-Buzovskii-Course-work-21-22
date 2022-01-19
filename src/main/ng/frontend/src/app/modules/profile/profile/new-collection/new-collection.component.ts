@@ -42,6 +42,7 @@ status=false;
   }
 
   ngOnInit(): void {
+    this.auth.check();
     this.initReactForm();
     if (this.auth.user==null){
       this.rout.navigate(['/'])

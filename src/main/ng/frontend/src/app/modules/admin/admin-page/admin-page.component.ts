@@ -19,6 +19,7 @@ export class AdminPageComponent implements OnInit {
   constructor(private rout: Router,private auth:AuthService,private userService:UserService) { }
 
   ngOnInit(): void {
+      this.auth.check();
       if (this.auth.user.role.toString()!="ADMIN"){
         this.rout.navigate(['/']);
       }
@@ -35,8 +36,7 @@ export class AdminPageComponent implements OnInit {
 
   delete():void{
     if (confirm('Delete user / users?')){
-      this.selection.selected.forEach((i) =>
-          i==this.auth.user ? this.auth.logOut() :
+      this.selection.selected.forEach(i=>
           this.userService.delete(i.id).subscribe(data=>{
                 console.log(data);
                 this.getAllUsers();

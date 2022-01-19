@@ -18,11 +18,10 @@ export class HeaderBlockComponent implements OnInit{
   }
 
   ngOnInit(): void{
-    if (this.auth.user.role.toString()=="ADMIN"){
+    if (this.auth.user!=null && this.auth.user.role.toString()=="ADMIN"){
       this.roleCurrent=true;
     }
     if (this.auth.user==null){
-      this.router.navigate(['/'])
     this.current=false;
     }else{
       this.current=true;

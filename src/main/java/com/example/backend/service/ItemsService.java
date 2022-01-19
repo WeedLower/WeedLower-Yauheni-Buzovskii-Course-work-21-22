@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.security.Principal;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class ItemsService {
@@ -49,6 +50,14 @@ public class ItemsService {
     public List<ItemModel> getAllByCollectionId(Integer id){
         List<ItemModel> itemModelList = itemsRepository.findAllByCollection_Id(id);
         itemModelList.forEach(s->  s.setTagSet(tagsService.findTagsByItemId(s.getId())));
+        itemModelList.forEach(s-> {
+            List<String> list = new ArrayList<>();
+            for (TagsEntity tagsEntity : s.getTagSet()) {
+                String toString = tagsEntity.getTag().toString();
+                list.add(toString);
+            }
+            s.setTags(list.toArray(new String[0]));
+        });
         return itemModelList;
     }
 

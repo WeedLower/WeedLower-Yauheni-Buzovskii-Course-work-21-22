@@ -74,6 +74,11 @@ public class UsersController {
         }
     }
 
+    @RequestMapping(value="/check/{id}",method = RequestMethod.GET)
+    public boolean check(@PathVariable(name = "id")Integer id){
+        return usersServise.check(id);
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     public UserEntity saveUser(@RequestBody UserEntity user){
         return usersServise.saveUser(user);

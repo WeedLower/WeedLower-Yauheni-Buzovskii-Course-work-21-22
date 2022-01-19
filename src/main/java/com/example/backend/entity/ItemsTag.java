@@ -16,7 +16,7 @@ public class ItemsTag {
     @JoinColumn(name = "item_id")
     ItemsEntity items;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @MapsId("tagId")
     @JoinColumn(name = "tag_id")
     TagsEntity tags;

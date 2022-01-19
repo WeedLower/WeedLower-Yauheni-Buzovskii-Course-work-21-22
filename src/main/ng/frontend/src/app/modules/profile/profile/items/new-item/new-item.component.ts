@@ -37,6 +37,7 @@ export class NewItemComponent implements OnInit {
               private tagService:TagService) {}
 
   ngOnInit(): void {
+    this.auth.check();
     this.initReactForm();
     this.id= +this.route.snapshot.params['id'];
     if(this.auth.user==null){

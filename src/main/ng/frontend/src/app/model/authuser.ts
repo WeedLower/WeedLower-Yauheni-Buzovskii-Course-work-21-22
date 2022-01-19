@@ -1,4 +1,3 @@
-import {Rolemodel} from "./rolemodel";
 import {Role} from "./role";
 
 export class AuthuserModel{
@@ -6,6 +5,7 @@ export class AuthuserModel{
     name: string;
     surname: string;
     email: string;
+    status: boolean;
     role: Role;
 
     static cloneBase(user: AuthuserModel) : AuthuserModel{
@@ -14,6 +14,7 @@ export class AuthuserModel{
         cloneUserModel.email=user.email;
         cloneUserModel.name=user.name;
         cloneUserModel.surname=user.surname;
+        cloneUserModel.status=user.status;
         cloneUserModel.role=user.role;
         return cloneUserModel;
     }

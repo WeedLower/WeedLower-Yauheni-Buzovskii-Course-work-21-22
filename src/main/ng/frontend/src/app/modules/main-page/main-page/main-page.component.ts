@@ -6,6 +6,7 @@ import {ItemsService} from "../../../service/collections/items.service";
 import {Router} from "@angular/router";
 import {TagModel} from "../../../model/tag";
 import {TagService} from "../../../service/tag/tag.service";
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 
 @Component({
@@ -21,12 +22,13 @@ export class MainPageComponent implements OnInit{
     tagModel:TagModel;
     constructor(private collect: CollectionsService,
                 private itm: ItemsService,private router:Router,
-                private tagService:TagService) { }
+                private tagService:TagService,private auth:AuthService) { }
 
     ngOnInit(): void {
         this.getAllTags();
         this.getBiggestCollection();
         this.getLastAddItems();
+        this.auth.check();
     }
 
     private getBiggestCollection():void{

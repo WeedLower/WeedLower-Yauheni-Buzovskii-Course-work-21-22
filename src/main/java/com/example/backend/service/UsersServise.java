@@ -26,7 +26,7 @@ public class UsersServise implements UserDetailsService {
     }
 
     public List<UserEntity> getAllUsers(){
-       return usersRepository.findAll();
+        return usersRepository.findAll();
     }
 
     public UserEntity findByEmail(String email){
@@ -59,7 +59,7 @@ public class UsersServise implements UserDetailsService {
     }
 
     public void setRoleAdmin(Integer id) {
-         usersRepository.setRoleAdmin(id);
+        usersRepository.setRoleAdmin(id);
     }
 
     public void setRoleUser(Integer id) {
@@ -76,6 +76,15 @@ public class UsersServise implements UserDetailsService {
 
     public void delete(Integer id){
         usersRepository.deleteById(id);
+    }
+
+
+    public boolean check(Integer id) {
+        if (usersRepository.checkChanged(id)){
+           usersRepository.updateChanged(id);
+           return true;
+        }
+        return usersRepository.checkStatus(id);
     }
 }
 

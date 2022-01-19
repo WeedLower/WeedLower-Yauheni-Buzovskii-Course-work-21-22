@@ -51,6 +51,7 @@ public class AuthController {
     public ResponseEntity<AuthUser> authUser(Principal user){
         ConvertUserToAuthUser convertUserToAuthUser = new ConvertUserToAuthUser();
         UserEntity userModel = userService.findByEmail(user.getName());
+        if (userModel.isStatus()==true){return ResponseEntity.notFound().build();}
         if (userModel !=null){
             return ResponseEntity.ok(convertUserToAuthUser.convert(userModel));
         }else {

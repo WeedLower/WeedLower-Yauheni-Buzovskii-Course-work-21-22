@@ -46,7 +46,7 @@ public class ItemsEntity {
     private Set<UserEntity> likes = new HashSet<>();
 
     @JsonIgnore
-    @OneToMany(mappedBy = "items")
+    @OneToMany(mappedBy = "items",cascade = CascadeType.REMOVE)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Set<ItemsTag> tags;
 
@@ -57,7 +57,6 @@ public class ItemsEntity {
 
     @ManyToOne
     @JoinColumn(name = "user_id",nullable=false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
     private UserEntity user;
 
     @JsonIgnore

@@ -20,7 +20,8 @@ export class ProfileComponent implements OnInit {
   collections:CollectionModel[];
   check=false;
   delMess=false;
-  id:any;
+  id:number;
+  idConv:any;
   num:number;
   s:Role;
   constructor(private auth:AuthService,private http: HttpClient,
@@ -28,17 +29,20 @@ export class ProfileComponent implements OnInit {
               private collect: CollectionsService) { }
 
   ngOnInit(): void {
+    this.auth.check();
     if (this.auth.user.role.toString()=="ADMIN"){
       this.id = +this.active.snapshot.params['id'];
-        this.getMyCollect(this.id);
+      console.log(this.id)
+      isNaN(this.id)? this.idConv=this.auth.user.id : this.idConv= +this.active.snapshot.params['id'];
+      this.getMyCollect(this.idConv);
     }else{
       if (this.auth.user==null){
         this.router.navigate(['/']);
       }else {
         this.currentUser=this.auth.user.name;
         this.currentEmail=this.auth.user.email;
-        this.id=this.auth.user.id;
-        this.getMyCollect(this.id);
+        this.idConv=this.auth.user.id;
+        this.getMyCollect(this.idConv);
       }
     }
   }

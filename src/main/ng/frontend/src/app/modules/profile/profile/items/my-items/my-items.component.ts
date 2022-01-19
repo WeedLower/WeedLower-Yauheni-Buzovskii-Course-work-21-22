@@ -38,6 +38,7 @@ export class MyItemsComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit(): void {
+    this.auth.check();
     if (this.auth.user.role.toString()=='ADMIN'){
 
     }
@@ -62,11 +63,11 @@ export class MyItemsComponent implements OnInit {
   };
 
   private getCollectItems(id: number): void {
-    this.itemsService.getAllItemsByCollection(id).subscribe(items => {
-      items.forEach(s=>s.tagSet.forEach(a=>items.tags=a.tag))
+    this.itemsService.getAllItemsByCollection(id).subscribe((items) => {
           this.item.data = items as ItemModel[];
         }
     )
+
   }
 
   delete():void{
