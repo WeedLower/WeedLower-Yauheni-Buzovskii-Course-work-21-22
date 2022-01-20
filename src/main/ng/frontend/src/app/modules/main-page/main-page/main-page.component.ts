@@ -60,4 +60,5 @@ export class MainPageComponent implements OnInit{
     searchByTag(id){
         this.router.navigate(['/search/tag/'+id])
     }
+
 }

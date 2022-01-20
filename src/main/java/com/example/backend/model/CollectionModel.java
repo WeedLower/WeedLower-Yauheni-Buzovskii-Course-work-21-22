@@ -1,5 +1,6 @@
 package com.example.backend.model;
 
+import com.example.backend.entity.ImageEntity;
 import com.example.backend.entity.UserEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,5 +19,6 @@ public class CollectionModel {
     private UserEntity owner;
     private String description;
     private String topic;
+    private ImageEntity img;
 
 }

@@ -49,6 +49,7 @@ public class CollectionController {
         if(collection.isPresent()){
             return ResponseEntity.ok(collection.get());
         }else {
+
             return ResponseEntity.notFound().build();
         }
     }

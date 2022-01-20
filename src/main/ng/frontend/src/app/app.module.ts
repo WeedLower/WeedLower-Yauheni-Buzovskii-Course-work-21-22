@@ -44,6 +44,8 @@ import {MatBadgeModule} from "@angular/material/badge";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {AdminPageComponent} from "./modules/admin/admin-page/admin-page.component";
+import { DragDropDirective } from './modules/profile/profile/new-collection/drag-drop.directive';
+import {NgxSpinnerModule} from "ngx-spinner";
 
 
 
@@ -79,7 +81,8 @@ import {AdminPageComponent} from "./modules/admin/admin-page/admin-page.componen
         A11yModule,
         MatBadgeModule,
         MatChipsModule,
-        MatAutocompleteModule
+        MatAutocompleteModule,
+        NgxSpinnerModule
     ],
     declarations: [
         AppComponent,
@@ -96,7 +99,8 @@ import {AdminPageComponent} from "./modules/admin/admin-page/admin-page.componen
         NewItemComponent,
         AdminPageComponent,
         ViewItemComponent,
-        CreateItemDialogComponent
+        CreateItemDialogComponent,
+        DragDropDirective
     ],
     providers:    [InterceptorService,{provide: HTTP_INTERCEPTORS,useClass: InterceptorService,multi: true}],
     bootstrap:    [ AppComponent ]

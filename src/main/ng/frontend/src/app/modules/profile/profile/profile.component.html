@@ -10,10 +10,12 @@
     <div *ngFor="let col of collections ">
             <mat-card class="example-card">
                 <mat-card-title-group>
+
                     <mat-card-title>Collection name:{{col.name}}</mat-card-title>
                     <mat-card-subtitle><h2>Description: {{col.description}}</h2>
                         <h2>Topic: {{col.topic}}</h2>
                     </mat-card-subtitle>
+                    <img *ngIf="(col.image)!= null" mat-card-md-image src="{{col.image.imageUrl}}">
                     <mat-card-actions>
                         <a mat-button  (click)="goCheck(col.id)">View</a>
                         <a mat-raised-button color="accent">Edit</a>

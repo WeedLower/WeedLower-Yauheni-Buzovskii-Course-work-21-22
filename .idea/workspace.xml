@@ -4,32 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="z">
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+    <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="&#10;few days - a lot of work">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/CloudinaryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/repository/ImageRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/CollectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/CollectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/FileUploadController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/CollectionsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/CollectionsEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/CommentsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/CommentsEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/ItemsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/ItemsEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/ItemsTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/ItemsTag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/repository/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/repository/UsersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/service/ItemsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/service/ItemsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/service/UsersServise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/service/UsersServise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/model/authuser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/model/authuser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/admin/admin-page/admin-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/admin/admin-page/admin-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/bars/header-block/header-block/header-block.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/bars/header-block/header-block/header-block.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/model/CollectionModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/model/CollectionModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/security/SecurityJwtConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/security/SecurityJwtConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/service/CollectionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/service/CollectionsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/admin/admin-page/admin-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/admin/admin-page/admin-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/main-page/main-page/main-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/main-page/main-page/main-page.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/main-page/main-page/main-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/main-page/main-page/main-page.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/main-page/main-page/main-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/main-page/main-page/main-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/items/my-items/my-items.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/items/my-items/my-items.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/items/my-items/my-items.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/items/my-items/my-items.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/items/my-items/my-items.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/items/my-items/my-items.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/items/new-item/new-item.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/items/new-item/new-item.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/new-collection.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/new-collection.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/new-collection.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/new-collection.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/new-collection.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/new-collection.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/profile.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/service/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/service/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/service/img/image.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/service/img/image.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +97,12 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="ts.external.directory.path" value="C:\Users\evg32\OneDrive\Рабочий стол\ItraCourse Project 21-22\src\main\ng\frontend\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.backend.repository" />
+      <recent name="com.example.backend.service" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -181,7 +187,10 @@
       <workItem from="1640883683181" duration="18917000" />
       <workItem from="1642506130333" duration="14850000" />
       <workItem from="1642521164813" duration="17654000" />
-      <workItem from="1642581623801" duration="1920000" />
+      <workItem from="1642581623801" duration="4617000" />
+      <workItem from="1642606374370" duration="1199000" />
+      <workItem from="1642612247569" duration="13303000" />
+      <workItem from="1642669167203" duration="1190000" />
     </task>
     <task id="LOCAL-00001" summary="z">
       <created>1642506216551</created>
@@ -246,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642522806080</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="&#10;few days - a lot of work">
+      <created>1642585022789</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1642585022789</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,7 +282,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="z" />
-    <option name="LAST_COMMIT_MESSAGE" value="z" />
+    <MESSAGE value="&#10;few days - a lot of work" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;few days - a lot of work" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

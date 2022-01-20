@@ -34,7 +34,7 @@ public class CollectionsService {
         collections.setUser(collection.getOwner());
         collections.setDescription(collection.getDescription());
         collections.setTopic(collection.getTopic());
-
+        collections.setImage(collection.getImg());
         return collectionRepository.save(collections);
     }
 

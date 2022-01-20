@@ -24,6 +24,9 @@
 
 <div class="biggest" *ngIf="collections!=null">
     <mat-card class="example-card2" *ngFor="let col of collections ">
+        <mat-card-header>
+                <img *ngIf="col.image!=null" mat-card-avatar src="{{col.image.imageUrl}}">
+        </mat-card-header>
         <mat-card-title-group>
             <mat-card-title>Name:{{col.name}}</mat-card-title>
             <mat-card-subtitle>

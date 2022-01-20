@@ -55,18 +55,18 @@ export class ProfileComponent implements OnInit {
   deleteItem(id: number):void {
     if(confirm('Are you sure you want to delete with all items?')){
       this.collect.delete(id).subscribe( data => {
-            console.log(data);
+            console.log("collection deleted");
             this.delMess=true;
             this.getMyCollect(this.id);
           },
           error => console.log(error));
+
     }
   }
 
   private getMyCollect(currentId: number): void{
     this.collect.findAllByUser(currentId).subscribe(collection=>{
       this.collections = collection as CollectionModel[];
-
       if (this.collections.length!=0){
         this.check=true;
       }

@@ -8,8 +8,6 @@ import {MatSort, Sort} from "@angular/material/sort";
 import {LiveAnnouncer} from "@angular/cdk/a11y";
 import {SelectionModel} from "@angular/cdk/collections";
 import {MatTableDataSource} from "@angular/material/table";
-import {empty} from "rxjs";
-import {error} from "protractor";
 import {AuthService} from "../../../../../service/auth/auth.service";
 
 
@@ -24,7 +22,7 @@ export class MyItemsComponent implements OnInit {
   newItem: ItemModel = new ItemModel();
   id: number;
   status=true;
-  displayedColumns: string[] = ['select', 'id', 'name','tags','view'];
+  displayedColumns: string[] = ['select', 'id', 'name','tags','button'];
   selection = new SelectionModel<ItemModel>(true, []);
   item = new MatTableDataSource<ItemModel>()
 
@@ -111,5 +109,9 @@ export class MyItemsComponent implements OnInit {
 
   viewItem(id) {
     this.rout.navigate(['/item/'+id])
+  }
+
+  updateItem(id) {
+    
   }
 }

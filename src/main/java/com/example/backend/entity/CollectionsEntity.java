@@ -38,5 +38,8 @@ public class CollectionsEntity {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private List<ItemsEntity> items;
 
+    @OneToOne
+    private ImageEntity image;
+
 
 }
