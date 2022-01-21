@@ -2,6 +2,7 @@ package com.example.backend.service;
 
 import com.example.backend.entity.CollectionsEntity;
 import com.example.backend.model.CollectionModel;
+import com.example.backend.model.convert.ConvertCollectionModelToCollectionEntity;
 import com.example.backend.repository.CollectionRepository;
 import com.example.backend.repository.ItemsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,12 +30,8 @@ public class CollectionsService {
     }
 
     public CollectionsEntity saveCollection(CollectionModel collection){
-        CollectionsEntity collections= new CollectionsEntity();
-        collections.setName(collection.getName());
-        collections.setUser(collection.getOwner());
-        collections.setDescription(collection.getDescription());
-        collections.setTopic(collection.getTopic());
-        collections.setImage(collection.getImg());
+        ConvertCollectionModelToCollectionEntity convert = new ConvertCollectionModelToCollectionEntity();
+        CollectionsEntity collections = convert.convert(collection);
         return collectionRepository.save(collections);
     }
 
@@ -54,4 +51,13 @@ public class CollectionsService {
         collectionRepository.deleteById(id);
     }
 
+    public void edit(CollectionModel collection) {
+
+        collectionRepository.edit(collection.getId(),collection.getName(),collection.getDescription(),collection.getTopic(),
+                collection.getImg(),collection.getNumberName1(),collection.getNumberName2(),collection.getNumberName3(),
+                collection.getStringName1(),collection.getStringName2(),collection.getStringName3(),
+                collection.getTextName1(),collection.getTextName2(),collection.getTextName3(),collection.getDataName1(),
+                collection.getDataName2(),collection.getDataName3(),collection.getCheckboxName1(),
+                collection.getCheckboxName2(),collection.getCheckboxName3());
+    }
 }

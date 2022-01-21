@@ -2,7 +2,6 @@ package com.example.backend.model.convert;
 
 import com.example.backend.entity.UserEntity;
 import com.example.backend.model.AuthUser;
-import com.example.backend.model.UserModel;
 import org.springframework.core.convert.converter.Converter;
 
 public class ConvertUserToAuthUser implements Converter<UserEntity, AuthUser> {

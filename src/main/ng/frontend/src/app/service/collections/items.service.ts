@@ -40,4 +40,7 @@ export class ItemsService {
     return this.http.get<ItemModel[]>("/api/items/tag/"+id);
   }
 
+  update(newItem: ItemModel):any{
+    return this.http.post<any>('/api/items/update',newItem);
+  }
 }

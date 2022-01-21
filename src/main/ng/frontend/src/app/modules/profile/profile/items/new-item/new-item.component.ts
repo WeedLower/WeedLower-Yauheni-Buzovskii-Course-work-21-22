@@ -12,6 +12,9 @@ import {COMMA, ENTER} from "@angular/cdk/keycodes";
 import {map, Observable, startWith} from "rxjs";
 import {MatChipInputEvent} from "@angular/material/chips";
 import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
+import {DatePipe} from "@angular/common";
+
+
 
 @Component({
   selector: 'app-new-item',
@@ -24,22 +27,32 @@ export class NewItemComponent implements OnInit {
   newItem:ItemModel = new ItemModel();
   collect: CollectionModel = new CollectionModel();
   allTags:TagModel[] = [];
-  tagString:string[] = ['books']
+  tagString:string[] = []
   allTagsString:string[] = [];
   filtredString: Observable<string[]>
   id:number;
+  updateMod=false;
+  itemId:number;
   separatorKeysCodes: number[] = [ENTER,COMMA];
   formControl = new FormControl();
+  checkbox=[true,false];
+  date:Date = new Date;
+
+
 
   @ViewChild('tagInput') tagInput: ElementRef<HTMLInputElement>;
+
   constructor(private route: ActivatedRoute,private rout:Router,private auth:AuthService,
               private fB:FormBuilder,private item:ItemsService,private col: CollectionsService,
-              private tagService:TagService) {}
+              private tagService:TagService,private datePipe:DatePipe) {
+    this.datePipe.transform(this.date,"yyyy-MM-dd")
+  }
 
   ngOnInit(): void {
     this.auth.check();
     this.initReactForm();
     this.id= +this.route.snapshot.params['id'];
+    this.route.snapshot.params['itemId']!= null || NaN ? this.getItem(+this.route.snapshot.params['itemId']) : true;
     if(this.auth.user==null){
       this.rout.navigate(['/'])
     }else {
@@ -52,9 +65,26 @@ export class NewItemComponent implements OnInit {
     }
   }
 
+
+
   private initReactForm() {
     this.formGroup = this.fB.group({
-      name:['',Validators.required]
+      name:['',Validators.required],
+      number1:[''],
+      number2:[''],
+      number3:[''],
+      string1:[''],
+      string2:[''],
+      string3:[''],
+      text1:[''],
+      text2:[''],
+      text3:[''],
+      data1:[''],
+      data2:[''],
+      data3:[''],
+      checkbox1:[''],
+      checkbox2:[''],
+      checkbox3:['']
     })
   }
 
@@ -91,6 +121,15 @@ export class NewItemComponent implements OnInit {
     })
   }
 
+  getItem(id:number) {
+    this.item.getById(id).subscribe(data=>{
+      this.newItem=data as ItemModel;
+      this.tagString=this.newItem.tags;
+      this.updateMod=true;
+      console.log(this.newItem)
+    })
+  }
+
   private getAllTags() {
     this.tagService.getAll().subscribe(data => {
           console.log(data);
@@ -108,4 +147,13 @@ export class NewItemComponent implements OnInit {
       this.rout.navigate(['/profile/collect/'+this.id])
     })
   }
+
+  edit(): any {
+    this.item.update(this.newItem).subscribe(data=>{
+      console.log('edit',data)
+      this.rout.navigate(['/profile/collect/'+this.id])
+    },
+        error => console.log(error))
+  }
+
 }

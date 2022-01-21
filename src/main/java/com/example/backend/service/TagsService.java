@@ -1,8 +1,11 @@
 package com.example.backend.service;
 
 import com.example.backend.entity.TagsEntity;
+import com.example.backend.model.ItemModel;
 import com.example.backend.repository.TagsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -43,5 +46,15 @@ public class TagsService {
 
     public Set<TagsEntity> findTagsByItemId(int id) {
         return tagsRepository.findAllByItemId(id);
+    }
+
+    public void checkTags(ItemModel item) throws Exception {
+        if (item.getTags().length==0){
+            throw new Exception("Tags cannot be empty");
+        }else {
+            item.getTagSet().forEach(s-> tagsRepository.deleteAllByItem(item.getId()));
+            findTagsByMame(item.getTags()).forEach(s -> saveItemTags(item.getId(),s.getId()));
+        }
+
     }
 }

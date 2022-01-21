@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../../../service/auth/auth.service";
 import {CollectionsService} from "../../../../service/collections/collections.service";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -15,10 +15,6 @@ interface Topic {
     viewVal: string;
 }
 
-interface Field {
-    val: string;
-    viewVal: string;
-}
 
 @Component({
     selector: 'app-new-collection',
@@ -32,6 +28,7 @@ export class NewCollectionComponent implements OnInit {
     newColl: CollectionModel = new CollectionModel();
     resCol: CollectionModel = new CollectionModel();
     createmes = false;
+    editColId:number
     errMess: any;
     image: File;
     imageMin: File;
@@ -39,9 +36,14 @@ export class NewCollectionComponent implements OnInit {
     owner: AuthuserModel;
     status = false;
     count = false;
+    edit=false;
     img:ImageModel;
-
     files: any[] = [];
+    fC = new FormControl;
+    optionalFields=['Number#1','Number#2','Number#3','String#1','String#2','String#3',
+        'Text#1','Text#2','Text#3','Data#1','Data#2', 'Data#3','Checkbox#1','Checkbox#2','Checkbox#3'];
+    selectedFields=[];
+    i;
 
     constructor(private auth: AuthService, private col: CollectionsService, private activeRout: ActivatedRoute,
                 private rout: Router, private fB: FormBuilder, private imageService: ImageService, private user: UserService,private spinner: NgxSpinnerService) {
@@ -52,6 +54,10 @@ export class NewCollectionComponent implements OnInit {
         this.initReactForm();
         if (this.auth.user == null) {
             this.rout.navigate(['/'])
+        } else if (+this.activeRout.snapshot.params['editId']!=null || NaN){
+            this.editColId= +this.activeRout.snapshot.params['editId'];
+            this.getColections(this.editColId);
+            this.edit=true;
         } else if (this.auth.user.role.toString() == "ADMIN") {
             this.status = true;
             this.id = +this.activeRout.snapshot.params['id'];
@@ -72,9 +78,25 @@ export class NewCollectionComponent implements OnInit {
         this.formControl = this.fB.group({
             name: ['', Validators.required],
             description: ['', Validators.required],
-            topic: ['', Validators.required]
+            topic: ['', Validators.required],
+            number1: [''],
+            number2: [''],
+            number3: [''],
+            string1:[''],
+            string2:[''],
+            string3:[''],
+            text1:[''],
+            text2:[''],
+            text3:[''],
+            data1:[''],
+            data2:[''],
+            data3:[''],
+            checkbox1:[''],
+            checkbox2:[''],
+            checkbox3:['']
         })
     }
+
 
     topics: Topic[] = [
         {val: 'Alcohol', viewVal: 'Alcohol'},
@@ -100,6 +122,24 @@ export class NewCollectionComponent implements OnInit {
         }else {
             this.createCollection(this.newColl);
         }
+
+    }
+
+    private editCol() {
+        this.col.editCollection(this.newColl).subscribe(data => {
+            console.log(data)
+            this.rout.navigate(['/profile/collect/'+this.newColl.id]);
+        },
+            error=> console.log(error))
+    }
+
+    private getColections(editColId: number) {
+        this.col.findCollectById(editColId).subscribe(s=>{
+                this.newColl=s as CollectionModel;
+                this.checkColumns(this.newColl);
+                console.log(s)
+            },
+            error=>console.log(error))
 
     }
 
@@ -165,4 +205,22 @@ export class NewCollectionComponent implements OnInit {
     }
 
 
+    private checkColumns(newColl: CollectionModel) {
+        this.newColl.numberName1!=null ? this.selectedFields.push("Number#1") : false;
+        this.newColl.numberName2!=null ? this.selectedFields.push("Number#2") : false;
+        this.newColl.numberName3!=null ? this.selectedFields.push("Number#3") : false;
+        this.newColl.stringName1!=null ? this.selectedFields.push("String#1") : false;
+        this.newColl.stringName2!=null ? this.selectedFields.push("String#2") : false;
+        this.newColl.stringName3!=null ? this.selectedFields.push("String#3") : false;
+        this.newColl.textName1!=null ? this.selectedFields.push("Text#1") : false;
+        this.newColl.textName2!=null ? this.selectedFields.push("Text#2") : false;
+        this.newColl.textName3!=null ? this.selectedFields.push("Text#3") : false;
+        this.newColl.dataName1!=null ? this.selectedFields.push("Data#1") : false;
+        this.newColl.dataName2!=null ? this.selectedFields.push("Data#2") : false;
+        this.newColl.dataName3!=null ? this.selectedFields.push("Data#3") : false;
+        this.newColl.checkboxName1!=null ? this.selectedFields.push("Checkbox#1") : false;
+        this.newColl.checkboxName2!=null ? this.selectedFields.push("Checkbox#2") : false;
+        this.newColl.checkboxName3!=null ? this.selectedFields.push("Checkbox#3") : false;
+
+    }
 }

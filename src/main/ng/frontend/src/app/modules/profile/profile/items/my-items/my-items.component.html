@@ -1,48 +1,131 @@
 <title>MyCollections</title>
 <app-header-block></app-header-block>
+<div fxFlex="1 0 100%" fxLayout="column" fxLayoutAlign="start stretch" >
+    <h1 *ngIf="collection.name!=null">Collection:{{collection.name}}</h1>
+    <h2 *ngIf="collection.description!=null">Description:{{collection.description}}</h2>
+    <h2 *ngIf="collection.topic!=null">Topic:{{collection.topic}}</h2>
 
-<h1 *ngIf="collection.name!=null">Collection:{{collection.name}}</h1>
+    <button mat-raised-button color="primary" (click)="openDialog()">Create</button>
+    <button mat-raised-button color="warn" *ngIf="item.data.length!=0" (click)="delete()">Delete</button>
+    <p></p>
+    <mat-sidenav-container fxFlex="0 1 auto"  *ngIf="item.data.length!=0">
+        <div class="mat-elevation-z8 m-12">
+            <div class="table-container">
+                <mat-form-field appearance ="standard">
+                    <mat-label>Filter</mat-label>
+                    <input matInput (keyup)="applyFilter($event)" placeholder="filter" #input>
+                </mat-form-field>
+                <table *ngIf="item.data.length!=0" mat-table [dataSource]="item" matSort>
+                    <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <mat-checkbox (change)="$event ? masterToggle() : null"
+                                          [checked]="selection.hasValue() && isAllSelected()"
+                                          [indeterminate]="selection.hasValue() && !isAllSelected()">
+                            </mat-checkbox>
+                        </th>
+                        <td mat-cell *matCellDef="let row">
+                            <mat-checkbox (click)="$event.stopPropagation()"
+                                          (change)="$event ? selection.toggle(row) : null"
+                                          [checked]="selection.isSelected(row)">
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+                        <td mat-cell *matCellDef="let i"> {{i.id}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                        <td mat-cell *matCellDef="let i"> {{i.name}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="tags">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tags </th>
+                        <td mat-cell *matCellDef="let i">{{i.tags}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="numberName1">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{collection.numberName1}}</th>
+                        <td mat-cell *matCellDef="let i">{{i.optionalNumberField1}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="numberName2">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{collection.numberName2}}</th>
+                        <td mat-cell *matCellDef="let i">{{i.optionalNumberField2}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="numberName3">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{collection.numberName3}}</th>
+                        <td mat-cell *matCellDef="let i">{{i.optionalNumberField3}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="stringName1">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{collection.stringName1}}</th>
+                        <td mat-cell *matCellDef="let i">{{i.optionalStringField1}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="stringName2">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{collection.stringName2}}</th>
+                        <td mat-cell *matCellDef="let i">{{i.optionalStringField2}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="stringName3">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{collection.stringName3}}</th>
+                        <td mat-cell *matCellDef="let i">{{i.optionalStringField3}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="textName1">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{collection.textName1}}</th>
+                        <td mat-cell *matCellDef="let i">{{i.optionalTextField1}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="textName2">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{collection.textName2}}</th>
+                        <td mat-cell *matCellDef="let i">{{i.optionalTextField2}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="textName3">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{collection.textName3}}</th>
+                        <td mat-cell *matCellDef="let i">{{i.optionalTextField3}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="dataName1">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{collection.dataName1}}</th>
+                        <td mat-cell *matCellDef="let i">{{i.optionalDataField1  | date: 'yyyy-MM-dd'}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="dataName2">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{collection.dataName2}}</th>
+                        <td mat-cell *matCellDef="let i">{{i.optionalDataField2  | date: 'yyyy-MM-dd'}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="dataName3" >
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{collection.dataName3}}</th>
+                        <td mat-cell *matCellDef="let i">{{i.optionalDataField3  | date: 'yyyy-MM-dd'}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="checkboxName1">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{collection.checkboxName1}}</th>
+                        <td mat-cell *matCellDef="let i">{{i.optionalCheckboxField1 ==true ? "✔" : "&#10006;"}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="checkboxName2">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{collection.checkboxName2}}</th>
+                        <td mat-cell *matCellDef="let i">{{i.optionalCheckboxField2 ==true ? "✔" : "&#10006;"}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="checkboxName3">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{collection.checkboxName3}}</th>
+                        <td mat-cell *matCellDef="let i">{{i.optionalCheckboxField3 ==true ? "✔" : "&#10006;"}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="button">
+                        <th mat-header-cell *matHeaderCellDef></th>
+                        <td mat-cell *matCellDef="let i"><button id="view" mat-raised-button (click)="viewItem(i.id)">View</button><button id="update" mat-raised-button color="accent" (click)="updateItem(i.id)">Update</button></td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+                        (click)="selection.toggle(row)">
+                    </tr>
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </mat-sidenav-container>
+</div>
 
-<button mat-raised-button color="primary" (click)="openDialog()">Create</button>
-<button mat-raised-button color="warn" *ngIf="item.data.length!=0" (click)="delete()">Delete</button>
-<p></p>
 
-<table *ngIf="item.data.length!=0" mat-table class="mat-elevation-z8" [dataSource]="item" matSort (matSortChange)="announceSortChange($event)">
-    <ng-container matColumnDef="select">
-        <th mat-header-cell *matHeaderCellDef>
-            <mat-checkbox (change)="$event ? masterToggle() : null"
-                          [checked]="selection.hasValue() && isAllSelected()"
-                          [indeterminate]="selection.hasValue() && !isAllSelected()">
-            </mat-checkbox>
-        </th>
-        <td mat-cell *matCellDef="let row">
-            <mat-checkbox (click)="$event.stopPropagation()"
-                          (change)="$event ? selection.toggle(row) : null"
-                          [checked]="selection.isSelected(row)">
-            </mat-checkbox>
-        </td>
-    </ng-container>
-    <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> No. </th>
-        <td mat-cell *matCellDef="let i"> {{i.id}} </td>
-    </ng-container>
-    <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name"> Name </th>
-        <td mat-cell *matCellDef="let i"> {{i.name}} </td>
-    </ng-container>
-    <ng-container matColumnDef="tags">
-        <th mat-header-cell *matHeaderCellDef> Tags </th>
-        <td mat-cell *matCellDef="let i">{{i.tags}}</td>
-    </ng-container>
-    <ng-container matColumnDef="button">
-    <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let i"><button id="view" mat-raised-button (click)="viewItem(i.id)">View</button> <button id="update" mat-raised-button color="accent" (click)="updateItem(i.id)">Update</button></td>
-    </ng-container>
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-        (click)="selection.toggle(row)">
-    </tr>
-</table>
+
+
+
+<div class="example-container mat-elevation-z8">
+</div>
+<h4></h4>
 
 <h3 *ngIf="item.data.length==0">Create first item</h3>
 

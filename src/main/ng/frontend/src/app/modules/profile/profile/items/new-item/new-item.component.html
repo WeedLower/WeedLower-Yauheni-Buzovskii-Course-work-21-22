@@ -1,6 +1,7 @@
-<title>New Item</title>
+<title xmlns="http://www.w3.org/1999/html">New Item</title>
 <app-header-block></app-header-block>
-<button mat-raised-button color="primary" [disabled]="!formGroup.valid" (click)="create()">Create</button>
+<button mat-raised-button color="primary" *ngIf="updateMod==false" [disabled]="!formGroup.valid" (click)="create()">Create</button>
+<button mat-raised-button color="warn" *ngIf="updateMod==true" [disabled]="!formGroup.valid" (click)="edit()">Edit</button>
 <form class="example-form" [formGroup]="formGroup">
 <p>
     <mat-form-field class="example-full-width" appearance="fill">
@@ -8,6 +9,108 @@
         <input matInput formControlName="name" name="name" [(ngModel)]="newItem.name" required>
     </mat-form-field>
 </p>
+    <p>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="newItem.collection.numberName1!=null">
+            <mat-label>{{newItem.collection.numberName1}}</mat-label>
+            <input matInput formControlName="number1" name="number1" type="number" [(ngModel)]="newItem.optionalNumberField1" required>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="newItem.collection.numberName2!=null">
+            <mat-label>{{newItem.collection.numberName2}}</mat-label>
+            <input matInput formControlName="number2" name="number2" type="number" [(ngModel)]="newItem.optionalNumberField2" required>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="newItem.collection.numberName3!=null">
+            <mat-label>{{newItem.collection.numberName3}}</mat-label>
+            <input matInput formControlName="number3" name="number3" type="number" [(ngModel)]="newItem.optionalNumberField3" required>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="newItem.collection.stringName1!=null">
+            <mat-label>{{newItem.collection.stringName1}}</mat-label>
+            <input matInput formControlName="string1" name="string1" [(ngModel)]="newItem.optionalStringField1" required>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="newItem.collection.stringName2!=null">
+            <mat-label>{{newItem.collection.stringName2}}</mat-label>
+            <input matInput formControlName="string2" name="string2" [(ngModel)]="newItem.optionalStringField2" required>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="newItem.collection.stringName3!=null">
+            <mat-label>{{newItem.collection.stringName3}}</mat-label>
+            <input matInput formControlName="string3" name="string3" [(ngModel)]="newItem.optionalStringField3" required>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="newItem.collection.textName1!=null">
+            <mat-label>{{newItem.collection.textName1}}</mat-label>
+            <textarea matInput formControlName="text1" name="text1" [(ngModel)]="newItem.optionalTextField1" required></textarea>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="newItem.collection.textName2!=null">
+            <mat-label>{{newItem.collection.textName2}}</mat-label>
+            <textarea matInput formControlName="text2" name="text2" [(ngModel)]="newItem.optionalTextField2" required></textarea>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="newItem.collection.textName3!=null">
+            <mat-label>{{newItem.collection.textName3}}</mat-label>
+            <textarea matInput formControlName="text3" name="text3" [(ngModel)]="newItem.optionalTextField3" required></textarea>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="newItem.collection.dataName1!=null">
+            <mat-label>{{newItem.collection.dataName1}}</mat-label>
+            <input matInput formControlName="data1" name="data1" type="date" [(ngModel)]="newItem.optionalDataField1" required>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="newItem.collection.dataName2!=null">
+            <mat-label>{{newItem.collection.dataName2}}</mat-label>
+            <input matInput formControlName="data2" name="data2" type="date" date [(ngModel)]="newItem.optionalDataField2" required>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="newItem.collection.dataName3!=null">
+            <mat-label>{{newItem.collection.dataName3}}</mat-label>
+            <input matInput formControlName="data3" name="data3" type="date" [(ngModel)]="newItem.optionalDataField3" required>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="newItem.collection.checkboxName1!=null">
+            <mat-label>{{newItem.collection.checkboxName1}}</mat-label>
+            <mat-select [(ngModel)]="newItem.optionalCheckboxField1" formControlName="checkbox1" name="checkbox1" required>
+                <mat-option *ngFor="let i of checkbox" [value]="i">
+                    {{i}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="newItem.collection.checkboxName2!=null">
+            <mat-label>{{newItem.collection.checkboxName2}}</mat-label>
+            <mat-select [(ngModel)]="newItem.optionalCheckboxField2" formControlName="checkbox2" name="checkbox2" required>
+                <mat-option *ngFor="let i of checkbox" [value]="i">
+                    {{i}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="newItem.collection.checkboxName3!=null">
+            <mat-label>{{newItem.collection.checkboxName3}}</mat-label>
+            <mat-select [(ngModel)]="newItem.optionalCheckboxField3" formControlName="checkbox3" name="checkbox3" required>
+                <mat-option *ngFor="let i of checkbox" [value]="i">
+                    {{i}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </p>
     <mat-form-field class="example-chip-list" appearance="fill">
         <mat-label>Tags</mat-label>
         <mat-chip-list #chipList aria-label="Tag selection">
@@ -35,3 +138,5 @@
         </mat-autocomplete>
     </mat-form-field>
 </form>
+
+

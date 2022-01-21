@@ -14,10 +14,7 @@ import org.hibernate.search.mapper.pojo.mapping.definition.annotation.IndexedEmb
 
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 
 @Getter
@@ -35,6 +32,22 @@ public class ItemsEntity {
 
     @Column(nullable=false)
     private String name;
+
+    private Long optionalNumberField1;
+    private Long optionalNumberField2;
+    private Long optionalNumberField3;
+    private String optionalStringField1;
+    private String optionalStringField2;
+    private String optionalStringField3;
+    private String optionalTextField1;
+    private String optionalTextField2;
+    private String optionalTextField3;
+    private Date optionalDataField1;
+    private Date optionalDataField2;
+    private Date optionalDataField3;
+    private Boolean optionalCheckboxField1;
+    private Boolean optionalCheckboxField2;
+    private Boolean optionalCheckboxField3;
 
     @JsonIgnore
     @ManyToMany

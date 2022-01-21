@@ -38,6 +38,11 @@ public class ItemsController {
         return itemsService.saveItem(item);
     }
 
+    @RequestMapping(value = "/update",method = RequestMethod.POST)
+    public void updateItem(@RequestBody ItemModel item) throws Exception {
+        itemsService.updateItem(item);
+    }
+
     @RequestMapping(value = "/name/{name}",method = RequestMethod.GET)
     public ResponseEntity<ItemsEntity> findItemByName(@PathVariable(name = "name")String name){
         ItemsEntity item = itemsService.getItemByName(name);

@@ -27,6 +27,8 @@ public interface TagsRepository extends JpaRepository<TagsEntity,Integer> {
     @Query(value = "select t from TagsEntity t left join t.items i where i.items.id= :id")
     Set<TagsEntity> findAllByItemId(@Param("id") Integer id);
 
-
-
+    @Modifying
+    @Transactional
+    @Query(value = "delete from postgres_db.items_tags where item_id=:id", nativeQuery=true)
+    void deleteAllByItem(@Param("id")int id);
 }

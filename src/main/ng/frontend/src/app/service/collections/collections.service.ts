@@ -30,4 +30,8 @@ export class CollectionsService {
   findCollectById(id: number):any{
     return this.http.get("api/collections/"+id);
   }
+
+    editCollection(newColl: CollectionModel):any {
+        return this.http.post("/api/collections/edit/",newColl)
+    }
 }

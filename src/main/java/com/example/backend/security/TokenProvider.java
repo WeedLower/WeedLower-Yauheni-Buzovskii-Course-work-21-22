@@ -48,7 +48,7 @@ public class TokenProvider implements Serializable {
         return Jwts.builder()
                 .setSubject(authentication.getName())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis()+SecurityJwtConstants.ACCESS_TOKEN_VALIDITY_SECOND * 1000))
+                .setExpiration(new Date(System.currentTimeMillis()+SecurityJwtConstants.ACCESS_TOKEN_VALIDITY_SECOND * 10000))
                 .signWith(SignatureAlgorithm.HS256,SecurityJwtConstants.SIGNING_KEY)
                 .claim(SecurityJwtConstants.AUTHORITIES_KEY,authorities)
                 .compact();

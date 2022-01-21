@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {CollectionsService} from "../../../../../service/collections/collections.service";
 import {CollectionModel} from "../../../../../model/collections";
@@ -9,6 +9,8 @@ import {LiveAnnouncer} from "@angular/cdk/a11y";
 import {SelectionModel} from "@angular/cdk/collections";
 import {MatTableDataSource} from "@angular/material/table";
 import {AuthService} from "../../../../../service/auth/auth.service";
+import {DatePipe} from "@angular/common";
+
 
 
 @Component({
@@ -16,46 +18,56 @@ import {AuthService} from "../../../../../service/auth/auth.service";
   templateUrl: './my-items.component.html',
   styleUrls: ['./my-items.component.css']
 })
-export class MyItemsComponent implements OnInit {
+export class MyItemsComponent implements OnInit,AfterViewInit {
   collection: CollectionModel;
   sortedData: ItemModel[];
   newItem: ItemModel = new ItemModel();
   id: number;
   status=true;
-  displayedColumns: string[] = ['select', 'id', 'name','tags','button'];
+  custom=false;
   selection = new SelectionModel<ItemModel>(true, []);
   item = new MatTableDataSource<ItemModel>()
-
+  displayedColumns: string[] = ['select','id','name','tags'];
 
 
   constructor(private route: ActivatedRoute, private collectionsService: CollectionsService,
               private itemsService: ItemsService,private auth:AuthService,
               private rout: Router, private _liveAnnouncer: LiveAnnouncer) {
+    this.id = +this.route.snapshot.params['id'];
+    if(this.id!=null){
+      this.itemsService.getAllItemsByCollection(this.id).subscribe((items) => {
+            this.item.data = items as ItemModel[];
+          })}
   }
-
-  @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit(): void {
     this.auth.check();
     if (this.auth.user.role.toString()=='ADMIN'){
-
     }
-    this.id = +this.route.snapshot.params['id'];
     if (this.id != null) {
       this.getCollect(this.id)
-      this.getCollectItems(this.id)
     }
   }
-
-
+  @ViewChild(MatSort) sort: MatSort;
   ngAfterViewInit() {
     this.item.sort = this.sort;
   }
+
+  delEmptyColumns(collection : CollectionModel){
+    const entries = Object.entries(collection);
+    entries.forEach(([key, value]) => {
+      value!=null && key!='user' && key!='items' && key!='image' && key!='id' && key!='name' && key!='description' && key!='topic'
+          ? this.displayedColumns.push(key): true;
+    })
+      this.displayedColumns.push('button');
+  }
+
 
   private getCollect(id): void {
     this.collectionsService.findCollectById(id).subscribe((data) =>{
       data.user.id!=this.auth.user.id && this.auth.user.role.toString()!="ADMIN" ? this.rout.navigate(['/']) :
       this.collection = data as CollectionModel;
+      this.delEmptyColumns(this.collection);
     },
         error=>console.log(error))
   };
@@ -111,7 +123,13 @@ export class MyItemsComponent implements OnInit {
     this.rout.navigate(['/item/'+id])
   }
 
-  updateItem(id) {
-    
+  updateItem(itemId) {
+    this.rout.navigate(['profile/collect/'+this.id+'/item/'+itemId])
   }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.item.filter = filterValue.trim().toLowerCase();
+  }
+
 }

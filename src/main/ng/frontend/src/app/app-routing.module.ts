@@ -25,9 +25,11 @@ const routes: Routes = [
   {path: 'profile',component:ProfileComponent },
   {path: 'profile/col/:id', component:NewCollectionComponent},
   {path: 'profile/collect', component:NewCollectionComponent},
+  {path: 'profile/collect/edit/:editId', component:NewCollectionComponent},
   {path: 'profile/:id',component:ProfileComponent },
   {path: 'item/:id',component:ViewItemComponent},
   {path: 'profile/collect/:id',component:MyItemsComponent},
+  {path: 'profile/collect/:id/item/:itemId',component:NewItemComponent},
   {path: 'profile/collect/:id/new-item',component:NewItemComponent},
   {path: '**', component:NotFoundComponent}
 ]

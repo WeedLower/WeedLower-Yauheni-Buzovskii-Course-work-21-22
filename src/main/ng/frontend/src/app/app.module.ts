@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {AppComponent }   from './app.component';
+import {DatePipe} from "@angular/common";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HTTP_INTERCEPTORS,HttpClientModule} from "@angular/common/http";
 import {InterceptorService} from "./service/auth/interceptor.service";
@@ -46,6 +47,9 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {AdminPageComponent} from "./modules/admin/admin-page/admin-page.component";
 import { DragDropDirective } from './modules/profile/profile/new-collection/drag-drop.directive';
 import {NgxSpinnerModule} from "ngx-spinner";
+import {CdkTableModule} from "@angular/cdk/table";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 
 
@@ -82,7 +86,10 @@ import {NgxSpinnerModule} from "ngx-spinner";
         MatBadgeModule,
         MatChipsModule,
         MatAutocompleteModule,
-        NgxSpinnerModule
+        NgxSpinnerModule,
+        CdkTableModule,
+        MatDatepickerModule,
+        MatSidenavModule
     ],
     declarations: [
         AppComponent,
@@ -102,7 +109,7 @@ import {NgxSpinnerModule} from "ngx-spinner";
         CreateItemDialogComponent,
         DragDropDirective
     ],
-    providers:    [InterceptorService,{provide: HTTP_INTERCEPTORS,useClass: InterceptorService,multi: true}],
+    providers:    [DatePipe,InterceptorService,{provide: HTTP_INTERCEPTORS,useClass: InterceptorService,multi: true}],
     bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

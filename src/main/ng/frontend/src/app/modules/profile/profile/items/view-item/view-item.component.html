@@ -2,6 +2,22 @@
 <app-header-block></app-header-block>
 <div class="main-block">
     <h1>Name:{{itemMod.name}}</h1>
+    <h2>Owner:{{itemMod.author.name}}</h2>
+    <h3 *ngIf="itemMod.optionalNumberField1!=null">{{itemMod.collection.numberName1}} :{{itemMod.optionalNumberField1}}</h3>
+    <h3 *ngIf="itemMod.optionalNumberField2!=null">{{itemMod.collection.numberName2}} :{{itemMod.optionalNumberField2}}</h3>
+    <h3 *ngIf="itemMod.optionalNumberField3!=null">{{itemMod.collection.numberName3}} :{{itemMod.optionalNumberField3}}</h3>
+    <h3 *ngIf="itemMod.optionalStringField1!=null">{{itemMod.collection.stringName1}} :{{itemMod.optionalStringField1}}</h3>
+    <h3 *ngIf="itemMod.optionalStringField2!=null">{{itemMod.collection.stringName2}} :{{itemMod.optionalStringField2}}</h3>
+    <h3 *ngIf="itemMod.optionalStringField3!=null">{{itemMod.collection.stringName3}} :{{itemMod.optionalStringField3}}</h3>
+    <h3 *ngIf="itemMod.optionalTextField1!=null">{{itemMod.collection.textName1}} :{{itemMod.optionalTextField1}}</h3>
+    <h3 *ngIf="itemMod.optionalTextField2!=null">{{itemMod.collection.textName2}} :{{itemMod.optionalTextField2}}</h3>
+    <h3 *ngIf="itemMod.optionalTextField3!=null">{{itemMod.collection.textName3}} :{{itemMod.optionalTextField3}}</h3>
+    <h3 *ngIf="itemMod.optionalDataField1!=null">{{itemMod.collection.dataName1}} :{{itemMod.optionalDataField1 | date: 'yyyy-MM-dd' }}</h3>
+    <h3 *ngIf="itemMod.optionalDataField2!=null">{{itemMod.collection.dataName2}} :{{itemMod.optionalDataField2 | date: 'yyyy-MM-dd' }}</h3>
+    <h3 *ngIf="itemMod.optionalDataField3!=null">{{itemMod.collection.dataName3}} :{{itemMod.optionalDataField3 | date: 'yyyy-MM-dd' }}</h3>
+    <h3 *ngIf="itemMod.optionalCheckboxField1!=null">{{itemMod.collection.checkboxName1}} :{{itemMod.optionalCheckboxField1==true? "✔" : "&#10006;" }}</h3>
+    <h3 *ngIf="itemMod.optionalCheckboxField2!=null">{{itemMod.collection.checkboxName2}} :{{itemMod.optionalCheckboxField2==true? "✔" : "&#10006;" }}</h3>
+    <h3 *ngIf="itemMod.optionalCheckboxField3!=null">{{itemMod.collection.checkboxName3}} :{{itemMod.optionalCheckboxField3==true? "✔" : "&#10006;" }}</h3>
     <button mat-icon-button matBadge="{{itemMod.likes}}" matBadgeColor="warn" matRipp color="warn" [disabled]="statusUser==false || statusLikes==true || itemMod.meLiked==null || itemMod.meLiked==true"  (click)="like()">
         <mat-icon>favorite</mat-icon>
     </button>

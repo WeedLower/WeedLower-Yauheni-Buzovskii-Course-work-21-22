@@ -3,9 +3,10 @@
 }
 
 .comment-block{
-    position: sticky;
+    position:relative;
     display: flex;
     align-self: center;
+    margin-bottom: 0;
 
 }
 h1{
@@ -26,6 +27,6 @@ h1{
     background: #3F51B5;
     margin-left: 0%;
     margin-right: 0%;
-    margin-bottom: 0%;
+    margin-bottom: 0;
     box-shadow: 5px 5px 5px grey;
 }

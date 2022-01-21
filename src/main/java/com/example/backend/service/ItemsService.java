@@ -5,12 +5,15 @@ import com.example.backend.entity.TagsEntity;
 import com.example.backend.entity.UserEntity;
 import com.example.backend.model.ItemModel;
 import com.example.backend.model.TagsModel;
+import com.example.backend.model.convert.ConvertItemModelToItemEntity;
 import com.example.backend.repository.ItemsRepository;
 import com.example.backend.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.security.Principal;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -34,10 +37,8 @@ public class ItemsService {
 
     public ItemsEntity saveItem(ItemModel items){
         Set<TagsEntity> tags= tagsService.findTagsByMame(items.getTags());
-        ItemsEntity item = new ItemsEntity();
-        item.setName(items.getName());
-        item.setCollection(items.getCollection());
-        item.setUser(items.getAuthor());
+        ConvertItemModelToItemEntity convert = new ConvertItemModelToItemEntity();
+        ItemsEntity item = convert.convert(items);
         ItemsEntity itemsEntity = itemsRepository.save(item);
         tags.forEach(s -> tagsService.saveItemTags(item.getId(),s.getId()));
         return itemsEntity;
@@ -62,7 +63,7 @@ public class ItemsService {
     }
 
     public Optional<ItemModel> findItemById(Integer id){
-        return itemsRepository.findItemById(id);
+         return itemsRepository.findItemById(id);
     }
 
 
@@ -73,7 +74,17 @@ public class ItemsService {
 
     public Optional<ItemModel> findItemAuthUser(Integer id, Principal user) {
         UserEntity userEntity = usersRepository.findByEmail(user.getName());
-        return itemsRepository.findItemAuthUser(id,userEntity.getId());
+        Optional<ItemModel> item = itemsRepository.findItemAuthUser(id,userEntity.getId());
+        if (item.isPresent()){
+            item.get().setTagSet(tagsService.findTagsByItemId(item.get().getId()));
+            List<String> tags = new ArrayList<>();
+            for(TagsEntity tagsEntity : item.get().getTagSet()){
+                String toString = tagsEntity.getTag().toString();
+                tags.add(toString);
+            }
+            item.get().setTags(tags.toArray(new String[0]));
+        }
+        return item;
     }
 
     public void like(Integer id, Principal user) {
@@ -83,5 +94,18 @@ public class ItemsService {
 
     public List<ItemsEntity> findItemsByTagId(Integer id) {
       return   itemsRepository.findItemsByTagsId(id);
+    }
+
+    public void updateItem(ItemModel item) throws Exception {
+        tagsService.checkTags(item);
+        itemsRepository.update(item.getId(),item.getName(),item.getOptionalNumberField1(),
+                item.getOptionalNumberField2(),item.getOptionalNumberField3(),
+                item.getOptionalStringField1(),item.getOptionalStringField2(),
+                item.getOptionalStringField3(), item.getOptionalTextField1(),
+                item.getOptionalTextField2(),item.getOptionalTextField3(),
+                item.getOptionalDataField1(),item.getOptionalDataField2(),
+                item.getOptionalDataField3(),item.getOptionalCheckboxField1(),
+                item.getOptionalCheckboxField2(),item.getOptionalCheckboxField3());
+
     }
 }

@@ -32,6 +32,11 @@ public class CollectionController {
         return collectionsService.saveCollection(collection);
     }
 
+    @RequestMapping(value="/edit/",method = RequestMethod.POST)
+    public void edit(@RequestBody CollectionModel collection){
+        collectionsService.edit(collection);
+    }
+
     @RequestMapping(value = "/name/{name}",method = RequestMethod.GET)
     public ResponseEntity<CollectionsEntity> findCollectionByName(@PathVariable(name = "name")String name){
         CollectionsEntity collection= collectionsService.getCollectionsByName(name);

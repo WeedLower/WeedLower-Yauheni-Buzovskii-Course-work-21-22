@@ -7,4 +7,26 @@ table {
   margin-right: 0px;
 }
 
+.mat-table {
+  overflow-x: scroll;
+}
+
+.mat-cell,
+.mat-header-cell {
+  word-wrap: initial;
+  display: table-cell;
+  padding: 0px 10px;
+  line-break: unset;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.mat-row,
+.mat-header-row {
+  overflow-x: scroll;
+  display: table-row;
+  min-width: 100%;
+  width: 100%;
+}
 

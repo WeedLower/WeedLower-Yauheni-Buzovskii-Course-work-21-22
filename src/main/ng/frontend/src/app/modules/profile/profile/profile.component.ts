@@ -76,4 +76,8 @@ export class ProfileComponent implements OnInit {
   goCheck(id) {
     this.router.navigate(['profile/collect/'+id]);
   }
+
+  edit(editId) {
+    this.router.navigate(['profile/collect/edit/'+editId]);
+  }
 }
