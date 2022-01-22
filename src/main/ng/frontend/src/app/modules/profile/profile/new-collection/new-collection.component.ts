@@ -52,21 +52,23 @@ export class NewCollectionComponent implements OnInit {
 
     ngOnInit(): void {
         this.spinner.hide();
-        this.auth.check();
         this.initReactForm();
         if (this.auth.user == null) {
             this.rout.navigate(['/'])
         } else if (this.activeRout.snapshot.params['editId']!=null || NaN){
+            this.auth.check();
             this.editColId= +this.activeRout.snapshot.params['editId'];
             this.getColections(this.editColId);
             this.edit=true;
         } else if (this.auth.user.role.toString() == "ADMIN") {
+            this.auth.check();
             this.status = true;
             this.edit=false;
             this.id = +this.activeRout.snapshot.params['id'];
             this.getOwner(this.id);
             this.currentId = this.auth.user.id;
         } else if (this.auth.user.role.toString() != "USER") {
+            this.auth.check();
             this.edit=false;
             this.currentId = this.auth.user.id;
         }

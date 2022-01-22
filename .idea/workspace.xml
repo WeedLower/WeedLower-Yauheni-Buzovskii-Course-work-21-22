@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="setting for heroku">
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.module.ts" afterDir="false" />
-    </list>
+    <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="setting for heroku" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -168,7 +166,7 @@
       <workItem from="1642612247569" duration="13303000" />
       <workItem from="1642669167203" duration="13090000" />
       <workItem from="1642751387562" duration="20890000" />
-      <workItem from="1642839732999" duration="16929000" />
+      <workItem from="1642839732999" duration="17465000" />
     </task>
     <task id="LOCAL-00001" summary="z">
       <created>1642506216551</created>
@@ -282,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642885365958</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="setting for heroku">
+      <created>1642886075427</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1642886075427</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
