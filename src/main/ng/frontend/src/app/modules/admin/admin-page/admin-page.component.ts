@@ -19,11 +19,12 @@ export class AdminPageComponent implements OnInit {
   constructor(private rout: Router,private auth:AuthService,private userService:UserService) { }
 
   ngOnInit(): void {
-      this.auth.check();
-      if (this.auth.user.role.toString()!="ADMIN"){
-        this.rout.navigate(['/']);
+      if (this.auth.user==null || this.auth.user.role.toString()!="ADMIN"){
+          this.rout.navigate(['/'])
+      }else {
+          this.auth.check();
+          this.getAllUsers();
       }
-    this.getAllUsers();
   }
 
   private getAllUsers() {

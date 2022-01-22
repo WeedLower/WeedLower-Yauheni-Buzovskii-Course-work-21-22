@@ -50,7 +50,6 @@ import {NgxSpinnerModule} from "ngx-spinner";
 import {CdkTableModule} from "@angular/cdk/table";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatSidenavModule} from "@angular/material/sidenav";
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
