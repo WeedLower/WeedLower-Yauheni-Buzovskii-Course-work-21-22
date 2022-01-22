@@ -68,7 +68,7 @@ public class ItemsService {
 
 
     public void delete(Integer id) {
-        itemsRepository.deleteById(id);
+        itemsRepository.deleteByItemId(id);
     }
 
 

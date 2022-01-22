@@ -16,6 +16,11 @@ public interface ItemsRepository extends JpaRepository<ItemsEntity,Integer> {
 
     ItemsEntity findByName(String name);
 
+    @Modifying
+    @Transactional
+    @Query(value="delete from ItemsEntity i where i.id = :id")
+    void deleteByItemId(@Param("id") Integer id);
+
     @Query(value = "select new com.example.backend.model.ItemModel(i) from ItemsEntity i where i.collection.id=:id")
     List<ItemModel> findAllByCollection_Id(@Param("id") Integer id);
 

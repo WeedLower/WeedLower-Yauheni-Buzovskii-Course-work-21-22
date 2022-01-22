@@ -84,7 +84,7 @@ export class MyItemsComponent implements OnInit,AfterViewInit {
     if (confirm('Delete item / items?')){
       this.selection.selected.forEach(id =>
           this.itemsService.delete(id.id).subscribe(data=>{
-            console.log(data);
+            console.log("collection deleted");
             this.getCollectItems(this.id);
           },
               error=> console.log(error)));
