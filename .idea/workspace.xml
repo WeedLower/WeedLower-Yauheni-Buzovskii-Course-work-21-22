@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="&#10;few days - a lot of work">
+    <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="fix del">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/repository/ItemsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/repository/ItemsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/service/ItemsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/service/ItemsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/model/collections.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/model/collections.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/main-page/main-page/main-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/main-page/main-page/main-page.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/main-page/main-page/main-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/main-page/main-page/main-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/main-page/main-page/main-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/main-page/main-page/main-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/new-collection.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/new-collection.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/new-collection.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/new-collection.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/service/role/role.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/service/role/role.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/reg-page/reg-page/reg-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/reg-page/reg-page/reg-page.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +171,7 @@
       <workItem from="1642612247569" duration="13303000" />
       <workItem from="1642669167203" duration="13090000" />
       <workItem from="1642751387562" duration="20890000" />
-      <workItem from="1642839732999" duration="6805000" />
+      <workItem from="1642839732999" duration="11089000" />
     </task>
     <task id="LOCAL-00001" summary="z">
       <created>1642506216551</created>
@@ -250,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642585022789</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix del">
+      <created>1642865523330</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1642865523330</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,7 +271,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="z" />
     <MESSAGE value="&#10;few days - a lot of work" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;few days - a lot of work" />
+    <MESSAGE value="fix del" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix del" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

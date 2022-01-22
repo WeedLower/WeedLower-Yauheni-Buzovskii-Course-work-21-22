@@ -31,9 +31,10 @@ export class RegPageComponent implements OnInit {
     if (this.auth.user == null){
 
     } else {
-      // this.loadUsers();
+
     }
   }
+
   initReactForm(): void{
     this.formControl = this.formBuilder.group({
       name: ['', Validators.required],
@@ -42,18 +43,6 @@ export class RegPageComponent implements OnInit {
       password:['', Validators.required,]
     });
   }
-
-  // private loadRoles(): void{
-  //   this.roleService.getRole().subscribe(roles=>{
-  //     this.roles = roles as Rolemodel[];
-  //   })
-  // }
-
-  // private loadUsers(): void{
-  //   this.userService.getUsers().subscribe(users=>{
-  //     this.users = users as UserModel[];
-  //   })
-  // }
 
   public register(){
     this.auth.regUser(this.newUser);
@@ -77,14 +66,5 @@ export class RegPageComponent implements OnInit {
         this.notification = true;
       }
     });
-  }
-
-  public clearForm(): void{
-    this.newUser.name='';
-    this.newUser.surname='';
-    this.newUser.email='';
-    this.newUser.role= null;
-    this.newUser.password = '';
-    this.notification = false;
   }
 }
