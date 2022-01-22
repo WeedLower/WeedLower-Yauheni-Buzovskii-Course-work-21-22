@@ -8,7 +8,6 @@ import {CommentsModel} from "../../../../../model/comments";
 import {MatDialog} from "@angular/material/dialog";
 import {CreateItemDialogComponent} from "./create-item-dialog/create-item-dialog.component";
 import {interval, startWith, Subscription, switchMap} from "rxjs";
-import {error} from "protractor";
 
 
 

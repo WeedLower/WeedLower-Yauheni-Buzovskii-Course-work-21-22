@@ -36,7 +36,6 @@ export class NewItemComponent implements OnInit {
   separatorKeysCodes: number[] = [ENTER,COMMA];
   formControl = new FormControl();
   checkbox=[true,false];
-  date:Date = new Date;
 
 
 
@@ -44,8 +43,8 @@ export class NewItemComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,private rout:Router,private auth:AuthService,
               private fB:FormBuilder,private item:ItemsService,private col: CollectionsService,
-              private tagService:TagService,private datePipe:DatePipe) {
-    this.datePipe.transform(this.date,"yyyy-MM-dd")
+              private tagService:TagService) {
+
   }
 
   ngOnInit(): void {
