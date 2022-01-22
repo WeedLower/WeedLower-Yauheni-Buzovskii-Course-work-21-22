@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component,OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../../../service/auth/auth.service";
 import {CollectionsService} from "../../../../service/collections/collections.service";
@@ -9,6 +9,7 @@ import {AuthuserModel} from "../../../../model/authuser";
 import {UserService} from "../../../../service/user/user.service";
 import {ImageModel} from "../../../../model/Image";
 import {NgxSpinnerService} from "ngx-spinner";
+
 
 interface Topic {
     val: string;
@@ -50,22 +51,24 @@ export class NewCollectionComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.spinner.hide();
         this.auth.check();
         this.initReactForm();
         if (this.auth.user == null) {
             this.rout.navigate(['/'])
-        } else if (+this.activeRout.snapshot.params['editId']!=null || NaN){
+        } else if (this.activeRout.snapshot.params['editId']!=null || NaN){
             this.editColId= +this.activeRout.snapshot.params['editId'];
             this.getColections(this.editColId);
             this.edit=true;
         } else if (this.auth.user.role.toString() == "ADMIN") {
             this.status = true;
+            this.edit=false;
             this.id = +this.activeRout.snapshot.params['id'];
             this.getOwner(this.id);
             this.currentId = this.auth.user.id;
         } else if (this.auth.user.role.toString() != "USER") {
+            this.edit=false;
             this.currentId = this.auth.user.id;
-
         }
     }
 
@@ -125,12 +128,27 @@ export class NewCollectionComponent implements OnInit {
 
     }
 
-    private editCol() {
-        this.col.editCollection(this.newColl).subscribe(data => {
-            console.log(data)
-            this.rout.navigate(['/profile/collect/'+this.newColl.id]);
-        },
-            error=> console.log(error))
+    editCol():any{
+        this.spinner.show();
+        if (this.files.length != 0) {
+            this.files.forEach(s => {
+                this.imageService.upload(s).subscribe(data => {
+                        console.log("file uploaded")
+                        this.newColl.img= data as ImageModel;
+                        this.sendEdit(this.newColl);
+                    },
+                    error => console.log(error))})
+        }else {
+            this.sendEdit(this.newColl);
+        }
+
+    }
+
+    private sendEdit(col: CollectionModel):any{
+        this.col.editCollection(col).subscribe(data => {
+            console.log(data);
+            this.rout.navigate(['/profile/collect/'+this.newColl.id])
+        })
     }
 
     private getColections(editColId: number) {
@@ -151,7 +169,6 @@ export class NewCollectionComponent implements OnInit {
                 this.status == false ? this.rout.navigate(['/profile']) : this.rout.navigate(['/profile/' + this.id])
             },
             error => console.log(error));
-
     }
 
     onUpload() {

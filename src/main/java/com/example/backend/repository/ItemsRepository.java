@@ -46,6 +46,9 @@ public interface ItemsRepository extends JpaRepository<ItemsEntity,Integer> {
                 @Param("text2")String text2, @Param("text3")String text3,@Param("date1")Date date1,
                 @Param("date2")Date date2, @Param("date3") Date date3, @Param("bol1")Boolean bol1,
                 @Param("bol2")Boolean bol2, @Param("bol3")Boolean bol3);
+
+    @Query(value="select i.* from postgres_db.items i  order by i.item_id desc limit 5",nativeQuery=true)
+    List<ItemsEntity> findLastAdd();
 }
 
 

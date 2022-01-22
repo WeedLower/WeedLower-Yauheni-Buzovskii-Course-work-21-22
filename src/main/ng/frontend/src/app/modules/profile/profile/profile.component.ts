@@ -57,7 +57,7 @@ export class ProfileComponent implements OnInit {
       this.collect.delete(id).subscribe( data => {
             console.log("collection deleted");
             this.delMess=true;
-            this.getMyCollect(this.id);
+            this.getMyCollect(this.idConv);
           },
           error => console.log(error));
 

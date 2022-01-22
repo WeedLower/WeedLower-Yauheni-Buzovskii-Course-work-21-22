@@ -32,7 +32,7 @@ public class ItemsService {
     }
 
     public List<ItemsEntity> getAllItems(){
-       return itemsRepository.findAll();
+       return itemsRepository.findLastAdd();
     }
 
     public ItemsEntity saveItem(ItemModel items){

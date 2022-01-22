@@ -3,7 +3,7 @@
 <div class="struct">
     <h1>Last added items</h1>
     <div class="last-item" *ngIf="items!=null">
-        <mat-card class="example-card" *ngFor="let item of i">
+        <mat-card class="example-card" *ngFor="let item of items">
             <mat-card-subtitle></mat-card-subtitle>
             <mat-card-title>{{item.name}}</mat-card-title>
             <mat-card-content>
@@ -30,8 +30,9 @@
         <mat-card-title-group>
             <mat-card-title>Name:{{col.name}}</mat-card-title>
             <mat-card-subtitle>
-                <h2>Topic: {{col.topic}}</h2>
-                <h3>Description:{{col.description}}</h3></mat-card-subtitle>
+                <h5>Count: {{col.count}}</h5>
+                <h5>Topic: {{col.topic}}</h5>
+                <h5>Description:{{col.description}}</h5></mat-card-subtitle>
         </mat-card-title-group>
         <mat-card-footer>
             <mat-progress-bar mode="determinate" value="100" color="primary"></mat-progress-bar>

@@ -1,12 +1,17 @@
 import {AuthuserModel} from "./authuser";
 import {ImageModel} from "./Image";
+import {ItemModel} from "./item";
+import {UserModel} from "./usermodel";
 
 export class CollectionModel {
     public id: string;
     public name: string;
     public owner: AuthuserModel;
+    public user:UserModel;
+    public items: ItemModel[];
     public description: string;
     public topic: string;
+    public count: number;
     public img?:ImageModel;
     public numberName1 ?:string;
     public numberName2 ?:string;

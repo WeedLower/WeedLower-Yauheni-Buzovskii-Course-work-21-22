@@ -34,14 +34,14 @@ export class MainPageComponent implements OnInit{
     private getBiggestCollection():void{
         this.collect.getAll().subscribe(collection =>{
             this.collections = collection as CollectionModel[];
+            this.collections.forEach(s=>{s.count=s.items.length})
+            console.log(this.collections)
         })
     }
 
     private getLastAddItems():void {
         this.itm.getAll().subscribe(data=>{
             this.items=data as ItemModel[];
-            data.forEach(s=>this.i.unshift(s))
-            this.i.length=5;
         })
     }
 

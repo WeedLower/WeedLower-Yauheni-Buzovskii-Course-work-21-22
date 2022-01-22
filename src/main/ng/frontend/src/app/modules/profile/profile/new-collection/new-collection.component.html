@@ -102,7 +102,7 @@
             </mat-form-field>
 
         </div>
-
+        <h1>You can choose a new photo</h1>
         <div class="container" appDrag (fileDropped)="onFileDropped($event)" *ngIf="count==false">
             <input type="file" accept="image/png, image/jpeg , image/gif" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target.files)"/>
             <svg xmlns="http://www.w3.org/2000/svg" width="63" height="64" viewBox="0 0 63 64">

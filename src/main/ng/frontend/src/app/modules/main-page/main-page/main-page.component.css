@@ -3,6 +3,9 @@ h1{
     text-align: center;
 }
 
+.mat-card-title{
+    margin: 0;
+}
 
 .example-chip-list {
     width: 100%;
@@ -19,7 +22,7 @@ h1{
     display: inline-block;
     min-width: 17%;
     max-width: 20%;
-    max-height: 200px;
+    max-height: 250px;
     text-align: left;
     margin: 0.2%;
 
