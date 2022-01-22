@@ -35,7 +35,6 @@ export class MainPageComponent implements OnInit{
         this.collect.getAll().subscribe(collection =>{
             this.collections = collection as CollectionModel[];
             this.collections.forEach(s=>{s.count=s.items.length})
-            console.log(this.collections)
         })
     }
 
@@ -51,7 +50,6 @@ export class MainPageComponent implements OnInit{
 
     private getAllTags() {
         this.tagService.getAll().subscribe(data => {
-                console.log(data);
                 this.tags=data as TagModel[];
             },
             error=>console.log(error))

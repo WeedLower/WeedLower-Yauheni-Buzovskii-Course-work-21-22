@@ -50,6 +50,8 @@ import {NgxSpinnerModule} from "ngx-spinner";
 import {CdkTableModule} from "@angular/cdk/table";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatSidenavModule} from "@angular/material/sidenav";
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 
 
 
@@ -109,7 +111,7 @@ import {MatSidenavModule} from "@angular/material/sidenav";
         CreateItemDialogComponent,
         DragDropDirective
     ],
-    providers:    [DatePipe,InterceptorService,{provide: HTTP_INTERCEPTORS,useClass: InterceptorService,multi: true}],
+    providers:    [InterceptorService,{provide: HTTP_INTERCEPTORS,useClass: InterceptorService,multi: true}],
     bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
