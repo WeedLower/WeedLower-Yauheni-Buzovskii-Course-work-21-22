@@ -117,7 +117,7 @@ export class NewCollectionComponent implements OnInit {
         if (this.files.length != 0) {
             this.files.forEach(s => {
                 this.imageService.upload(s).subscribe(data => {
-                        console.log(data)
+                        console.log("file uploaded")
                         this.newColl.img= data as ImageModel;
                         this.createCollection(this.newColl);
                     },
@@ -148,16 +148,15 @@ export class NewCollectionComponent implements OnInit {
 
     private sendEdit(col: CollectionModel):any{
         this.col.editCollection(col).subscribe(data => {
-            console.log(data);
             this.rout.navigate(['/profile/collect/'+this.newColl.id])
-        })
+        },
+            error=>console.log(error))
     }
 
     private getColections(editColId: number) {
         this.col.findCollectById(editColId).subscribe(s=>{
                 this.newColl=s as CollectionModel;
                 this.checkColumns(this.newColl);
-                console.log(s)
             },
             error=>console.log(error))
 
@@ -165,7 +164,6 @@ export class NewCollectionComponent implements OnInit {
 
     private createCollection(newColl: CollectionModel) {
         this.col.saveNewCol(newColl).subscribe(data => {
-                console.log(data);
                 this.createmes = true,
                     this.spinner.hide;
                 this.status == false ? this.rout.navigate(['/profile']) : this.rout.navigate(['/profile/' + this.id])

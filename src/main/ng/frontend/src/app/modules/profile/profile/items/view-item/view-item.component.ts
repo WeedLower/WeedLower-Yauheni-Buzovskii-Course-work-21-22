@@ -39,7 +39,6 @@ export class ViewItemComponent implements OnInit,OnDestroy {
         switchMap(()=> this.comment.getAllCommentByItemId(this.id)))
         .subscribe(res=>{
       this.comments=res;
-      console.log(res)
     } ,error => console.log(error));
     this.getItemById(this.id)
     if (this.auth.user != null) {
@@ -53,7 +52,6 @@ export class ViewItemComponent implements OnInit,OnDestroy {
   like(){
     this.statusLikes=true;
     this.itm.like(this.itemMod.id).subscribe(data=>{
-      console.log(data)
       this.getItemById(this.id);
     },
         error=> console.log(error)
@@ -61,7 +59,6 @@ export class ViewItemComponent implements OnInit,OnDestroy {
   }
   getItemById(id: number): any {
     this.itm.getById(id).subscribe(data => {
-          console.log(data)
           this.itemMod = data;
         },
         error => console.log(error));

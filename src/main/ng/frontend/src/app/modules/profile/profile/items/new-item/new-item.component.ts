@@ -126,13 +126,11 @@ export class NewItemComponent implements OnInit {
       this.newItem=data as ItemModel;
       this.tagString=this.newItem.tags;
       this.updateMod=true;
-      console.log(this.newItem)
     })
   }
 
   private getAllTags() {
     this.tagService.getAll().subscribe(data => {
-          console.log(data);
           this.allTags=data as TagModel[];
           data.forEach(s=>this.allTagsString.push(s.tag))
         },
@@ -143,14 +141,14 @@ export class NewItemComponent implements OnInit {
     this.newItem.author=this.auth.user;
     this.newItem.tags=this.tagString;
     this.item.saveNewItem(this.newItem).subscribe(data=>{
-      console.log(data);
+      console.log("create new item");
       this.rout.navigate(['/profile/collect/'+this.id])
     })
   }
 
   edit(): any {
     this.item.update(this.newItem).subscribe(data=>{
-      console.log('edit',data)
+      console.log('edit')
       this.rout.navigate(['/profile/collect/'+this.id])
     },
         error => console.log(error))

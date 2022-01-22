@@ -29,7 +29,6 @@ export class AdminPageComponent implements OnInit {
 
   private getAllUsers() {
     this.userService.getUsers().subscribe(data=>{
-      console.log(data);
       this.users.data=data as UserModel[];
     },
         error => console.log(error));
@@ -39,7 +38,6 @@ export class AdminPageComponent implements OnInit {
     if (confirm('Delete user / users?')){
       this.selection.selected.forEach(i=>
           this.userService.delete(i.id).subscribe(data=>{
-                console.log(data);
                 this.getAllUsers();
               },
               error=> console.log(error)));
@@ -50,7 +48,6 @@ export class AdminPageComponent implements OnInit {
     if (confirm('Block user / users?')){
       this.selection.selected.forEach(i =>
           this.userService.block(i.id).subscribe(data=>{
-                console.log(data);
                 this.getAllUsers();
               },
               error=> console.log(error)));
@@ -61,7 +58,6 @@ export class AdminPageComponent implements OnInit {
     if (confirm('Unblock user / users?')){
       this.selection.selected.forEach(i =>
           this.userService.unblock(i.id).subscribe(data=>{
-                console.log(data);
                 this.getAllUsers();
               },
               error=> console.log(error)));
@@ -73,7 +69,6 @@ export class AdminPageComponent implements OnInit {
       this.selection.selected.forEach((i) =>
           i == this.auth.user? this.auth.logOut() :
           this.userService.setRoleAdmin(i.id).subscribe(data=>{
-                console.log(data);
                 this.getAllUsers();
               },
               error=> console.log(error)));
@@ -84,7 +79,6 @@ export class AdminPageComponent implements OnInit {
     if (confirm('Set role USER to user / users?')){
       this.selection.selected.forEach(i =>
           this.userService.setRoleUser(i.id).subscribe(data=>{
-                console.log(data);
                 this.getAllUsers();
               },
               error=> console.log(error)));
