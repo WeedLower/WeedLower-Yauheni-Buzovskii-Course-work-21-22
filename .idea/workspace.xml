@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="fix del">
+    <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="setting for heroku">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/repository/ItemsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/repository/ItemsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/reg-page/reg-page/reg-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/reg-page/reg-page/reg-page.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +169,7 @@
       <workItem from="1642612247569" duration="13303000" />
       <workItem from="1642669167203" duration="13090000" />
       <workItem from="1642751387562" duration="20890000" />
-      <workItem from="1642839732999" duration="11089000" />
+      <workItem from="1642839732999" duration="12318000" />
     </task>
     <task id="LOCAL-00001" summary="z">
       <created>1642506216551</created>
@@ -250,7 +248,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642865523330</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="setting for heroku">
+      <created>1642879955567</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1642879955567</updated>
+    </task>
+    <task id="LOCAL-00013" summary="setting for heroku">
+      <created>1642880260720</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1642880260720</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +284,8 @@
     <MESSAGE value="z" />
     <MESSAGE value="&#10;few days - a lot of work" />
     <MESSAGE value="fix del" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix del" />
+    <MESSAGE value="setting for heroku" />
+    <option name="LAST_COMMIT_MESSAGE" value="setting for heroku" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

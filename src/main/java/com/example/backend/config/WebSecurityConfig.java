@@ -60,10 +60,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().and().csrf().disable()
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                .authorizeRequests().antMatchers("/api/**","/**","/login").permitAll()
-                .antMatchers("/admin").hasAnyRole("ADMIN")
-                .antMatchers("/profile").hasAnyRole("USER","ADMIN")
-                .anyRequest().authenticated();
+                .authorizeRequests().antMatchers("/api/**","/**","/login/**","/reg").permitAll()
+                .antMatchers("/admin","/admin/**").hasAnyRole("ADMIN")
+                .antMatchers("/profile","/profile/**").hasAnyRole("USER","ADMIN")
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .loginPage("/login").permitAll()
+        ;
         http.addFilterBefore(authenticationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 }
