@@ -77,9 +77,8 @@ export class AuthService {
 
   check():void {
     if(this.user.id!=null){
-      console.log(this.user.id);
       this.getStatus(this.user.id).subscribe(data =>{
-        data==true? this.logOut() : console.log(data);
+        data==true? this.logOut() : true;
       })
     }
   }
