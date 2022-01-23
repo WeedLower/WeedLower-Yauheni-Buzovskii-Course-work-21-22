@@ -1,6 +1,7 @@
 package com.example.backend.service;
 
 import com.cloudinary.Cloudinary;
+import com.cloudinary.Transformation;
 import com.cloudinary.utils.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,16 +16,23 @@ import java.util.Map;
 @Service
 public class CloudinaryService {
 
-    Cloudinary cloudinary;
+//    Cloudinary cloudinary;
 
     private Map<String,String> valuesMap = new HashMap<>();
 
-    public CloudinaryService(){
-        valuesMap.put("cloud_name", "duell9lnz");
-        valuesMap.put("api_key", "114213817868275");
-        valuesMap.put("api_secret", "ZxkYqHGFaoUg6v3eR6_i_V3AwPs");
-        cloudinary = new Cloudinary(valuesMap);
-    }
+    Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap(
+            "cloud_name","duell9lnz",
+            "api_key","114213817868275",
+            "api_secret","ZxkYqHGFaoUg6v3eR6_i_V3AwPs",
+            "secure",true));
+
+
+//    public CloudinaryService(){
+//        valuesMap.put("cloud_name", "duell9lnz");
+//        valuesMap.put("api_key", "114213817868275");
+//        valuesMap.put("api_secret", "ZxkYqHGFaoUg6v3eR6_i_V3AwPs");
+//        cloudinary = new Cloudinary(valuesMap);
+//    }
 
     public Map upload(MultipartFile multipartFile) throws IOException{
         File file = convert(multipartFile);
