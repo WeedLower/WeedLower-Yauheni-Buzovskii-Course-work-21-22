@@ -25,7 +25,8 @@ public class CommentsEntity {
     @JoinColumn(name = "item_id", referencedColumnName = "item_id")
     private ItemsEntity itemsEntity;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "user_id",referencedColumnName = "user_id")
     private UserEntity user;
 }

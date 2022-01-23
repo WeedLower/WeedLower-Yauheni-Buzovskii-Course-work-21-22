@@ -37,7 +37,7 @@ public interface UsersRepository extends JpaRepository<UserEntity,Integer> {
     @Modifying
     @Transactional
     @Query(value = "delete from UserEntity i where i.id = :id")
-    void deleteById(@Param("id")Integer id);
+    void deleteByUserId(@Param("id")Integer id);
 
     @Query(value = "select i from UserEntity i where i.id = :id")
     UserEntity findUserById(@Param("id")Integer id);

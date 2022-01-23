@@ -75,7 +75,7 @@ public class UsersServise implements UserDetailsService {
     }
 
     public void delete(Integer id){
-        usersRepository.deleteById(id);
+        usersRepository.deleteByUserId(id);
     }
 
 

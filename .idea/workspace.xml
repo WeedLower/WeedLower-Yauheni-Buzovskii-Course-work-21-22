@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="setting for heroku">
+    <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="setting for heroku last">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/CommentsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/CommentsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/repository/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/repository/UsersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/service/UsersServise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/service/UsersServise.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +173,7 @@
       <workItem from="1642669167203" duration="13090000" />
       <workItem from="1642751387562" duration="20890000" />
       <workItem from="1642839732999" duration="23615000" />
-      <workItem from="1642926254666" duration="7881000" />
+      <workItem from="1642926254666" duration="9631000" />
     </task>
     <task id="LOCAL-00001" summary="z">
       <created>1642506216551</created>
@@ -346,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642942212222</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="setting for heroku last">
+      <created>1642943051005</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1642943051005</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,7 +380,8 @@
     <MESSAGE value="&#10;few days - a lot of work" />
     <MESSAGE value="fix del" />
     <MESSAGE value="setting for heroku" />
-    <option name="LAST_COMMIT_MESSAGE" value="setting for heroku" />
+    <MESSAGE value="setting for heroku last" />
+    <option name="LAST_COMMIT_MESSAGE" value="setting for heroku last" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
