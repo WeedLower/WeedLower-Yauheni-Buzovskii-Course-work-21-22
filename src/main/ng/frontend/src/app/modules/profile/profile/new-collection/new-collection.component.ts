@@ -156,6 +156,7 @@ export class NewCollectionComponent implements OnInit {
     private getColections(editColId: number) {
         this.col.findCollectById(editColId).subscribe(s=>{
                 this.newColl=s as CollectionModel;
+                this.newColl.img=s.image;
                 this.checkColumns(this.newColl);
             },
             error=>console.log(error))

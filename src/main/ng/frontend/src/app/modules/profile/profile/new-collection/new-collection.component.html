@@ -28,8 +28,8 @@
                 </mat-select>
             </mat-form-field>
         </p>
-        <h1>Optional</h1>
-        <h2>These fields will be contained in each item</h2>
+        <h1 *ngIf="edit==false">Optional</h1>
+        <h2 *ngIf="edit==false">These fields will be contained in each item</h2>
         <mat-form-field appearance ="fill" *ngIf="edit==false">
             <mat-select placeholder="Optional fields" [formControl]="fC" [(value)]="selectedFields" multiple>
                 <mat-option *ngFor="let i of optionalFields" [value]="i">
