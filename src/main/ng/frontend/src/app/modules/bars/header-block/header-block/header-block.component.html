@@ -2,10 +2,10 @@
     <mat-toolbar color="primary">
         <h2><a mat-button routerLink="">Collections</a></h2>
         <span class="example-spacer"></span>
-        <mat-form-field color="primary" floatLabel="never">
-            <input matInput  placeholder="Search..."/>
+        <mat-form-field [formGroup]="formControl"  color="primary" floatLabel="never">
+            <input matInput formControlName="search" [(ngModel)]="searchString" autocomplete="on" placeholder="Search..." (keyup.enter)="search()" required/>
         </mat-form-field>
-        <button mat-icon-button matSuffix matTooltip="New feed" matTooltipPosition="left">
+        <button mat-icon-button matSuffix matTooltip="New feed" matTooltipPosition="left" (click)="search()">
             <mat-icon>search</mat-icon>
         </button>
         <a mat-button *ngIf="current==true && roleCurrent==false" routerLink="/profile">{{name.toUpperCase()}}</a>

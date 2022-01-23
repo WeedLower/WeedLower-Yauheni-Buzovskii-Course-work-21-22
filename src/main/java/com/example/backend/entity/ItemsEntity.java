@@ -8,15 +8,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import org.hibernate.search.mapper.pojo.mapping.definition.annotation.Indexed;
-import org.hibernate.search.mapper.pojo.mapping.definition.annotation.IndexedEmbedded;
-
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
 
 
 import javax.persistence.*;
 import java.util.*;
 
 
+@Indexed
 @Getter
 @Setter
 @NoArgsConstructor
@@ -31,6 +31,7 @@ public class ItemsEntity {
     private Integer id;
 
     @Column(nullable=false)
+    @Field
     private String name;
 
     private Long optionalNumberField1;

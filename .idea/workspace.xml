@@ -6,10 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="setting for heroku last">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/config/HibernateSearchConfiguration.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/CommentsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/CommentsEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/repository/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/repository/UsersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/service/UsersServise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/service/UsersServise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/SearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/ItemsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/ItemsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/service/SearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/service/SearchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/proxy.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/proxy.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/bars/header-block/header-block/header-block.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/bars/header-block/header-block/header-block.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/bars/header-block/header-block/header-block.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/bars/header-block/header-block/header-block.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/search-page/search-page/search-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/search-page/search-page/search-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -74,6 +82,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/" value="PostgreSQL" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="ts.external.directory.path" value="C:\Users\evg32\OneDrive\Рабочий стол\ItraCourse Project 21-22\src\main\ng\frontend\node_modules\typescript\lib" />
@@ -86,9 +97,9 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
+      <command value="mvn spring-boot:run" />
       <command value="mvn spring-boot:start" />
       <command value="mvn clean install" />
-      <command value="mvn spring-boot:run" />
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.BackendApplication">
@@ -173,7 +184,7 @@
       <workItem from="1642669167203" duration="13090000" />
       <workItem from="1642751387562" duration="20890000" />
       <workItem from="1642839732999" duration="23615000" />
-      <workItem from="1642926254666" duration="9631000" />
+      <workItem from="1642926254666" duration="24911000" />
     </task>
     <task id="LOCAL-00001" summary="z">
       <created>1642506216551</created>
@@ -357,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642943051005</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="setting for heroku last">
+      <created>1642944865169</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1642944865169</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

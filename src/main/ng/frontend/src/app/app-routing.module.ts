@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'reg', component:RegPageComponent },
   {path: 'admin',component:AdminPageComponent},
   {path: 'search', component:SearchPageComponent },
-  {path: 'search/:id', component:SearchPageComponent },
+  {path: 'search/:searchString', component:SearchPageComponent },
   {path: 'search/tag/:id',component:SearchPageComponent},
   {path: 'profile',component:ProfileComponent },
   {path: 'profile/col/:id', component:NewCollectionComponent},
