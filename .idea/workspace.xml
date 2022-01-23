@@ -7,7 +7,7 @@
     <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="setting for heroku">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/service/CloudinaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/service/CloudinaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/UserEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,9 +84,9 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn spring-boot:run" />
       <command value="mvn spring-boot:start" />
       <command value="mvn clean install" />
+      <command value="mvn spring-boot:run" />
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.BackendApplication">
@@ -171,7 +171,7 @@
       <workItem from="1642669167203" duration="13090000" />
       <workItem from="1642751387562" duration="20890000" />
       <workItem from="1642839732999" duration="23615000" />
-      <workItem from="1642926254666" duration="1112000" />
+      <workItem from="1642926254666" duration="4331000" />
     </task>
     <task id="LOCAL-00001" summary="z">
       <created>1642506216551</created>
@@ -327,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642890237131</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="setting for heroku">
+      <created>1642935795644</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1642935795644</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

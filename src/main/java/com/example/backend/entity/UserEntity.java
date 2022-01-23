@@ -36,6 +36,7 @@ public class UserEntity {
     @Column(name = "email")
     private String email;
 
+
     @NotBlank
     @Column(name = "password")
     private String password;
