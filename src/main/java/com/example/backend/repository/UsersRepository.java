@@ -2,13 +2,10 @@ package com.example.backend.repository;
 
 
 import com.example.backend.entity.UserEntity;
-import org.apache.catalina.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.transaction.Transactional;
 
@@ -37,7 +34,10 @@ public interface UsersRepository extends JpaRepository<UserEntity,Integer> {
     @Query("update UserEntity i set i.status=false where i.id=:id")
     void unblockUser(@Param("id") Integer id);
 
-    void deleteById(Integer id);
+    @Modifying
+    @Transactional
+    @Query(value = "delete from UserEntity i where i.id = :id")
+    void deleteById(@Param("id")Integer id);
 
     @Query(value = "select i from UserEntity i where i.id = :id")
     UserEntity findUserById(@Param("id")Integer id);
