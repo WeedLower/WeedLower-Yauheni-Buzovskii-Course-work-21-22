@@ -10,6 +10,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.IndexedEmbedded;
 
 
 import javax.persistence.*;
@@ -37,11 +38,17 @@ public class ItemsEntity {
     private Long optionalNumberField1;
     private Long optionalNumberField2;
     private Long optionalNumberField3;
+    @Field
     private String optionalStringField1;
+    @Field
     private String optionalStringField2;
+    @Field
     private String optionalStringField3;
+    @Field
     private String optionalTextField1;
+    @Field
     private String optionalTextField2;
+    @Field
     private String optionalTextField3;
     private Date optionalDataField1;
     private Date optionalDataField2;
@@ -67,6 +74,7 @@ public class ItemsEntity {
     @JsonIgnore
     @OneToMany(mappedBy = "itemsEntity",cascade = CascadeType.REMOVE)
     @OnDelete(action = OnDeleteAction.CASCADE)
+    @IndexedEmbedded
     private List<CommentsEntity> comments = new ArrayList<>();
 
     @ManyToOne
@@ -76,6 +84,7 @@ public class ItemsEntity {
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "collection",referencedColumnName = "id",nullable=false)
+    @IndexedEmbedded
     private CollectionsEntity collection;
 
 }

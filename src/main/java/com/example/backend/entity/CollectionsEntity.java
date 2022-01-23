@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.search.annotations.Field;
 
 import javax.persistence.*;
 import java.util.List;
@@ -21,9 +22,11 @@ public class CollectionsEntity {
     private Integer id;
 
     @Column(name = "name")
+    @Field
     private String name;
 
     @Column(name = "description")
+    @Field
     private String description;
 
     @Column(name = "topic")

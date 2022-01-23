@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {ItemsService} from "../../../service/collections/items.service";
 import {ItemModel} from "../../../model/item";
 import {SearchService} from "../../../service/search/search.service";
+import {filter} from "rxjs";
 
 @Component({
   selector: 'app-search-page',
@@ -11,12 +12,21 @@ import {SearchService} from "../../../service/search/search.service";
 })
 export class SearchPageComponent implements OnInit {
 
+  router:any='';
   id:number;
   searchString:string;
   items:ItemModel[]=[];
-  constructor(private rout:Router,private route:ActivatedRoute,private itemService:ItemsService,private searchService:SearchService) { }
+  constructor(private rout:Router,private route:ActivatedRoute,private itemService:ItemsService,private searchService:SearchService) {
+    this.router=this.rout.url;
+  }
 
   ngOnInit(): void {
+    this.rout.events.pipe(
+        filter(event => event instanceof NavigationEnd)
+    ).subscribe(()=>{
+      this.searchString = this.route.snapshot.params['searchString']
+      this.search(this.searchString)
+    })
     if(this.route.snapshot.params['id']!=null){
       this.id = +this.route.snapshot.params['id'];
       this.findItemsByTagId(this.id)
@@ -42,7 +52,6 @@ export class SearchPageComponent implements OnInit {
 
   private search(searchString: string) {
     this.searchService.search(this.searchString).subscribe(data=>{
-      console.log(data)
       this.items=data as ItemModel[];
     },
         error=> console.log(error))

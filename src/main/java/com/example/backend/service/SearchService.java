@@ -45,7 +45,14 @@ public class SearchService implements SearchServiceItr{
 
         QueryBuilder qb = fullTextEntityManager.getSearchFactory().buildQueryBuilder().forEntity(ItemsEntity.class).get();
 
-        Query luceneQuery = qb.keyword().fuzzy().withEditDistanceUpTo(1).withPrefixLength(1).onField("name").matching(searchItm).createQuery();
+        Query luceneQuery = qb.keyword()
+                .fuzzy()
+                .withEditDistanceUpTo(2)
+                .withPrefixLength(1)
+                .onFields("name","optionalStringField1","optionalStringField2","optionalStringField3",
+                        "optionalTextField1","optionalTextField2","optionalTextField3","comments.comment",
+                        "collection.name","collection.description")
+                .matching(searchItm+"*").createQuery();
 
         javax.persistence.Query jpaQuery = fullTextEntityManager.createFullTextQuery(luceneQuery,ItemsEntity.class);
 

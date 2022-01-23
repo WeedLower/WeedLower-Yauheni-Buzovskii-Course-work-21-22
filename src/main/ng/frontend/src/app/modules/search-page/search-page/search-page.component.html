@@ -1,6 +1,5 @@
 <title>Search</title>
 <app-header-block></app-header-block>
-
 <div class="tags" *ngIf="items!=null">
     <mat-card class="example-card" *ngFor="let i of items">
         <mat-card-subtitle></mat-card-subtitle>
@@ -17,4 +16,6 @@
         </mat-card-footer>
     </mat-card>
 </div>
+<h1 *ngIf="items.length==0">No results found for: {{searchString}}</h1>
+
 

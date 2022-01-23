@@ -4,6 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.search.annotations.ContainedIn;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Index;
 
 import javax.persistence.*;
 
@@ -18,11 +21,13 @@ public class CommentsEntity {
     private Integer id;
 
     @Column(name = "comment")
+    @Field
     private String comment;
 
     @ManyToOne(cascade = CascadeType.REMOVE)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "item_id", referencedColumnName = "item_id")
+    @ContainedIn
     private ItemsEntity itemsEntity;
 
     @ManyToOne(cascade = CascadeType.REMOVE)
