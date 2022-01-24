@@ -1,9 +1,9 @@
-body{
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 100px;
-    background: inherit;
-}
+/*body{*/
+/*    position: relative;*/
+/*    min-height:100vh;*/
+/*    margin-bottom: 100px;*/
+/*    background: inherit;*/
+/*}*/
 header{
     position: static;
     top: 0;
@@ -12,11 +12,18 @@ header{
     hight:5%;
     margin-top: 0;
 }
+#page-container{
+    position:relative;
+    min-height:100vh;
+}
+
+#content-wrap{
+    padding-bottom: 2.5rem;
+}
+
 footer {
-    position: relative;
+    position: absolute;
     bottom: 0;
-    height: 100px;
-    left: 0;
+    height: 2.5rem;
     width: 100% ;
-    margin-bottom: 0;
 }
