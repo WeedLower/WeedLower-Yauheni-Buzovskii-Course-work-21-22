@@ -1,7 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {AppComponent }   from './app.component';
-import {DatePipe} from "@angular/common";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HTTP_INTERCEPTORS,HttpClientModule} from "@angular/common/http";
 import {InterceptorService} from "./service/auth/interceptor.service";
@@ -90,10 +89,11 @@ import {MatSidenavModule} from "@angular/material/sidenav";
         NgxSpinnerModule,
         CdkTableModule,
         MatDatepickerModule,
-        MatSidenavModule
+        MatSidenavModule,
     ],
     declarations: [
         AppComponent,
+        FooterBlockComponent,
         MainPageComponent,
         LoginPageComponent,
         NotFoundComponent,
@@ -101,7 +101,6 @@ import {MatSidenavModule} from "@angular/material/sidenav";
         SearchPageComponent,
         ProfileComponent,
         NewCollectionComponent,
-        FooterBlockComponent,
         HeaderBlockComponent,
         MyItemsComponent,
         NewItemComponent,

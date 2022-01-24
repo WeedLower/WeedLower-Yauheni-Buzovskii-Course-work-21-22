@@ -32,7 +32,6 @@ export class SearchPageComponent implements OnInit {
       this.findItemsByTagId(this.id)
     }else if(this.route.snapshot.params['searchString']!=null){
       this.searchString = this.route.snapshot.params['searchString']
-      console.log(this.searchString)
       this.search(this.searchString)
     }
   }
