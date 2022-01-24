@@ -9,7 +9,12 @@ $app-typography: mat-typography-config(
   @include mat-select-typography($typography);
   @include mat-form-field-typography($typography);
   @include mat-slide-toggle-typography($typography);
+  @include mat-sidenav-typography($typography);
   @include mat-toolbar-typography($typography);
+  @include mat-table-typography($typography);
+  @include mat-button-typography($typography);
+  @include mat-autocomplete-typography($typography);
+  @include mat-dialog-typography($typography);
 
   @include app-root-typography($typography);
 }

@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="setting footer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/main-page/main-page/main-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/main-page/main-page/main-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/assets/styles/_app-typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/assets/styles/_app-typography.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/assets/styles/app-theme.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/assets/styles/app-theme.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +176,7 @@
       <workItem from="1642751387562" duration="20890000" />
       <workItem from="1642839732999" duration="23615000" />
       <workItem from="1642926254666" duration="33784000" />
-      <workItem from="1643009731736" duration="5380000" />
+      <workItem from="1643009731736" duration="8188000" />
     </task>
     <task id="LOCAL-00001" summary="z">
       <created>1642506216551</created>
@@ -387,7 +388,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643023438336</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="setting footer">
+      <created>1643024934402</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1643024934402</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

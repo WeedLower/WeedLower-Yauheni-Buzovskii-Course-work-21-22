@@ -18,7 +18,13 @@
   @include mat-select-theme($theme);
   @include mat-form-field-theme($theme);
   @include mat-slide-toggle-theme($theme);
+  @include mat-sidenav-theme($theme);
   @include mat-toolbar-theme($theme);
+  @include mat-table-theme($theme);
+  @include mat-button-theme($theme);
+  @include mat-autocomplete-theme($theme);
+  @include mat-dialog-theme($theme);
+
 
 
   // Costom themes for components
