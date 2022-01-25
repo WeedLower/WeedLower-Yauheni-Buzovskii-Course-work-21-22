@@ -1,6 +1,6 @@
 import {Role} from "./role";
 
-export class AuthuserModel{
+export class AuthUserModel {
     id: string;
     name: string;
     surname: string;
@@ -8,8 +8,8 @@ export class AuthuserModel{
     status: boolean;
     role: Role;
 
-    static cloneBase(user: AuthuserModel) : AuthuserModel{
-        const cloneUserModel: AuthuserModel = new AuthuserModel();
+    static cloneBase(user: AuthUserModel) : AuthUserModel{
+        const cloneUserModel: AuthUserModel = new AuthUserModel();
         cloneUserModel.id = user.id;
         cloneUserModel.email=user.email;
         cloneUserModel.name=user.name;

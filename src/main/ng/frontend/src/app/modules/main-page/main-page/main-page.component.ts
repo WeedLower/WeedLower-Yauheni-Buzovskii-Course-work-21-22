@@ -17,9 +17,7 @@ import { AuthService } from 'src/app/service/auth/auth.service';
 export class MainPageComponent implements OnInit{
     collections:CollectionModel[];
     items:ItemModel[]=[];
-    i:ItemModel[]=[];
     tags:TagModel[];
-    tagModel:TagModel;
     constructor(private collect: CollectionsService,
                 private itm: ItemsService,private router:Router,
                 private tagService:TagService,private auth:AuthService) { }

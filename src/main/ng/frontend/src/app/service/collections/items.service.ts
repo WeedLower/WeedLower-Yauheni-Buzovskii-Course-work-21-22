@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ItemModel} from "../../model/item";
 import {Observable} from "rxjs";
-import {TagModel} from "../../model/tag";
 
 
 @Injectable({

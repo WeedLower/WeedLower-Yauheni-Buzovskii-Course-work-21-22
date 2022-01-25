@@ -5,7 +5,7 @@ import {CollectionsService} from "../../../../service/collections/collections.se
 import {ActivatedRoute, Router} from "@angular/router";
 import {CollectionModel} from "../../../../model/collections";
 import {ImageService} from "../../../../service/img/image.service";
-import {AuthuserModel} from "../../../../model/authuser";
+import {AuthUserModel} from "../../../../model/authuser";
 import {UserService} from "../../../../service/user/user.service";
 import {ImageModel} from "../../../../model/Image";
 import {NgxSpinnerService} from "ngx-spinner";
@@ -34,7 +34,7 @@ export class NewCollectionComponent implements OnInit {
     image: File;
     imageMin: File;
     id: number;
-    owner: AuthuserModel;
+    owner: AuthUserModel;
     status = false;
     count = false;
     edit=false;
@@ -47,7 +47,8 @@ export class NewCollectionComponent implements OnInit {
     i;
 
     constructor(private auth: AuthService, private col: CollectionsService, private activeRout: ActivatedRoute,
-                private rout: Router, private fB: FormBuilder, private imageService: ImageService, private user: UserService,private spinner: NgxSpinnerService) {
+                private rout: Router, private fB: FormBuilder, private imageService: ImageService,
+                private user: UserService,private spinner: NgxSpinnerService) {
     }
 
     ngOnInit(): void {
@@ -102,7 +103,6 @@ export class NewCollectionComponent implements OnInit {
         })
     }
 
-
     topics: Topic[] = [
         {val: 'Alcohol', viewVal: 'Alcohol'},
         {val: 'Books', viewVal: 'Books'},
@@ -117,13 +117,10 @@ export class NewCollectionComponent implements OnInit {
         if (this.files.length != 0) {
             this.files.forEach(s => {
                 this.imageService.upload(s).subscribe(data => {
-                        console.log("file uploaded")
-                        this.newColl.img= data as ImageModel;
-                        this.createCollection(this.newColl);
-                    },
-                    error => console.log(error)
-                )
-            })
+                    console.log("file uploaded")
+                    this.newColl.img= data as ImageModel;
+                    this.createCollection(this.newColl);
+                }, error => console.log(error))})
         }else {
             this.createCollection(this.newColl);
         }
@@ -147,9 +144,9 @@ export class NewCollectionComponent implements OnInit {
     }
 
     private sendEdit(col: CollectionModel):any{
-        this.col.editCollection(col).subscribe(data => {
-            this.rout.navigate(['/profile/collect/'+this.newColl.id])
-        },
+        this.col.editCollection(col).subscribe(() => {
+                this.rout.navigate(['/profile/collect/'+this.newColl.id])
+            },
             error=>console.log(error))
     }
 
@@ -157,23 +154,23 @@ export class NewCollectionComponent implements OnInit {
         this.col.findCollectById(editColId).subscribe(s=>{
                 this.newColl=s as CollectionModel;
                 this.newColl.img=s.image;
-                this.checkColumns(this.newColl);
+                this.checkColumns();
             },
             error=>console.log(error))
 
     }
 
     private createCollection(newColl: CollectionModel) {
-        this.col.saveNewCol(newColl).subscribe(data => {
-                this.createmes = true,
-                    this.spinner.hide;
+        this.col.saveNewCol(newColl).subscribe(() => {
+                this.createmes = true;
+                this.spinner.hide;
                 this.status == false ? this.rout.navigate(['/profile']) : this.rout.navigate(['/profile/' + this.id])
             },
             error => console.log(error));
     }
 
     onUpload() {
-        this.imageService.upload(this.image).subscribe(data => {
+        this.imageService.upload(this.image).subscribe(() => {
                 this.rout.navigate(['/'])
             },
             error => {
@@ -223,7 +220,7 @@ export class NewCollectionComponent implements OnInit {
     }
 
 
-    private checkColumns(newColl: CollectionModel) {
+    private checkColumns() {
         this.newColl.numberName1!=null ? this.selectedFields.push("Number#1") : false;
         this.newColl.numberName2!=null ? this.selectedFields.push("Number#2") : false;
         this.newColl.numberName3!=null ? this.selectedFields.push("Number#3") : false;

@@ -4,12 +4,11 @@ import {CollectionsService} from "../../../../../service/collections/collections
 import {CollectionModel} from "../../../../../model/collections";
 import {ItemsService} from "../../../../../service/collections/items.service";
 import {ItemModel} from "../../../../../model/item";
-import {MatSort, Sort} from "@angular/material/sort";
-import {LiveAnnouncer} from "@angular/cdk/a11y";
+import {MatSort} from "@angular/material/sort";
 import {SelectionModel} from "@angular/cdk/collections";
 import {MatTableDataSource} from "@angular/material/table";
 import {AuthService} from "../../../../../service/auth/auth.service";
-import {DatePipe} from "@angular/common";
+
 
 
 
@@ -20,7 +19,6 @@ import {DatePipe} from "@angular/common";
 })
 export class MyItemsComponent implements OnInit,AfterViewInit {
   collection: CollectionModel;
-  sortedData: ItemModel[];
   newItem: ItemModel = new ItemModel();
   id: number;
   status=true;
@@ -32,7 +30,7 @@ export class MyItemsComponent implements OnInit,AfterViewInit {
 
   constructor(private route: ActivatedRoute, private collectionsService: CollectionsService,
               private itemsService: ItemsService,private auth:AuthService,
-              private rout: Router, private _liveAnnouncer: LiveAnnouncer) {
+              private rout: Router) {
     this.id = +this.route.snapshot.params['id'];
     if(this.id!=null){
       this.itemsService.getAllItemsByCollection(this.id).subscribe((items) => {
@@ -83,7 +81,7 @@ export class MyItemsComponent implements OnInit,AfterViewInit {
   delete():void{
     if (confirm('Delete item / items?')){
       this.selection.selected.forEach(id =>
-          this.itemsService.delete(id.id).subscribe(data=>{
+          this.itemsService.delete(id.id).subscribe(()=>{
             console.log("collection deleted");
             this.getCollectItems(this.id);
           },
@@ -93,14 +91,6 @@ export class MyItemsComponent implements OnInit,AfterViewInit {
 
   openDialog() {
     this.rout.navigate(['profile/collect/' + this.id + '/new-item'])
-  }
-
-  announceSortChange(sortState: Sort) {
-    if (sortState.direction) {
-      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
-    } else {
-      this._liveAnnouncer.announce('Sorting cleared');
-    }
   }
 
   isAllSelected() {

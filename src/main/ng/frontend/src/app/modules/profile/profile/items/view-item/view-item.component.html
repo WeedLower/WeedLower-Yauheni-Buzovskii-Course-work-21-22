@@ -2,7 +2,6 @@
 <app-header-block></app-header-block>
 <div class="main-block">
     <h1>Name:{{itemMod.name}}</h1>
-    <h2>Owner:{{itemMod.author.name}}</h2>
     <h3 *ngIf="itemMod.optionalNumberField1!=null">{{itemMod.collection.numberName1}} :{{itemMod.optionalNumberField1}}</h3>
     <h3 *ngIf="itemMod.optionalNumberField2!=null">{{itemMod.collection.numberName2}} :{{itemMod.optionalNumberField2}}</h3>
     <h3 *ngIf="itemMod.optionalNumberField3!=null">{{itemMod.collection.numberName3}} :{{itemMod.optionalNumberField3}}</h3>
@@ -18,14 +17,13 @@
     <h3 *ngIf="itemMod.optionalCheckboxField1!=null">{{itemMod.collection.checkboxName1}} :{{itemMod.optionalCheckboxField1==true? "✔" : "&#10006;" }}</h3>
     <h3 *ngIf="itemMod.optionalCheckboxField2!=null">{{itemMod.collection.checkboxName2}} :{{itemMod.optionalCheckboxField2==true? "✔" : "&#10006;" }}</h3>
     <h3 *ngIf="itemMod.optionalCheckboxField3!=null">{{itemMod.collection.checkboxName3}} :{{itemMod.optionalCheckboxField3==true? "✔" : "&#10006;" }}</h3>
-    <button mat-icon-button matBadge="{{itemMod.likes}}" matBadgeColor="warn" matRipp color="warn" [disabled]="statusUser==false || statusLikes==true || itemMod.meLiked==null || itemMod.meLiked==true"  (click)="like()">
+    <button mat-icon-button matBadge="{{itemMod.likes}}" matBadgeColor="warn" matRipp color="warn" [disabled]="statusUser==false ||
+     statusLikes==true || itemMod.meLiked==null || itemMod.meLiked==true"  (click)="like()">
         <mat-icon>favorite</mat-icon>
     </button>
 </div>
-
 <h1>Comments</h1>
 <button mat-raised-button  color="warn" *ngIf="statusUser==true" (click)="openDialog()">Comment</button>
-
 <div class="comment-block">
         <cdk-virtual-scroll-viewport itemSize="100" class="viewport" [scrollTop]="">
            <mat-card class="example-card" *cdkVirtualFor="let c of comments" >

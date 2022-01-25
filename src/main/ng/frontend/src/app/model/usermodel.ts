@@ -1,4 +1,3 @@
-import {Rolemodel} from "./rolemodel";
 import {Role} from "./role";
  export class UserModel{
      id: string;

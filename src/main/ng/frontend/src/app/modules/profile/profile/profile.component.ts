@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../../service/auth/auth.service";
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Role} from "../../../model/role";
 import {CollectionsService} from "../../../service/collections/collections.service";
 import {CollectionModel} from "../../../model/collections";
 
@@ -22,8 +21,7 @@ export class ProfileComponent implements OnInit {
   delMess=false;
   id:number;
   idConv:any;
-  num:number;
-  s:Role;
+
   constructor(private auth:AuthService,private http: HttpClient,
               private active: ActivatedRoute,private router:Router,
               private collect: CollectionsService) { }
@@ -36,7 +34,6 @@ export class ProfileComponent implements OnInit {
     }
     if (this.auth.user.role.toString()=="ADMIN"){
       this.id = +this.active.snapshot.params['id'];
-      console.log(this.id)
       isNaN(this.id)? this.idConv=this.auth.user.id : this.idConv= +this.active.snapshot.params['id'];
       this.getMyCollect(this.idConv);
     }else{
@@ -52,10 +49,9 @@ export class ProfileComponent implements OnInit {
         this.router.navigate(['profile/col/'+this.id])
   }
 
-  deleteItem(id: number):void {
+  deleteCollection(id: number):void {
     if(confirm('Are you sure you want to delete with all items?')){
       this.collect.delete(id).subscribe( () => {
-            console.log("collection deleted");
             this.delMess=true;
             this.getMyCollect(this.idConv);
           },
@@ -77,7 +73,7 @@ export class ProfileComponent implements OnInit {
     this.router.navigate(['profile/collect/'+id]);
   }
 
-  edit(editId) {
+  editCollection(editId) {
     this.router.navigate(['profile/collect/edit/'+editId]);
   }
 }

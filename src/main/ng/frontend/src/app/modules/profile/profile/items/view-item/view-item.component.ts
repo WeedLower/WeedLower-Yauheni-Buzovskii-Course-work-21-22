@@ -50,7 +50,7 @@ export class ViewItemComponent implements OnInit,OnDestroy {
 
   like(){
     this.statusLikes=true;
-    this.itm.like(this.itemMod.id).subscribe(data=>{
+    this.itm.like(this.itemMod.id).subscribe(()=>{
       this.getItemById(this.id);
     },
         error=> console.log(error)

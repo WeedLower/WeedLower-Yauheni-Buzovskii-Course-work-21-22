@@ -1,7 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthService} from "../../../../../service/auth/auth.service";
-import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ItemModel} from "../../../../../model/item";
 import {ItemsService} from "../../../../../service/collections/items.service";
 import {CollectionsService} from "../../../../../service/collections/collections.service";
@@ -12,7 +12,6 @@ import {COMMA, ENTER} from "@angular/cdk/keycodes";
 import {map, Observable, startWith} from "rxjs";
 import {MatChipInputEvent} from "@angular/material/chips";
 import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
-import {DatePipe} from "@angular/common";
 
 
 
@@ -55,7 +54,7 @@ export class NewItemComponent implements OnInit {
     if(this.auth.user==null){
       this.rout.navigate(['/'])
     }else {
-      this.getCol(this.id);
+      this.getCol();
       this.getAllTags();
       this.filtredString = this.formControl.valueChanges.pipe(
           startWith(null),
@@ -114,7 +113,7 @@ export class NewItemComponent implements OnInit {
     return this.allTagsString.filter(tag => tag.toLowerCase().includes(filterValue));
   }
 
-  getCol(id:number): any{
+  getCol(): any{
     this.col.findCollectById(this.id).subscribe(data=>{
       this.newItem.collection=data;
     })
@@ -139,14 +138,14 @@ export class NewItemComponent implements OnInit {
   create(): any {
     this.newItem.author=this.auth.user;
     this.newItem.tags=this.tagString;
-    this.item.saveNewItem(this.newItem).subscribe(data=>{
+    this.item.saveNewItem(this.newItem).subscribe(()=>{
       console.log("create new item");
       this.rout.navigate(['/profile/collect/'+this.id])
     })
   }
 
   edit(): any {
-    this.item.update(this.newItem).subscribe(data=>{
+    this.item.update(this.newItem).subscribe(()=>{
       console.log('edit')
       this.rout.navigate(['/profile/collect/'+this.id])
     },

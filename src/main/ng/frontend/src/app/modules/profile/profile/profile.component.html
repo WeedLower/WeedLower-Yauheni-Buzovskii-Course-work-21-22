@@ -18,8 +18,8 @@
                     <img *ngIf="(col.image)!= null" mat-card-md-image src="{{col.image.imageUrl}}">
                     <mat-card-actions>
                         <a mat-button  (click)="goCheck(col.id)">View</a>
-                        <a mat-raised-button color="accent" (click)="edit(col.id)">Edit</a>
-                        <a mat-raised-button color="warn" (click)="deleteItem(col.id)" >Delete</a>
+                        <a mat-raised-button color="accent" (click)="editCollection(col.id)">Edit</a>
+                        <a mat-raised-button color="warn" (click)="deleteCollection(col.id)" >Delete</a>
                     </mat-card-actions>
                 </mat-card-title-group>
                 <mat-card-content>

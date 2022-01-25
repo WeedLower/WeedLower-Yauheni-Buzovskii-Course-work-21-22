@@ -2,9 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../../../service/auth/auth.service";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {SearchService} from "../../../../service/search/search.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {async} from "rxjs";
 
 @Component({
   selector: 'app-header-block',
@@ -20,10 +18,7 @@ export class HeaderBlockComponent implements OnInit{
   searchString:string;
   formControl:FormGroup;
 
-  constructor(private auth: AuthService,private http:HttpClient,private router:Router,private fb:FormBuilder) {
-
-
-  }
+  constructor(private auth: AuthService,private http:HttpClient,private router:Router,private fb:FormBuilder) {}
 
   ngOnInit(): void{
     this.initReactForm();

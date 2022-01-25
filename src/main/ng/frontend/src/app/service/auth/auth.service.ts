@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {AuthuserModel} from "../../model/authuser";
+import {AuthUserModel} from "../../model/authuser";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {AuthToken, UserModel} from "../../model/usermodel";
@@ -9,7 +9,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class AuthService {
-  public user: AuthuserModel;
+  public user: AuthUserModel;
   public token: string;
 
   public authError: boolean=false;
@@ -59,7 +59,7 @@ export class AuthService {
   }
 
   public regUser(authUser: UserModel): void{
-    this.regNewUser(authUser).subscribe(data =>{
+    this.regNewUser(authUser).subscribe(() =>{
       this.router.navigate(['/login'])
     }, error => {
       this.regError=true;
@@ -72,7 +72,6 @@ export class AuthService {
     this.token="";
     this.router.navigate(['/']);
     setTimeout(location.reload.bind(location), 100);
-    // this.logout();
   }
 
   check():void {

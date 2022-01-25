@@ -16,6 +16,7 @@ export class SearchPageComponent implements OnInit {
   id:number;
   searchString:string;
   items:ItemModel[]=[];
+
   constructor(private rout:Router,private route:ActivatedRoute,private itemService:ItemsService,private searchService:SearchService) {
     this.router=this.rout.url;
   }
@@ -25,14 +26,14 @@ export class SearchPageComponent implements OnInit {
         filter(event => event instanceof NavigationEnd)
     ).subscribe(()=>{
       this.searchString = this.route.snapshot.params['searchString']
-      this.search(this.searchString)
+      this.search()
     })
     if(this.route.snapshot.params['id']!=null){
       this.id = +this.route.snapshot.params['id'];
       this.findItemsByTagId(this.id)
     }else if(this.route.snapshot.params['searchString']!=null){
       this.searchString = this.route.snapshot.params['searchString']
-      this.search(this.searchString)
+      this.search()
     }
   }
 
@@ -49,7 +50,7 @@ export class SearchPageComponent implements OnInit {
     this.rout.navigate(['/item/'+id])
   }
 
-  private search(searchString: string) {
+  private search() {
     this.searchService.search(this.searchString).subscribe(data=>{
       this.items=data as ItemModel[];
     },

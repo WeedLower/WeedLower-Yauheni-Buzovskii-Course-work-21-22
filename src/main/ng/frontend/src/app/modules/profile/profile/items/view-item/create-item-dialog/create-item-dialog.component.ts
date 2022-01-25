@@ -8,10 +8,12 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./create-item-dialog.component.scss']
 })
 export class CreateItemDialogComponent implements OnInit{
+
   formControl: FormGroup;
+
   constructor( public dialogRef: MatDialogRef<CreateItemDialogComponent>,
                @Inject(MAT_DIALOG_DATA) public data: any,
-               private formBuilder: FormBuilder) { }
+               private formBuilder: FormBuilder) {}
 
   ngOnInit():void {
     this.initReactForm();
@@ -24,6 +26,5 @@ export class CreateItemDialogComponent implements OnInit{
   private initReactForm() {
     this.formControl=this.formBuilder.group({
       mes:['',Validators.required]
-    })
-  }
+    })}
 }

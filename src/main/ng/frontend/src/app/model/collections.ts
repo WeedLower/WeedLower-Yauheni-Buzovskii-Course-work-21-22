@@ -1,4 +1,4 @@
-import {AuthuserModel} from "./authuser";
+import {AuthUserModel} from "./authuser";
 import {ImageModel} from "./Image";
 import {ItemModel} from "./item";
 import {UserModel} from "./usermodel";
@@ -6,7 +6,7 @@ import {UserModel} from "./usermodel";
 export class CollectionModel {
     public id: string;
     public name: string;
-    public owner: AuthuserModel;
+    public owner: AuthUserModel;
     public user:UserModel;
     public items: ItemModel[];
     public description: string;
@@ -28,5 +28,4 @@ export class CollectionModel {
     public checkboxName1 ?:string;
     public checkboxName2 ?:string;
     public checkboxName3 ?:string;
-
 }

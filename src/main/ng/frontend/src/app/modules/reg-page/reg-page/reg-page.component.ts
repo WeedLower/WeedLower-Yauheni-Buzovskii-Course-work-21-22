@@ -50,11 +50,7 @@ export class RegPageComponent implements OnInit {
 
   public ifExistsByEmail(email: string): void{
     this.userService.findByEmail(email).subscribe((exists) =>{
-      if (exists){
-        this.userExistByEmail=true;
-      }else {
-        this.userExistByEmail=false;
-      }
+      this.userExistByEmail = !!exists;
       if (!this.userExistByEmail){
         this.register();
         this.newUser.name='';

@@ -37,7 +37,7 @@ export class AdminPageComponent implements OnInit {
   delete():void{
     if (confirm('Delete user / users?')){
       this.selection.selected.forEach(i=>
-          this.userService.delete(i.id).subscribe(data=>{
+          this.userService.delete(i.id).subscribe(()=>{
                 this.getAllUsers();
               },
               error=> console.log(error)));
@@ -47,7 +47,7 @@ export class AdminPageComponent implements OnInit {
   block():void{
     if (confirm('Block user / users?')){
       this.selection.selected.forEach(i =>
-          this.userService.block(i.id).subscribe(data=>{
+          this.userService.block(i.id).subscribe(()=>{
                 this.getAllUsers();
               },
               error=> console.log(error)));
@@ -57,7 +57,7 @@ export class AdminPageComponent implements OnInit {
   unblock():void{
     if (confirm('Unblock user / users?')){
       this.selection.selected.forEach(i =>
-          this.userService.unblock(i.id).subscribe(data=>{
+          this.userService.unblock(i.id).subscribe(()=>{
                 this.getAllUsers();
               },
               error=> console.log(error)));
@@ -68,7 +68,7 @@ export class AdminPageComponent implements OnInit {
     if (confirm('Set role ADMIN to user / users?')){
       this.selection.selected.forEach((i) =>
           i == this.auth.user? this.auth.logOut() :
-          this.userService.setRoleAdmin(i.id).subscribe(data=>{
+          this.userService.setRoleAdmin(i.id).subscribe(()=>{
                 this.getAllUsers();
               },
               error=> console.log(error)));
@@ -78,7 +78,7 @@ export class AdminPageComponent implements OnInit {
   setUser():void{
     if (confirm('Set role USER to user / users?')){
       this.selection.selected.forEach(i =>
-          this.userService.setRoleUser(i.id).subscribe(data=>{
+          this.userService.setRoleUser(i.id).subscribe(()=>{
                 this.getAllUsers();
               },
               error=> console.log(error)));
