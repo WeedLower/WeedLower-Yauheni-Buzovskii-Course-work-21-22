@@ -31,11 +31,9 @@ public class UserEntity {
     @Column(name = "surname")
     private String surname;
 
-
     @NotBlank
     @Column(name = "email")
     private String email;
-
 
     @NotBlank
     @Column(name = "password")

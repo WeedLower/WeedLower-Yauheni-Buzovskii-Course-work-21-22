@@ -4,25 +4,21 @@ import com.example.backend.entity.ItemsEntity;
 import com.example.backend.entity.TagsEntity;
 import com.example.backend.entity.UserEntity;
 import com.example.backend.model.ItemModel;
-import com.example.backend.model.TagsModel;
 import com.example.backend.model.convert.ConvertItemModelToItemEntity;
 import com.example.backend.repository.ItemsRepository;
 import com.example.backend.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.security.Principal;
-import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 public class ItemsService {
 
-    private ItemsRepository itemsRepository;
-    private UsersRepository usersRepository;
-    private TagsService tagsService;
+    private final ItemsRepository itemsRepository;
+    private final UsersRepository usersRepository;
+    private final TagsService tagsService;
 
     @Autowired
     public ItemsService(ItemsRepository itemsRepository, UsersRepository usersRepository, TagsService tagsService) {
@@ -39,6 +35,7 @@ public class ItemsService {
         Set<TagsEntity> tags= tagsService.findTagsByMame(items.getTags());
         ConvertItemModelToItemEntity convert = new ConvertItemModelToItemEntity();
         ItemsEntity item = convert.convert(items);
+        assert item != null;
         ItemsEntity itemsEntity = itemsRepository.save(item);
         tags.forEach(s -> tagsService.saveItemTags(item.getId(),s.getId()));
         return itemsEntity;
@@ -54,7 +51,7 @@ public class ItemsService {
         itemModelList.forEach(s-> {
             List<String> list = new ArrayList<>();
             for (TagsEntity tagsEntity : s.getTagSet()) {
-                String toString = tagsEntity.getTag().toString();
+                String toString = tagsEntity.getTag();
                 list.add(toString);
             }
             s.setTags(list.toArray(new String[0]));
@@ -65,7 +62,6 @@ public class ItemsService {
     public Optional<ItemModel> findItemById(Integer id){
          return itemsRepository.findItemById(id);
     }
-
 
     public void delete(Integer id) {
         itemsRepository.deleteByItemId(id);
@@ -79,7 +75,7 @@ public class ItemsService {
             item.get().setTagSet(tagsService.findTagsByItemId(item.get().getId()));
             List<String> tags = new ArrayList<>();
             for(TagsEntity tagsEntity : item.get().getTagSet()){
-                String toString = tagsEntity.getTag().toString();
+                String toString = tagsEntity.getTag();
                 tags.add(toString);
             }
             item.get().setTags(tags.toArray(new String[0]));
@@ -106,6 +102,5 @@ public class ItemsService {
                 item.getOptionalDataField1(),item.getOptionalDataField2(),
                 item.getOptionalDataField3(),item.getOptionalCheckboxField1(),
                 item.getOptionalCheckboxField2(),item.getOptionalCheckboxField3());
-
     }
 }

@@ -21,10 +21,10 @@ import java.security.Principal;
 @RestController
 @RequestMapping("/api/users/auth")
 public class AuthController {
-    private AuthenticationManager authenticationManager;
-    private UsersServise userService;
-    private TokenProvider tokenProvide;
-    private PasswordEncoder passwordEncoder;
+    private final AuthenticationManager authenticationManager;
+    private final UsersServise userService;
+    private final TokenProvider tokenProvide;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
     public AuthController(AuthenticationManager authenticationManager, UsersServise userService, TokenProvider tokenProvide, PasswordEncoder passwordEncoder) {
@@ -51,12 +51,8 @@ public class AuthController {
     public ResponseEntity<AuthUser> authUser(Principal user){
         ConvertUserToAuthUser convertUserToAuthUser = new ConvertUserToAuthUser();
         UserEntity userModel = userService.findByEmail(user.getName());
-        if (userModel.isStatus()==true){return ResponseEntity.notFound().build();}
-        if (userModel !=null){
-            return ResponseEntity.ok(convertUserToAuthUser.convert(userModel));
-        }else {
-            return ResponseEntity.notFound().build();
-        }
+        if (userModel.isStatus()){return ResponseEntity.notFound().build();}
+        return ResponseEntity.ok(convertUserToAuthUser.convert(userModel));
     }
 
     @RequestMapping(value = "/sign-up",method = RequestMethod.POST)

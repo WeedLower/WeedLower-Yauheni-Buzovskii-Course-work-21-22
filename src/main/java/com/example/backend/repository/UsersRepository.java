@@ -39,9 +39,6 @@ public interface UsersRepository extends JpaRepository<UserEntity,Integer> {
     @Query(value = "delete from UserEntity i where i.id = :id")
     void deleteByUserId(@Param("id")Integer id);
 
-    @Query(value = "select i from UserEntity i where i.id = :id")
-    UserEntity findUserById(@Param("id")Integer id);
-
     @Query(value = "select i.status from UserEntity i where i.id=:id")
     boolean checkStatus(@Param("id")Integer id);
 

@@ -1,6 +1,5 @@
 package com.example.backend.controller;
 
-import com.example.backend.entity.ItemsEntity;
 import com.example.backend.entity.TagsEntity;
 import com.example.backend.service.TagsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,7 @@ import java.util.List;
 @RequestMapping("api/tags")
 public class TagsController {
 
-    private TagsService tagsService;
+    private final TagsService tagsService;
 
     @Autowired
     public TagsController(TagsService tagsService) {

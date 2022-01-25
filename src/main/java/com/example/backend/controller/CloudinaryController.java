@@ -14,7 +14,6 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -22,8 +21,8 @@ import java.util.Optional;
 @RequestMapping("api/cloudinary")
 public class CloudinaryController {
 
-    private CloudinaryService cloudinary;
-    private ImageService imageService;
+    private final CloudinaryService cloudinary;
+    private final ImageService imageService;
 
 
     @Autowired
@@ -35,10 +34,7 @@ public class CloudinaryController {
     @RequestMapping(value="/{id}",method = RequestMethod.GET)
     public ResponseEntity<ImageEntity> getImg(@PathVariable(name = "id")int id){
         Optional<ImageEntity> image = imageService.getOne(id);
-        if (image.isPresent()){
-            return ResponseEntity.ok(image.get());
-        }
-        return new ResponseEntity(new MessageResponse("get faild"),HttpStatus.NOT_FOUND);
+        return image.map(ResponseEntity::ok).orElseGet(() -> new ResponseEntity(new MessageResponse("get faild"), HttpStatus.NOT_FOUND));
     }
 
     @RequestMapping(value= "/upload",method = RequestMethod.POST)

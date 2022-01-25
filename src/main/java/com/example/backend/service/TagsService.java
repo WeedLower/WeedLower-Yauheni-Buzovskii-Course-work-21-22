@@ -4,8 +4,6 @@ import com.example.backend.entity.TagsEntity;
 import com.example.backend.model.ItemModel;
 import com.example.backend.repository.TagsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -15,7 +13,7 @@ import java.util.Set;
 @Service
 public class TagsService {
 
-    private TagsRepository tagsRepository;
+    private final TagsRepository tagsRepository;
 
     @Autowired
     public TagsService(TagsRepository tagsRepository) {

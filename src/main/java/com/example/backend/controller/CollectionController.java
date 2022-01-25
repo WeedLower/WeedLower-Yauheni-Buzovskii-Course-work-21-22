@@ -1,7 +1,6 @@
 package com.example.backend.controller;
 
 import com.example.backend.entity.CollectionsEntity;
-import com.example.backend.entity.UserEntity;
 import com.example.backend.model.CollectionModel;
 import com.example.backend.service.CollectionsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,7 @@ import java.util.Optional;
 @RequestMapping("api/collections")
 public class CollectionController {
 
-    private CollectionsService collectionsService;
+    private final CollectionsService collectionsService;
 
     @Autowired
     public CollectionController(CollectionsService collectionsService) {
@@ -51,12 +50,7 @@ public class CollectionController {
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     public ResponseEntity<CollectionsEntity> findCollectionById(@PathVariable(name = "id")Integer id){
         Optional<CollectionsEntity> collection = collectionsService.getCollectionById(id);
-        if(collection.isPresent()){
-            return ResponseEntity.ok(collection.get());
-        }else {
-
-            return ResponseEntity.notFound().build();
-        }
+        return collection.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @RequestMapping(value = "/delete/{id}",method = RequestMethod.DELETE)

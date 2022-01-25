@@ -7,6 +7,5 @@ import java.util.List;
 
 public interface CommentsRepository extends JpaRepository<CommentsEntity,Integer> {
 
-    List<CommentsEntity> findAllByUser_Id(Integer id);
     List<CommentsEntity> findAllByItemsEntity_Id(Integer id);
 }

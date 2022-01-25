@@ -2,23 +2,20 @@ package com.example.backend.service;
 
 import com.example.backend.entity.Role;
 import com.example.backend.entity.UserEntity;
-import com.example.backend.model.UserModel;
 import com.example.backend.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.*;
 
 @Service("customUserDetailsService")
 public class UsersServise implements UserDetailsService {
 
-    private UsersRepository usersRepository;
+    private final UsersRepository usersRepository;
 
     @Autowired
     public UsersServise(UsersRepository usersRepository) {
@@ -77,7 +74,6 @@ public class UsersServise implements UserDetailsService {
     public void delete(Integer id){
         usersRepository.deleteByUserId(id);
     }
-
 
     public boolean check(Integer id) {
         if (usersRepository.checkChanged(id)){

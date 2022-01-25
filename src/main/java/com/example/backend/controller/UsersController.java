@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequestMapping("/api/users")
 public class UsersController {
 
-    private UsersServise usersServise;
+    private final UsersServise usersServise;
 
     @Autowired
     public UsersController(UsersServise usersServise) {
@@ -67,11 +67,7 @@ public class UsersController {
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     public ResponseEntity<UserEntity> findUserById(@PathVariable(name = "id")Integer id){
         Optional<UserEntity> user = usersServise.findUserById(id);
-        if (user.isPresent()){
-            return ResponseEntity.ok(user.get());
-        }else {
-            return ResponseEntity.notFound().build();
-        }
+        return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @RequestMapping(value="/check/{id}",method = RequestMethod.GET)

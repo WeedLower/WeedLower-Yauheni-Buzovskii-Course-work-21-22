@@ -4,21 +4,16 @@ import com.example.backend.entity.CollectionsEntity;
 import com.example.backend.model.CollectionModel;
 import com.example.backend.model.convert.ConvertCollectionModelToCollectionEntity;
 import com.example.backend.repository.CollectionRepository;
-import com.example.backend.repository.ItemsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class CollectionsService {
 
-    private CollectionRepository collectionRepository;
-
+    private final CollectionRepository collectionRepository;
 
     @Autowired
     public CollectionsService(CollectionRepository collectionRepository) {
@@ -32,6 +27,7 @@ public class CollectionsService {
     public CollectionsEntity saveCollection(CollectionModel collection){
         ConvertCollectionModelToCollectionEntity convert = new ConvertCollectionModelToCollectionEntity();
         CollectionsEntity collections = convert.convert(collection);
+        assert collections != null;
         return collectionRepository.save(collections);
     }
 
@@ -52,7 +48,6 @@ public class CollectionsService {
     }
 
     public void edit(CollectionModel collection) {
-
         collectionRepository.edit(collection.getId(),collection.getName(),collection.getDescription(),collection.getTopic(),
                 collection.getImg(),collection.getNumberName1(),collection.getNumberName2(),collection.getNumberName3(),
                 collection.getStringName1(),collection.getStringName2(),collection.getStringName3(),

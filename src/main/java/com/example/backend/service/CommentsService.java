@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class CommentsService {
 
-    private CommentsRepository commentsRepository;
+    private final CommentsRepository commentsRepository;
 
     @Autowired
     public CommentsService(CommentsRepository commentsRepository) {

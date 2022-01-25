@@ -19,7 +19,7 @@ import java.util.List;
 @RequestMapping("api/search")
 public class SearchController {
 
-    private SearchService searchService;
+    private final SearchService searchService;
 
     @Autowired
     public SearchController(SearchService searchService) {
