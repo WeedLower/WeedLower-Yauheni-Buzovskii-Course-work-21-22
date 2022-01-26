@@ -28,7 +28,6 @@ export class FooterBlockComponent implements OnInit{
 
   ngOnInit(): void {
 
-
     // if (this.auth.user!=null){
     //   if (localStorage.getItem('locale')){
     //   }else {
