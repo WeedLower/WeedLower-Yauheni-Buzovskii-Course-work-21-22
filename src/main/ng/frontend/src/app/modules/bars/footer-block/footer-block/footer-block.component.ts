@@ -1,7 +1,6 @@
 import {ChangeDetectionStrategy, EventEmitter, Component, Input, Output, OnInit} from '@angular/core';
 import {MatSlideToggleChange} from "@angular/material/slide-toggle";
 import {TranslateService} from "@ngx-translate/core";
-import { AuthService } from 'src/app/service/auth/auth.service';
 
 interface Lang {
   viewValue: string;
@@ -18,22 +17,15 @@ export class FooterBlockComponent implements OnInit{
 
   selectedValue: string;
 
-
-  constructor(public translate:TranslateService,private auth:AuthService) {
-    translate.addLangs(['en','ru']);
-    translate.setDefaultLang('en');
-    const browserLang = translate.getBrowserLang()
-    translate.use(browserLang.match(/en|ru/)? browserLang : 'en');
-  }
-
-  ngOnInit(): void {
-
-    // if (this.auth.user!=null){
-    //   if (localStorage.getItem('locale')){
-    //   }else {
-    //     localStorage.setItem('locale','en');
-    //   }
-    // }
+  constructor(public translate:TranslateService) {
+    this.translate.addLangs(['en','ru']);
+    if (localStorage.getItem('locale')){
+      const browserLang = localStorage.getItem('locale');
+      translate.use(browserLang.match(/en|ru/)? browserLang : 'en');
+    }else {
+      localStorage.setItem('locale','en');
+      translate.setDefaultLang('en');
+    }
   }
 
 
@@ -50,5 +42,8 @@ export class FooterBlockComponent implements OnInit{
   switchLanguage(lang: string) {
     localStorage.setItem('locale',lang);
     this.translate.use(lang);
+  }
+
+  ngOnInit(): void {
   }
 }
