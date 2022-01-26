@@ -1,9 +1,9 @@
-<title>My Profile</title>
+<title>{{'page.profile.title'| translate}}</title>
 <app-header-block></app-header-block>
 
-<a mat-raised-button color="primary" (click)="createNewCollection()">Create new collection</a>
-<h2>My collections</h2>
-<h4 *ngIf="check==false">You don't have collections,but you can try to start!</h4>
+<a mat-raised-button color="primary" (click)="createNewCollection()">{{'page.profile.newcol'| translate}}</a>
+<h2>{{'page.profile.coll'| translate}}</h2>
+<h4 *ngIf="check==false">{{'page.profile.error'|translate}}</h4>
 <div *ngIf="check==true">
     <a>
     </a>
@@ -11,15 +11,15 @@
             <mat-card class="example-card">
                 <mat-card-title-group>
 
-                    <mat-card-title>Collection name:{{col.name}}</mat-card-title>
-                    <mat-card-subtitle><h2>Description: {{col.description}}</h2>
-                        <h2>Topic: {{col.topic}}</h2>
+                    <mat-card-title>{{'page.profile.name'| translate}}{{col.name}}</mat-card-title>
+                    <mat-card-subtitle><h2>{{'page.profile.desc'| translate}} {{col.description}}</h2>
+                        <h2>{{'page.profile.topic'| translate}} {{col.topic}}</h2>
                     </mat-card-subtitle>
                     <img *ngIf="(col.image)!= null" mat-card-md-image src="{{col.image.imageUrl}}">
                     <mat-card-actions>
-                        <a mat-button  (click)="goCheck(col.id)">View</a>
-                        <a mat-raised-button color="accent" (click)="editCollection(col.id)">Edit</a>
-                        <a mat-raised-button color="warn" (click)="deleteCollection(col.id)" >Delete</a>
+                        <a mat-button  (click)="goCheck(col.id)">{{'page.profile.view'| translate}}</a>
+                        <a mat-raised-button color="accent" (click)="editCollection(col.id)">{{'page.profile.edit'| translate}}</a>
+                        <a mat-raised-button color="warn" (click)="deleteCollection(col.id)" >{{'page.profile.del'| translate}}</a>
                     </mat-card-actions>
                 </mat-card-title-group>
                 <mat-card-content>

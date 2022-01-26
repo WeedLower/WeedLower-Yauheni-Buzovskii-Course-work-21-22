@@ -1,12 +1,12 @@
-<title>Admin</title>
+<title>{{'page.admin.title'| translate}}</title>
 <app-header-block></app-header-block>
-<h1>All users</h1>
+<h1>{{'page.admin.users'| translate}}</h1>
 
-<a mat-raised-button color="accent" (click)="block()">Block</a>
-<a mat-raised-button color="primary" (click)="unblock()">Unblock</a>
-<a mat-raised-button color="warn" (click)="delete()">DELETE</a>
-<a mat-raised-button color="primary" (click)="setAdmin()">Set Admin</a>
-<a mat-raised-button color="warn" (click)="setUser()">Set User</a>
+<a mat-raised-button color="accent" (click)="block()">{{'page.admin.block'| translate}}</a>
+<a mat-raised-button color="primary" (click)="unblock()">{{'page.admin.unblock'| translate}}</a>
+<a mat-raised-button color="warn" (click)="delete()">{{'page.admin.delete'| translate}}</a>
+<a mat-raised-button color="primary" (click)="setAdmin()">{{'page.admin.rola'| translate}}</a>
+<a mat-raised-button color="warn" (click)="setUser()">{{'page.admin.rolu'| translate}}</a>
 <table mat-table [dataSource]="users" class="mat-elevation-z8">
     <ng-container matColumnDef="select">
         <th mat-header-cell *matHeaderCellDef>
@@ -29,7 +29,7 @@
     </ng-container>
 
     <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <th mat-header-cell *matHeaderCellDef>{{'page.admin.name' | translate}}</th>
         <td mat-cell *matCellDef="let i"> {{i.name}} </td>
     </ng-container>
 
@@ -39,18 +39,18 @@
     </ng-container>
 
     <ng-container matColumnDef="role">
-        <th mat-header-cell *matHeaderCellDef> Role </th>
+        <th mat-header-cell *matHeaderCellDef>{{'page.admin.role' | translate}}</th>
         <td mat-cell *matCellDef="let i"> {{i.role}} </td>
     </ng-container>
 
     <ng-container matColumnDef="status">
-        <th mat-header-cell *matHeaderCellDef> Blocked </th>
+        <th mat-header-cell *matHeaderCellDef>{{'page.admin.blocked' | translate}}</th>
         <td mat-cell *matCellDef="let i">{{i.status==true ? "✔" : "&#10006;"}}</td>
     </ng-container>
 
     <ng-container matColumnDef="view">
         <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let i"><button id="view" mat-raised-button (click)="viewUser(i.id)">View</button></td>
+        <td mat-cell *matCellDef="let i"><button id="view" mat-raised-button (click)="viewUser(i.id)">{{'page.admin.view'| translate}}</button></td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"

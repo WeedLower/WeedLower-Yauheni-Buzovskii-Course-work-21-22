@@ -1,26 +1,26 @@
-<title>Create new collection</title>
+<title>{{'page.newcol.title'|translate}}</title>
 <app-header-block></app-header-block>
-<h2>Your collection</h2>
+<h2>{{'page.newcol.main'|translate}}</h2>
 <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
-    <p style="font-size: 20px; color: white">Create...</p>
+    <p style="font-size: 20px; color: white">{{'page.newcol.create'|translate}}</p>
 </ngx-spinner>
 <div>
     <form class="example-form" [formGroup]="formControl">
         <p>
             <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Name collection</mat-label>
+                <mat-label>{{'page.newcol.title2'|translate}}</mat-label>
                 <input matInput formControlName="name" name="name" [(ngModel)]="newColl.name" required>
             </mat-form-field>
         </p>
         <p>
             <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Description</mat-label>
+                <mat-label>{{'page.newcol.desc'|translate}}</mat-label>
                 <input matInput formControlName="description" name="description" [(ngModel)]="newColl.description" required>
             </mat-form-field>
         </p>
         <p>
             <mat-form-field appearance="fill">
-                <mat-label>Topic</mat-label>
+                <mat-label>{{'page.newcol.topic'|translate}}</mat-label>
                 <mat-select matInput formControlName="topic" name="topic" [(ngModel)]="newColl.topic" required>
                     <mat-option *ngFor="let f of topics" [value]="f.viewVal">
                         {{f.viewVal}}
@@ -28,10 +28,10 @@
                 </mat-select>
             </mat-form-field>
         </p>
-        <h1 *ngIf="edit==false">Optional</h1>
-        <h2 *ngIf="edit==false">These fields will be contained in each item</h2>
+        <h1 *ngIf="edit==false">{{'page.newcol.mes'|translate}}</h1>
+        <h2 *ngIf="edit==false">{{'page.newcol.mes1'|translate}}</h2>
         <mat-form-field appearance ="fill" *ngIf="edit==false">
-            <mat-select placeholder="Optional fields" [formControl]="fC" [(value)]="selectedFields" multiple>
+            <mat-select placeholder="{{'page.newcol.optional'|translate}}" [formControl]="fC" [(value)]="selectedFields" multiple>
                 <mat-option *ngFor="let i of optionalFields" [value]="i">
                     {{i}}
                 </mat-option>
@@ -41,68 +41,68 @@
 
         <div *ngFor="let i of selectedFields">
             <mat-form-field appearance ="fill" *ngIf="i=='Number#1'">
-                <mat-label>Name: {{i}}</mat-label>
+                <mat-label>{{'page.newcol.name'|translate}}{{i}}</mat-label>
                 <input matInput formControlName="number1" name="number1" [(ngModel)]="newColl.numberName1" required>
             </mat-form-field>
             <mat-form-field appearance ="fill" *ngIf="i=='Number#2'">
-                <mat-label>Name: {{i}}</mat-label>
+                <mat-label>{{'page.newcol.name'|translate}} {{i}}</mat-label>
                 <input matInput formControlName="number2" name="number2" [(ngModel)]="newColl.numberName2" required>
             </mat-form-field>
             <mat-form-field appearance ="fill" *ngIf="i=='Number#3'">
-                <mat-label>Name: {{i}}</mat-label>
+                <mat-label>{{'page.newcol.name'|translate}} {{i}}</mat-label>
                 <input matInput formControlName="number3" name="number3" [(ngModel)]="newColl.numberName3" required>
             </mat-form-field>
             <mat-form-field appearance ="fill" *ngIf="i=='String#1'">
-                <mat-label>Name: {{i}}</mat-label>
+                <mat-label>{{'page.newcol.name'|translate}} {{i}}</mat-label>
                 <input matInput formControlName="string1" name="string1" [(ngModel)]="newColl.stringName1" required>
             </mat-form-field>
             <mat-form-field appearance ="fill" *ngIf="i=='String#2'">
-                <mat-label>Name: {{i}}</mat-label>
+                <mat-label>{{'page.newcol.name'|translate}}{{i}}</mat-label>
                 <input matInput formControlName="string2" name="string2" [(ngModel)]="newColl.stringName2" required>
             </mat-form-field>
             <mat-form-field appearance ="fill" *ngIf="i=='String#3'">
-                <mat-label>Name: {{i}}</mat-label>
+                <mat-label>{{'page.newcol.name'|translate}} {{i}}</mat-label>
                 <input matInput formControlName="string3" name="string3" [(ngModel)]="newColl.stringName3" required>
             </mat-form-field>
             <mat-form-field appearance ="fill" *ngIf="i=='Text#1'">
-                <mat-label>Name: {{i}}</mat-label>
+                <mat-label>{{'page.newcol.name'|translate}} {{i}}</mat-label>
                 <input matInput formControlName="text1" name="text1" [(ngModel)]="newColl.textName1" required>
             </mat-form-field>
             <mat-form-field appearance ="fill" *ngIf="i=='Text#2'">
-                <mat-label>Name: {{i}}</mat-label>
+                <mat-label>{{'page.newcol.name'|translate}} {{i}}</mat-label>
                 <input matInput formControlName="text2" name="text2" [(ngModel)]="newColl.textName2" required>
             </mat-form-field>
             <mat-form-field appearance ="fill" *ngIf="i=='Text#3'">
-                <mat-label>Name: {{i}}</mat-label>
+                <mat-label>{{'page.newcol.name'|translate}} {{i}}</mat-label>
                 <input matInput formControlName="text3" name="text3" [(ngModel)]="newColl.textName3" required>
             </mat-form-field>
             <mat-form-field appearance ="fill" *ngIf="i=='Data#1'">
-                <mat-label>Name: {{i}}</mat-label>
+                <mat-label>{{'page.newcol.name'|translate}} {{i}}</mat-label>
                 <input matInput formControlName="data1" name="data1" [(ngModel)]="newColl.dataName1" required>
             </mat-form-field>
             <mat-form-field appearance ="fill" *ngIf="i=='Data#2'">
-                <mat-label>Name: {{i}}</mat-label>
+                <mat-label>{{'page.newcol.name'|translate}} {{i}}</mat-label>
                 <input matInput formControlName="data2" name="data2" [(ngModel)]="newColl.dataName2" required>
             </mat-form-field>
             <mat-form-field appearance ="fill" *ngIf="i=='Data#3'">
-                <mat-label>Name: {{i}}</mat-label>
+                <mat-label>{{'page.newcol.name'|translate}} {{i}}</mat-label>
                 <input matInput formControlName="data3" name="data3" [(ngModel)]="newColl.dataName3" required>
             </mat-form-field>
             <mat-form-field appearance ="fill" *ngIf="i=='Checkbox#1'">
-                <mat-label>Name: {{i}}</mat-label>
+                <mat-label>{{'page.newcol.name'|translate}} {{i}}</mat-label>
                 <input matInput formControlName="checkbox1" name="checkbox1" [(ngModel)]="newColl.checkboxName1" required>
             </mat-form-field>
             <mat-form-field appearance ="fill" *ngIf="i=='Checkbox#2'">
-                <mat-label>Name: {{i}}</mat-label>
+                <mat-label>{{'page.newcol.name'|translate}} {{i}}</mat-label>
                 <input matInput formControlName="checkbox2" name="checkbox2" [(ngModel)]="newColl.checkboxName2" required>
             </mat-form-field>
             <mat-form-field appearance ="fill" *ngIf="i=='Checkbox#3'">
-                <mat-label>Name: {{i}}</mat-label>
+                <mat-label>{{'page.newcol.name'|translate}} {{i}}</mat-label>
                 <input matInput formControlName="checkbox3" name="checkbox3" [(ngModel)]="newColl.checkboxName3" required>
             </mat-form-field>
 
         </div>
-        <h1>You can choose a new photo</h1>
+        <h1>{{'page.newcol.choose'|translate}}</h1>
         <div class="container" appDrag (fileDropped)="onFileDropped($event)" *ngIf="count==false">
             <input type="file" accept="image/png, image/jpeg , image/gif" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target.files)"/>
             <svg xmlns="http://www.w3.org/2000/svg" width="63" height="64" viewBox="0 0 63 64">
@@ -116,9 +116,9 @@
                 </g>
             </svg>
 
-            <h3>Drag and drop file here</h3>
-            <h3>or</h3>
-            <label for="fileDropRef">Browse for file</label>
+            <h3>{{'page.newcol.mes2'|translate}}</h3>
+            <h3>{{'page.newcol.mes3'|translate}}</h3>
+            <label for="fileDropRef">{{'page.newcol.mes4'|translate}}</label>
         </div>
         <div class="files-list">
             <div class="single-file" *ngFor="let file of files; let i = index">
@@ -162,6 +162,9 @@
 
         </div>
     </form>
-    <button mat-raised-button color="primary" *ngIf="edit==false" [disabled]="!formControl.valid" (click)="create()">Create</button>
-    <button mat-raised-button color="primary" *ngIf="edit==true"[disabled]="!formControl.valid" (click)="editCol()">Edit</button>
+    <button mat-raised-button color="primary" *ngIf="edit==false" [disabled]="!formControl.valid" (click)="create()">
+        {{'page.newcol.create1'|translate}}
+    </button>
+    <button mat-raised-button color="primary" *ngIf="edit==true"[disabled]="!formControl.valid" (click)="editCol()">
+        {{'page.newcol.edit'|translate}}</button>
 </div>

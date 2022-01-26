@@ -19,7 +19,96 @@
       "signup": "Signup"
     },
     "main":{
-      "title": "Главная"
+      "title": "Main",
+      "last": "Last added items",
+      "big": "Biggest collection",
+      "tag":"Tags cloud",
+      "card": {
+        "item": "Item:",
+        "view": "View",
+        "name": "Name:",
+        "count": "Quantity of items",
+        "topic": "Topic:",
+        "descr": "Description:"
+      }
+    },
+    "admin": {
+      "title": "Admin",
+      "users": "All Users",
+      "block":"Block",
+      "unblock":"Unblock",
+      "delete": "Delete",
+      "rola": "Set Admin",
+      "rolu": "Set User",
+      "view": "View",
+      "name": "Name",
+      "role": "Role",
+      "blocked":"Blocked"
+    },
+    "profile": {
+      "title": "Profile",
+      "newcol": "Create new collection",
+      "coll": "My collections",
+      "name": "Title:",
+      "desc": "Description:",
+      "topic": "Topic:",
+      "view": "View",
+      "edit": "Edit",
+      "del": "Delete",
+      "error": "You don't have collections,but you can try to start!"
+    },
+    "item":{
+      "title": "My collection",
+      "col":"Collection:",
+      "desc": "Description:",
+      "topic": "Topic:",
+      "create": "Create",
+      "del":"Delete",
+      "filter": "Filter",
+      "view": "View",
+      "update": "Edit",
+      "name": "Title",
+      "tags": "Tags",
+      "error": "No data matching the filter ",
+      "error2": "Create first item"
+    },
+    "view": {
+      "comments": "Comments",
+      "name" : "Name:",
+      "comment": "Comment:",
+      "title": "Title:",
+      "com": "Send",
+      "dialog": {
+        "com": "Your comment",
+        "newcom": "Create Comment",
+        "no": "No Thanks",
+        "yes": "Create"
+      }
+    },
+    "newitem": {
+      "title": "New item",
+      "create": "Create",
+      "edit": "Edit",
+      "name": "Title",
+      "tag": "Tags"
+    },
+    "newcol": {
+      "title": "Create new collection",
+      "main": "Your collection",
+      "create": "Create...",
+      "title2": "Title collection",
+      "desc": "Description",
+      "topic": "Topic",
+      "mes": "Optional",
+      "mes1": "These fields will be contained in each item",
+      "name": "Title:",
+      "choose": "You can choose a new photo",
+      "create1": "Create",
+      "edit": "Edit",
+      "optional":"Optional fields",
+      "mes2":"Drag and drop file here",
+      "mes3":"or",
+      "mes4":"Browse for file"
     },
     "bars": {
       "theme": "Dark mode",

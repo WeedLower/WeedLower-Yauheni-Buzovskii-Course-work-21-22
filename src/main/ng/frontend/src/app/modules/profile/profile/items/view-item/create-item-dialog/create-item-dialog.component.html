@@ -1,10 +1,10 @@
-<h1 mat-dialog-title>Create Comment</h1>
+<h1 mat-dialog-title>{{'page.view.dialog.newcom'|translate}}</h1>
 <div mat-dialog-content>
-    <p>Your comment</p>
+    <p>{{'page.view.dialog.com'|translate}}</p>
     <mat-form-field [formGroup]="formControl">
         <input matInput formControlName="mes" [(ngModel)]="data.mes" required>
     </mat-form-field>
 </div>
-<button mat-button (click)="noClick()">No Thanks</button>
-<button mat-button  [disabled]="!formControl.valid" [mat-dialog-close]="data.mes" cdkFocusInitial>Create</button>
+<button mat-button (click)="noClick()">{{'page.view.dialog.no'|translate}}</button>
+<button mat-button  [disabled]="!formControl.valid" [mat-dialog-close]="data.mes" cdkFocusInitial>{{'page.view.dialog.yes'|translate}}</button>
 
