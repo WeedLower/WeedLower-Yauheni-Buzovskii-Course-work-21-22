@@ -19,7 +19,13 @@ export class FooterBlockComponent {
 
   constructor(public translate:TranslateService) {
     translate.addLangs(['en','ru']);
-    translate.setDefaultLang('en');
+    if (localStorage.getItem('locale')){
+      const browserLang = localStorage.getItem('locale');
+      translate.use(browserLang.match(/en|ru/)? browserLang : 'en');
+    }else {
+      localStorage.setItem('locale','en');
+      translate.setDefaultLang('en');
+    }
   }
 
 
@@ -34,10 +40,7 @@ export class FooterBlockComponent {
   }
 
   switchLanguage(lang: string) {
+    localStorage.setItem('locale',lang);
     this.translate.use(lang);
-  }
-
-  switch(value: any) {
-    this.translate.use(value);
   }
 }
