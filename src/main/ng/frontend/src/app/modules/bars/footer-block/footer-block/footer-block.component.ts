@@ -23,14 +23,14 @@ export class FooterBlockComponent implements OnInit{
   ngOnInit(): void {
     this.translate.addLangs(['en','ru']);
     this.translate.setDefaultLang('en');
-    if (this.auth.user!=null){
-      if (localStorage.getItem('locale')){
-        const browserLang = localStorage.getItem('locale');
-        this.translate.use(browserLang.match(/en|ru/)? browserLang : 'en');
-      }else {
-        localStorage.setItem('locale','en');
-      }
-    }
+    // if (this.auth.user!=null){
+    //   if (localStorage.getItem('locale')){
+    //     const browserLang = localStorage.getItem('locale');
+    //     this.translate.use(browserLang.match(/en|ru/)? browserLang : 'en');
+    //   }else {
+    //     localStorage.setItem('locale','en');
+    //   }
+    // }
   }
 
 
