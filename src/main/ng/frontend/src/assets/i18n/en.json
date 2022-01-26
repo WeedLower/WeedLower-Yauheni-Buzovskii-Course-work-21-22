@@ -110,6 +110,11 @@
       "mes3":"or",
       "mes4":"Browse for file"
     },
+    "search": {
+      "title": "Search",
+      "view": "View",
+      "error": "No results found!"
+    },
     "bars": {
       "theme": "Dark mode",
       "search": "Search....",
