@@ -17,14 +17,15 @@ interface Lang {
 export class FooterBlockComponent implements OnInit{
 
   selectedValue: string;
+  private browserLang: any;
 
   constructor(public translate:TranslateService,private auth:AuthService) {}
 
   ngOnInit(): void {
     this.translate.addLangs(['en','ru']);
     this.translate.setDefaultLang('en');
-    const browserLang = localStorage.getItem('locale');
-    this.translate.use(browserLang.match(/en|ru/)? browserLang : 'en');
+    this.browserLang =localStorage.getItem('locale');
+    this.translate.use(this.browserLang.match(/en|ru/)? this.browserLang : 'en');
 
     // if (this.auth.user!=null){
     //   if (localStorage.getItem('locale')){

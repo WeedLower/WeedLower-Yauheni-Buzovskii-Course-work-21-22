@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="localization">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/bars/footer-block/footer-block/footer-block.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/bars/footer-block/footer-block/footer-block.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +177,7 @@
       <workItem from="1643009731736" duration="10561000" />
       <workItem from="1643043626070" duration="2702000" />
       <workItem from="1643095345088" duration="19474000" />
-      <workItem from="1643123534746" duration="34671000" />
+      <workItem from="1643123534746" duration="35602000" />
     </task>
     <task id="LOCAL-00001" summary="z">
       <created>1642506216551</created>
@@ -465,7 +466,21 @@
       <option name="project" value="LOCAL" />
       <updated>1643227740018</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="localization">
+      <created>1643228146702</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1643228146702</updated>
+    </task>
+    <task id="LOCAL-00043" summary="localization">
+      <created>1643228429726</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1643228429726</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
