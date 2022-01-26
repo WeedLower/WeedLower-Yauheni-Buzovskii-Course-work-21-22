@@ -17,8 +17,17 @@ export class FooterBlockComponent implements OnInit{
 
   selectedValue: string;
 
-  constructor(public translate:TranslateService) {
+  constructor(public translate:TranslateService) {}
 
+  ngOnInit(): void {
+    this.translate.addLangs(['en','ru']);
+    this.translate.setDefaultLang('en');
+    if (localStorage.getItem('locale')){
+      const browserLang = localStorage.getItem('locale');
+      this.translate.use(browserLang.match(/en|ru/)? browserLang : 'en');
+    }else {
+      localStorage.setItem('locale','en');
+    }
   }
 
 
@@ -36,15 +45,4 @@ export class FooterBlockComponent implements OnInit{
     localStorage.setItem('locale',lang);
     this.translate.use(lang);
   }
-
-  ngOnInit(): void {
-    this.translate.addLangs(['en','ru']);
-    this.translate.setDefaultLang('en');
-    // if (localStorage.getItem('locale')){
-      const browserLang = localStorage.getItem('locale');
-      this.translate.use(browserLang.match(/en|ru/)? browserLang : 'en');
-    // }else {
-      localStorage.setItem('locale','en');
-    }
-  //}
 }
