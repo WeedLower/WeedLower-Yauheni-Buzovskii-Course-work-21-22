@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy,EventEmitter, Component, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, EventEmitter, Component, Input, Output, OnInit} from '@angular/core';
 import {MatSlideToggleChange} from "@angular/material/slide-toggle";
 import {TranslateService} from "@ngx-translate/core";
 
@@ -13,19 +13,12 @@ interface Lang {
   styleUrls: ['./footer-block.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FooterBlockComponent {
+export class FooterBlockComponent implements OnInit{
 
   selectedValue: string;
 
   constructor(public translate:TranslateService) {
-    translate.addLangs(['en','ru']);
-    if (localStorage.getItem('locale')){
-      const browserLang = localStorage.getItem('locale');
-      translate.use(browserLang.match(/en|ru/)? browserLang : 'en');
-    }else {
-      localStorage.setItem('locale','en');
-      translate.setDefaultLang('en');
-    }
+
   }
 
 
@@ -43,4 +36,15 @@ export class FooterBlockComponent {
     localStorage.setItem('locale',lang);
     this.translate.use(lang);
   }
+
+  ngOnInit(): void {
+    this.translate.addLangs(['en','ru']);
+    this.translate.setDefaultLang('en');
+    // if (localStorage.getItem('locale')){
+      const browserLang = localStorage.getItem('locale');
+      this.translate.use(browserLang.match(/en|ru/)? browserLang : 'en');
+    // }else {
+      localStorage.setItem('locale','en');
+    }
+  //}
 }
