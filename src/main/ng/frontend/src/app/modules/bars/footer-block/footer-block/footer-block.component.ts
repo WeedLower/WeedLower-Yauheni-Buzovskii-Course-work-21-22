@@ -1,6 +1,11 @@
 import {ChangeDetectionStrategy,EventEmitter, Component, Input, Output} from '@angular/core';
 import {MatSlideToggleChange} from "@angular/material/slide-toggle";
+import {TranslateService} from "@ngx-translate/core";
 
+interface Lang {
+  viewValue: string;
+  value:string;
+}
 
 @Component({
   selector: 'app-footer-block',
@@ -10,6 +15,14 @@ import {MatSlideToggleChange} from "@angular/material/slide-toggle";
 })
 export class FooterBlockComponent {
 
+  selectedValue: string;
+
+  constructor(public translate:TranslateService) {
+    translate.addLangs(['en','ru']);
+    translate.setDefaultLang('en');
+  }
+
+
   @Input()
   isDarkMode = false;
 
@@ -18,5 +31,13 @@ export class FooterBlockComponent {
 
   onDarkModeSwitched({ checked }: MatSlideToggleChange) {
     this.darkModeSwitched.emit(checked);
+  }
+
+  switchLanguage(lang: string) {
+    this.translate.use(lang);
+  }
+
+  switch(value: any) {
+    this.translate.use(value);
   }
 }

@@ -4,6 +4,7 @@ import com.example.backend.entity.Role;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
+@Builder
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,4 +18,6 @@ public class UserModel {
     private String surname;
     private String password;
     private Role role;
+    private boolean status;
+    private boolean changed;
 }

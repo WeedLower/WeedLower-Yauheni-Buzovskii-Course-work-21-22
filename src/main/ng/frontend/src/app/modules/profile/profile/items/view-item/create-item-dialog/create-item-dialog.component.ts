@@ -19,7 +19,7 @@ export class CreateItemDialogComponent implements OnInit{
     this.initReactForm();
   }
 
-  onNoClick(): void {
+  noClick(): void {
     this.dialogRef.close();
   }
 

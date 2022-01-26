@@ -1,6 +1,7 @@
 package com.example.backend.controller;
 
 import com.example.backend.entity.UserEntity;
+import com.example.backend.model.UserModel;
 import com.example.backend.service.UsersServise;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,14 +22,14 @@ public class UsersController {
     }
 
     @RequestMapping(value = "",method = RequestMethod.GET)
-    public List<UserEntity> getAllUsers(){
+    public List<UserModel> getAllUsers(){
         return usersServise.getAllUsers();
     }
 
 
     @RequestMapping(value = "/email/{email}",method = RequestMethod.GET)
-    public ResponseEntity<UserEntity> findUserByEmail(@PathVariable(name = "email") String email){
-        UserEntity user = usersServise.findByEmail(email);
+    public ResponseEntity<UserModel> findUserByEmail(@PathVariable(name = "email") String email){
+        UserModel user = usersServise.findByEmail(email);
         return ResponseEntity.ok(user);
     }
 

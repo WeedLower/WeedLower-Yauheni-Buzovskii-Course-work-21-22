@@ -19,14 +19,14 @@ public class CommentsService {
     }
 
     public List<CommentsEntity> getAllByItemId(Integer id) {
-       return this.commentsRepository.findAllByItemsEntity_Id(id);
+        return this.commentsRepository.findAllByItemsEntity_Id(id);
     }
 
     public CommentsEntity save(CommentsModel comments) {
-        CommentsEntity commentsEntity = new CommentsEntity();
-        commentsEntity.setComment(comments.getComment());
-        commentsEntity.setItemsEntity(comments.getItem());
-        commentsEntity.setUser(comments.getOwner());
+        CommentsEntity commentsEntity = CommentsEntity.builder()
+                .comment(comments.getComment())
+                .itemsEntity(comments.getItem())
+                .user(comments.getOwner()).build();
         return this.commentsRepository.save(commentsEntity);
     }
 }

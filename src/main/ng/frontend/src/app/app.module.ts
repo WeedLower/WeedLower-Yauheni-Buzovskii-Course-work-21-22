@@ -2,7 +2,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {AppComponent }   from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {HTTP_INTERCEPTORS,HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import {InterceptorService} from "./service/auth/interceptor.service";
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppRoutingModule} from "./app-routing.module";
@@ -49,16 +49,25 @@ import {NgxSpinnerModule} from "ngx-spinner";
 import {CdkTableModule} from "@angular/cdk/table";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatSidenavModule} from "@angular/material/sidenav";
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
-
-
-
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}
 
 @NgModule({
     imports: [
-        BrowserModule,
+        BrowserModule, HttpClientModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        }),
         BrowserAnimationsModule,
-        HttpClientModule,
         FormsModule,
         ReactiveFormsModule,
         AppRoutingModule,
@@ -89,7 +98,7 @@ import {MatSidenavModule} from "@angular/material/sidenav";
         NgxSpinnerModule,
         CdkTableModule,
         MatDatepickerModule,
-        MatSidenavModule,
+        MatSidenavModule, MatButtonToggleModule,
     ],
     declarations: [
         AppComponent,

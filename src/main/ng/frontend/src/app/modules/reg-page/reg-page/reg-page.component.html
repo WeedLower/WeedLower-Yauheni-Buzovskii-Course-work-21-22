@@ -1,18 +1,18 @@
-<title>Registration</title>
+<title>{{'page.reg.title' | translate}}</title>
 <app-header-block></app-header-block>
 <div id="login_form" >
     <form class="example-form" [formGroup]="formControl">
-        <h2>Registration</h2>
+        <h2>{{'page.reg.reg' | translate}}</h2>
         <p>
             <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Name</mat-label>
+                <mat-label>{{'page.reg.name'| translate}}</mat-label>
                 <input matInput formControlName="name" [(ngModel)]="newUser.name">
                 <mat-error>Error</mat-error>
             </mat-form-field>
         </p>
         <p>
             <mat-form-field class="example-full-width" appearance="fill" >
-                <mat-label>Surname</mat-label>
+                <mat-label>{{'page.reg.surname'|translate}}</mat-label>
                 <input matInput formControlName="surname" [(ngModel)]="newUser.surname">
                 <mat-error>Error</mat-error>
             </mat-form-field>
@@ -26,20 +26,20 @@
         </p>
         <p>
             <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Password</mat-label>
+                <mat-label>{{'page.reg.pass'|translate}}</mat-label>
                 <input matInput formControlName="password" [(ngModel)]="newUser.password">
                 <mat-error>Error</mat-error>
             </mat-form-field>
         </p>
         <div *ngIf="!formControl.valid">
             <hr>
-            <p><b>All fields should be filled</b></p>
+            <p><b>{{'page.reg.error'|translate}}</b></p>
 
         </div>
     </form>
-    <a mat-raised-button color="primary" [disabled]="!formControl.valid" (click)="ifExistsByEmail(newUser.email)">Signup</a>
+    <a mat-raised-button color="primary" [disabled]="!formControl.valid" (click)="ifExistsByEmail(newUser.email)">{{'page.reg.signup'|translate}}</a>
 
-    <h4 *ngIf="this.notification" class="text-center wdi-red">Email should be unique!</h4>
+    <h4 *ngIf="this.notification" class="text-center wdi-red">{{'page.reg.error2'|translate}}</h4>
 </div>
 
 

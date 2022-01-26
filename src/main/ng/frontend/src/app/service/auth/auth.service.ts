@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AuthUserModel} from "../../model/authuser";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {AuthToken, UserModel} from "../../model/usermodel";
 import {Observable} from "rxjs";
+import {Role} from "../../model/role";
 
 @Injectable({
   providedIn: 'root'
@@ -49,7 +50,7 @@ export class AuthService {
         this.user=data;
         localStorage.setItem("user", JSON.stringify(this.user));
         localStorage.setItem("token", this.token);
-        this.router.navigate(['/profile']);
+        this.router.navigate(['/']);
       },error => {
         this.authError = true;
       })

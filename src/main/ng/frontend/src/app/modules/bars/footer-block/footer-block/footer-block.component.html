@@ -1,14 +1,13 @@
 <mat-toolbar class="footer" >
     <mat-slide-toggle color="accent" [checked]="isDarkMode"
                       (change)="onDarkModeSwitched($event)">
-        Dark Theme
+        {{'page.bars.theme' | translate}}
     </mat-slide-toggle>
     <span class="example-spacer"></span>
-    <mat-form-field>
-        <mat-label>Select lang</mat-label>
-        <mat-select>
-            <mat-option value="en">English</mat-option>
-            <mat-option value="ru">Русский</mat-option>
-        </mat-select>
-    </mat-form-field>
+    <mat-button-toggle-group>
+        <mat-button-toggle class="btn btn-info" value="en" (click)="switchLanguage('en')">en</mat-button-toggle>
+        <mat-button-toggle class="btn btn-info" value="ru" (click)="switchLanguage('ru')">ru</mat-button-toggle>
+    </mat-button-toggle-group>
 </mat-toolbar>
+
+

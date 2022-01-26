@@ -15,13 +15,11 @@ import {Router} from "@angular/router";
 export class RegPageComponent implements OnInit {
 
   newUser: UserModel = new UserModel();
-  public roles: Rolemodel;
-  public userExistByEmail: boolean = false;
-  public notification: boolean=false;
-  public users: UserModel[];
+  roles: Rolemodel;
+  userExistByEmail: boolean = false;
+  notification: boolean=false;
+  users: UserModel[];
   formControl: FormGroup;
-
-
 
   constructor(private roleService: RoleService, private userService: UserService,private auth: AuthService,
               private router: Router,private formBuilder: FormBuilder) { }
@@ -29,13 +27,12 @@ export class RegPageComponent implements OnInit {
   ngOnInit(): void {
     this.initReactForm();
     if (this.auth.user == null){
-
     } else {
-
+      this.router.navigate(['/'])
     }
   }
 
-  initReactForm(): void{
+  private initReactForm(): void{
     this.formControl = this.formBuilder.group({
       name: ['', Validators.required],
       surname:['', Validators.required],
@@ -44,11 +41,11 @@ export class RegPageComponent implements OnInit {
     });
   }
 
-  public register(){
+  private register(){
     this.auth.regUser(this.newUser);
   }
 
-  public ifExistsByEmail(email: string): void{
+  ifExistsByEmail(email: string): void{
     this.userService.findByEmail(email).subscribe((exists) =>{
       this.userExistByEmail = !!exists;
       if (!this.userExistByEmail){

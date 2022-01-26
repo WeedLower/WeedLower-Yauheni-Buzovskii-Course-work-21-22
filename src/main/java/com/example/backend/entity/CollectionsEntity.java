@@ -1,7 +1,6 @@
 package com.example.backend.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.search.annotations.Field;
@@ -10,9 +9,11 @@ import javax.persistence.*;
 import java.util.List;
 
 
-
+@Builder
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "collections",schema = "postgres_db")
 public class CollectionsEntity {

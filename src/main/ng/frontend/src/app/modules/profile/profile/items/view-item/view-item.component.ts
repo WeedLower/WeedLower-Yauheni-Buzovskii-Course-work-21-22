@@ -26,10 +26,10 @@ export class ViewItemComponent implements OnInit,OnDestroy {
   mes:string;
   statusLikes=false;
   timeInterval:Subscription;
+
   constructor(private route: ActivatedRoute, private auth: AuthService,private rout:Router,
               private itm: ItemsService, private comment: CommentsService,
-              private dialog:MatDialog) {
-  }
+              private dialog:MatDialog) {}
 
   ngOnInit(): void {
     this.id = +this.route.snapshot.params['id'];
@@ -44,6 +44,7 @@ export class ViewItemComponent implements OnInit,OnDestroy {
       this.statusUser = true;
     }
   }
+
   ngOnDestroy(): void {
     this.timeInterval.unsubscribe();
   }
@@ -56,6 +57,7 @@ export class ViewItemComponent implements OnInit,OnDestroy {
         error=> console.log(error)
         );
   }
+
   getItemById(id: number): any {
     this.itm.getById(id).subscribe(data => {
           this.itemMod = data;
@@ -63,7 +65,7 @@ export class ViewItemComponent implements OnInit,OnDestroy {
         error => console.log(error));
   }
 
-  saveNewComment(mes:string):any{
+  private saveNewComment(mes:string):any{
     this.newComment.comment=mes;
     this.newComment.item=this.itemMod;
     this.newComment.owner=this.auth.user;

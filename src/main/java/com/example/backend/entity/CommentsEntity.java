@@ -1,7 +1,6 @@
 package com.example.backend.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.search.annotations.ContainedIn;
@@ -9,8 +8,11 @@ import org.hibernate.search.annotations.Field;
 
 import javax.persistence.*;
 
+@Builder
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "comments",schema = "postgres_db")
 public class CommentsEntity {
@@ -26,7 +28,6 @@ public class CommentsEntity {
     @ManyToOne(cascade = CascadeType.REMOVE)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "item_id", referencedColumnName = "item_id")
-    @ContainedIn
     private ItemsEntity itemsEntity;
 
     @ManyToOne(cascade = CascadeType.REMOVE)

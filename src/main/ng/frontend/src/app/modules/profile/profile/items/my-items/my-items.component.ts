@@ -46,12 +46,14 @@ export class MyItemsComponent implements OnInit,AfterViewInit {
       this.getCollect(this.id)
     }
   }
+
   @ViewChild(MatSort) sort: MatSort;
+
   ngAfterViewInit() {
     this.item.sort = this.sort;
   }
 
-  delEmptyColumns(collection : CollectionModel){
+  private delEmptyColumns(collection : CollectionModel){
     const entries = Object.entries(collection);
     entries.forEach(([key, value]) => {
       value!=null && key!='user' && key!='items' && key!='image' && key!='id' && key!='name' && key!='description' && key!='topic'

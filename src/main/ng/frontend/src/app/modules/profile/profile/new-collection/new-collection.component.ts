@@ -66,6 +66,7 @@ export class NewCollectionComponent implements OnInit {
             this.status = true;
             this.edit=false;
             this.id = +this.activeRout.snapshot.params['id'];
+
             this.getOwner(this.id);
             this.currentId = this.auth.user.id;
         } else if (this.auth.user.role.toString() != "USER") {
@@ -171,11 +172,9 @@ export class NewCollectionComponent implements OnInit {
 
     onUpload() {
         this.imageService.upload(this.image).subscribe(() => {
-                this.rout.navigate(['/'])
-            },
+                this.rout.navigate(['/'])},
             error => {
                 console.log(error);
-                // this.reset();
             })
     }
 

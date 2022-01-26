@@ -35,11 +35,11 @@ public class AuthController {
     }
 
     @RequestMapping(value = "/generate-token",method = RequestMethod.POST)
-    public ResponseEntity generateToken(@RequestBody UserModel userModel){
+    public ResponseEntity generateToken(@RequestBody UserEntity user){
         final Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        userModel.getEmail(),
-                        userModel.getPassword()
+                        user.getEmail(),
+                        user.getPassword()
                 )
         );
         SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -50,9 +50,9 @@ public class AuthController {
     @GetMapping("/user")
     public ResponseEntity<AuthUser> authUser(Principal user){
         ConvertUserToAuthUser convertUserToAuthUser = new ConvertUserToAuthUser();
-        UserEntity userModel = userService.findByEmail(user.getName());
-        if (userModel.isStatus()){return ResponseEntity.notFound().build();}
-        return ResponseEntity.ok(convertUserToAuthUser.convert(userModel));
+        UserEntity userEntity = userService.findUserEntityByEmail(user.getName());
+        if (userEntity.isStatus()){return ResponseEntity.notFound().build();}
+        return ResponseEntity.ok(convertUserToAuthUser.convert(userEntity));
     }
 
     @RequestMapping(value = "/sign-up",method = RequestMethod.POST)

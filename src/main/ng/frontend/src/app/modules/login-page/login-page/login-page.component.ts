@@ -13,7 +13,6 @@ import {UserService} from "../../../service/user/user.service";
 })
 export class LoginPageComponent implements OnInit {
   hide = true;
-  public existance: boolean = false;
   user: UserModel = new UserModel();
   formControl: FormGroup;
 
@@ -23,14 +22,14 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
     this.initReactForm()
   }
-  initReactForm():void{
+  private initReactForm():void{
     this.formControl = this.formBuilder.group({
       email: ['', Validators.email],
       password: ['',Validators.required]
     });
   }
 
-  public onSubmit(){
+  onSubmit(){
     this.auth.signIn(this.user);
   }
 

@@ -1,0 +1,36 @@
+{
+  "page":{
+    "login": {
+      "title": "Login",
+      "login":"Login",
+      "pass": "Password",
+      "signin": "Signin",
+      "reg": "Registration",
+      "error": "Wrong email or password! Please try again"
+    },
+    "reg": {
+      "title": "Registration",
+      "reg": "Registration",
+      "name": "Name",
+      "surname": "Surname",
+      "pass": "Password",
+      "error": "All fields should be filled",
+      "error2": "Email should be unique!",
+      "signup": "Signup"
+    },
+    "main":{
+      "title": "Главная"
+    },
+    "bars": {
+      "theme": "Dark mode",
+      "search": "Search....",
+      "login": "Login",
+      "logout": "Logout",
+      "admin": "Admin",
+      "title": "COLLECTIONS"
+    },
+    "404": {
+      "error": "PAGE NOT FOUND"
+    }
+  }
+}

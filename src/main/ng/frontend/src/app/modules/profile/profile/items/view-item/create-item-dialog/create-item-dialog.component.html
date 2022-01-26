@@ -5,6 +5,6 @@
         <input matInput formControlName="mes" [(ngModel)]="data.mes" required>
     </mat-form-field>
 </div>
-<button mat-button (click)="onNoClick()">No Thanks</button>
+<button mat-button (click)="noClick()">No Thanks</button>
 <button mat-button  [disabled]="!formControl.valid" [mat-dialog-close]="data.mes" cdkFocusInitial>Create</button>
 

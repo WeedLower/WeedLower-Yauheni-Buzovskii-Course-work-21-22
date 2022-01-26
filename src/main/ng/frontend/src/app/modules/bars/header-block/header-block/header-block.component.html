@@ -1,17 +1,17 @@
 <header>
     <mat-toolbar color="primary">
-        <h2><a mat-button routerLink="/">Collections</a></h2>
+        <h2><a mat-button routerLink="/">{{'page.bars.title' | translate}}</a></h2>
         <span class="example-spacer"></span>
         <mat-form-field [formGroup]="formControl"  color="primary" floatLabel="never">
-            <input matInput formControlName="search" [(ngModel)]="searchString" autocomplete="on" placeholder="Search..." (keyup.enter)="search()" required/>
+            <input matInput formControlName="search" [(ngModel)]="searchString" autocomplete="on" placeholder="{{'page.bars.search'| translate}}" (keyup.enter)="search()" required/>
         </mat-form-field>
         <button mat-icon-button matSuffix (click)="search()">
             <mat-icon>search</mat-icon>
         </button>
         <a mat-button *ngIf="current==true && roleCurrent==false" routerLink="/profile">{{name.toUpperCase()}}</a>
-        <a mat-button *ngIf="roleCurrent==true" routerLink="/admin">Admin</a>
-        <a mat-button *ngIf="current==false" routerLink="/login">Login</a>
-        <a mat-button *ngIf="current==true" (click)="logOut()" >LogOut</a>
+        <a mat-button *ngIf="roleCurrent==true" routerLink="/admin">{{'page.bars.admin' | translate}}</a>
+        <a mat-button *ngIf="current==false" routerLink="/login">{{'page.bars.login' | translate}}</a>
+        <a mat-button *ngIf="current==true" (click)="logOut()">{{'page.bars.logout' | translate}}</a>
     </mat-toolbar>
 </header>
 

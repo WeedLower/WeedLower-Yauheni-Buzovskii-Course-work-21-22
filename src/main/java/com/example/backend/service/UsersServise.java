@@ -2,6 +2,8 @@ package com.example.backend.service;
 
 import com.example.backend.entity.Role;
 import com.example.backend.entity.UserEntity;
+import com.example.backend.model.UserModel;
+import com.example.backend.model.convert.ConvertUserEntityToUserModel;
 import com.example.backend.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -22,12 +24,26 @@ public class UsersServise implements UserDetailsService {
         this.usersRepository = usersRepository;
     }
 
-    public List<UserEntity> getAllUsers(){
-        return usersRepository.findAll();
+    public List<UserModel> getAllUsers(){
+        List<UserEntity> getAllUsers = usersRepository.findAll();
+        ConvertUserEntityToUserModel convert = new ConvertUserEntityToUserModel();
+        List<UserModel> users = new ArrayList<>();
+        getAllUsers.forEach(s->users.add(convert.convert(s)));
+        return users;
     }
 
-    public UserEntity findByEmail(String email){
+    public UserEntity findUserEntityByEmail(String email){
         return usersRepository.findByEmail(email);
+    }
+
+    public UserModel findByEmail(String email){
+        UserEntity userEntity = usersRepository.findByEmail(email);
+        if (userEntity==null){
+            return null;
+        }
+        UserModel user= UserModel.builder().id(userEntity.getId()).name(userEntity.getName())
+                .surname(userEntity.getSurname()).email(userEntity.getEmail()).build();
+        return user;
     }
 
     public UserEntity findByName(String name){
@@ -41,7 +57,7 @@ public class UsersServise implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        UserEntity user = findByEmail(email);
+        UserEntity user = findUserEntityByEmail(email);
         return new org.springframework.security.core.userdetails.User(user.getEmail(),user.getPassword(),getAuthority(user));
     }
 
@@ -77,8 +93,8 @@ public class UsersServise implements UserDetailsService {
 
     public boolean check(Integer id) {
         if (usersRepository.checkChanged(id)){
-           usersRepository.updateChanged(id);
-           return true;
+            usersRepository.updateChanged(id);
+            return true;
         }
         return usersRepository.checkStatus(id);
     }

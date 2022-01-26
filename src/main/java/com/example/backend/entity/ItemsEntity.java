@@ -2,6 +2,7 @@ package com.example.backend.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -77,6 +78,7 @@ public class ItemsEntity {
     @IndexedEmbedded
     private List<CommentsEntity> comments = new ArrayList<>();
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_id",nullable=false)
     private UserEntity user;

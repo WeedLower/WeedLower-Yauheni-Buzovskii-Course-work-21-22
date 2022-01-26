@@ -4,7 +4,7 @@ import {Role} from "./role";
      name: string;
      surname: string;
      email: string;
-     password: string;
+     password?: string;
      status:boolean;
      role: Role;
  }
