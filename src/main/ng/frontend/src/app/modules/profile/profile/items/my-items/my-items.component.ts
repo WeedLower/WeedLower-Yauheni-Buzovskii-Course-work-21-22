@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnChanges, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {CollectionsService} from "../../../../../service/collections/collections.service";
 import {CollectionModel} from "../../../../../model/collections";
@@ -17,7 +17,8 @@ import {AuthService} from "../../../../../service/auth/auth.service";
   templateUrl: './my-items.component.html',
   styleUrls: ['./my-items.component.css']
 })
-export class MyItemsComponent implements OnInit,AfterViewInit {
+export class MyItemsComponent implements OnInit,AfterViewInit,OnChanges{
+
   collection: CollectionModel;
   newItem: ItemModel = new ItemModel();
   id: number;
@@ -34,12 +35,16 @@ export class MyItemsComponent implements OnInit,AfterViewInit {
     this.id = +this.route.snapshot.params['id'];
     if(this.id!=null){
       this.itemsService.getAllItemsByCollection(this.id).subscribe((items) => {
-            this.item.data = items as ItemModel[];
-          })}
+        this.item.data = items as ItemModel[];
+      })
+    }
   }
+
+  @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit(): void {
     this.auth.check();
+    this.item.sort=this.sort
     if (this.auth.user.role.toString()=='ADMIN'){
     }
     if (this.id != null) {
@@ -47,9 +52,11 @@ export class MyItemsComponent implements OnInit,AfterViewInit {
     }
   }
 
-  @ViewChild(MatSort) sort: MatSort;
-
   ngAfterViewInit() {
+    this.item.sort = this.sort;
+  }
+
+  ngOnChanges(){
     this.item.sort = this.sort;
   }
 
@@ -123,5 +130,4 @@ export class MyItemsComponent implements OnInit,AfterViewInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.item.filter = filterValue.trim().toLowerCase();
   }
-
 }
