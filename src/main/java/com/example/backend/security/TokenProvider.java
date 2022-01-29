@@ -1,6 +1,7 @@
 package com.example.backend.security;
 
 import io.jsonwebtoken.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -17,6 +18,10 @@ import java.util.stream.Collectors;
 
 @Component
 public class TokenProvider implements Serializable {
+
+    @Value("${auth.secret}")
+    private String SIGNING_KEY;
+
     public String getUsernameFromToken(String token){
         return getClaimFromToken(token, Claims::getSubject);
     }
@@ -31,7 +36,7 @@ public class TokenProvider implements Serializable {
 
     private Claims getAllClaimsFromToken(String token){
         return Jwts.parser()
-                .setSigningKey(SecurityJwtConstants.SIGNING_KEY)
+                .setSigningKey(SIGNING_KEY)
                 .parseClaimsJws(token)
                 .getBody();
     }
@@ -49,7 +54,7 @@ public class TokenProvider implements Serializable {
                 .setSubject(authentication.getName())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis()+SecurityJwtConstants.ACCESS_TOKEN_VALIDITY_SECOND * 10000))
-                .signWith(SignatureAlgorithm.HS256,SecurityJwtConstants.SIGNING_KEY)
+                .signWith(SignatureAlgorithm.HS256,SIGNING_KEY)
                 .claim(SecurityJwtConstants.AUTHORITIES_KEY,authorities)
                 .compact();
     }
@@ -60,7 +65,7 @@ public class TokenProvider implements Serializable {
     }
 
     public UsernamePasswordAuthenticationToken getAuthentication(final String token, final Authentication existingAuthentication, UserDetails userDetails){
-        final JwtParser jwtParser = Jwts.parser().setSigningKey(SecurityJwtConstants.SIGNING_KEY);
+        final JwtParser jwtParser = Jwts.parser().setSigningKey(SIGNING_KEY);
         final Jws<Claims> claimsJws = jwtParser.parseClaimsJws(token);
         final Claims claims = claimsJws.getBody();
         final Collection<? extends GrantedAuthority> authorities = Arrays.stream(claims.get(SecurityJwtConstants.AUTHORITIES_KEY).toString().split(","))
