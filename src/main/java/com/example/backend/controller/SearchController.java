@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 
-@Controller
+
 @RestController
 @RequestMapping("api/search")
 public class SearchController {
