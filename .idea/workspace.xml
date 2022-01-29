@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="localization">
+    <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="last fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/items/my-items/my-items.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/items/my-items/my-items.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/CommentsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/CommentsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/ItemsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/entity/ItemsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/filter/CORSFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/filter/CORSFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/repository/CollectionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/repository/CollectionRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +185,10 @@
       <workItem from="1643123534746" duration="37599000" />
       <workItem from="1643272910929" duration="616000" />
       <workItem from="1643279056429" duration="1314000" />
-      <workItem from="1643282893485" duration="6122000" />
+      <workItem from="1643282893485" duration="11200000" />
+      <workItem from="1643353174677" duration="3412000" />
+      <workItem from="1643383943819" duration="2147000" />
+      <workItem from="1643439657462" duration="1389000" />
     </task>
     <task id="LOCAL-00001" summary="z">
       <created>1642506216551</created>
@@ -511,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643230819529</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="sort">
+      <created>1643314232696</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1643314232696</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -540,7 +555,9 @@
     <MESSAGE value="finished dark mode setup" />
     <MESSAGE value="minfix" />
     <MESSAGE value="localization" />
-    <option name="LAST_COMMIT_MESSAGE" value="localization" />
+    <MESSAGE value="sort" />
+    <MESSAGE value="last fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="last fix" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

@@ -3,8 +3,7 @@ package com.example.backend.entity;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import org.hibernate.search.annotations.ContainedIn;
-import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.*;
 
 import javax.persistence.*;
 
@@ -25,6 +24,7 @@ public class CommentsEntity {
     @Field
     private String comment;
 
+    @ContainedIn
     @ManyToOne(cascade = CascadeType.REMOVE)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "item_id", referencedColumnName = "item_id")

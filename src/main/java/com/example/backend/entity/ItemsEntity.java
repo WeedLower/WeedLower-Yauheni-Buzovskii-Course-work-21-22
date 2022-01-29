@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import org.hibernate.search.annotations.Field;
-import org.hibernate.search.annotations.Indexed;
-import org.hibernate.search.annotations.IndexedEmbedded;
+import org.hibernate.search.annotations.*;
 
 
 import javax.persistence.*;
@@ -75,7 +73,7 @@ public class ItemsEntity {
     @JsonIgnore
     @OneToMany(mappedBy = "itemsEntity",cascade = CascadeType.REMOVE)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @IndexedEmbedded
+    @IndexedEmbedded(depth = 1)
     private List<CommentsEntity> comments = new ArrayList<>();
 
     @JsonIgnore
