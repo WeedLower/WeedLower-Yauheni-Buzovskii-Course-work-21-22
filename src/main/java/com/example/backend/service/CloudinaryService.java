@@ -14,7 +14,7 @@ import java.util.Objects;
 @Service
 public class CloudinaryService {
 
-    Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap(
+    Cloudinary cloudinary=new Cloudinary(ObjectUtils.asMap(
             "cloud_name","duell9lnz",
             "api_key","114213817868275",
             "api_secret","ZxkYqHGFaoUg6v3eR6_i_V3AwPs",
