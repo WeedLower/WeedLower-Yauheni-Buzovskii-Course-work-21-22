@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="latest fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/service/CloudinaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/service/CloudinaryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/drag-drop.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/drag-drop.directive.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/new-collection.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/new-collection.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/service/SearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/service/SearchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/bars/footer-block/footer-block/footer-block.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/bars/footer-block/footer-block/footer-block.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/items/view-item/view-item.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/items/view-item/view-item.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/styles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -189,21 +191,7 @@
       <workItem from="1643383943819" duration="2147000" />
       <workItem from="1643439657462" duration="7999000" />
       <workItem from="1643457133982" duration="11370000" />
-      <workItem from="1643538470768" duration="8185000" />
-    </task>
-    <task id="LOCAL-00004" summary="z">
-      <created>1642510462951</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1642510462951</updated>
-    </task>
-    <task id="LOCAL-00005" summary="z">
-      <created>1642511473386</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1642511473386</updated>
+      <workItem from="1643538470768" duration="12879000" />
     </task>
     <task id="LOCAL-00006" summary="z">
       <created>1642512851589</created>
@@ -534,7 +522,21 @@
       <option name="project" value="LOCAL" />
       <updated>1643470096752</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="latest fixes">
+      <created>1643551619904</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1643551619905</updated>
+    </task>
+    <task id="LOCAL-00054" summary="latest fixes">
+      <created>1643551882211</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1643551882211</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

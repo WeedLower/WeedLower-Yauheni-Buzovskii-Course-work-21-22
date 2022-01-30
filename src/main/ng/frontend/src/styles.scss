@@ -16,8 +16,6 @@ body {
   margin: 0;
 }
 
-
-
 .theme-dark {
   @include app-theme($mat-dark-theme);
 

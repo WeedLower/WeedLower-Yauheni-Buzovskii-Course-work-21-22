@@ -26,7 +26,6 @@ public class SearchService implements SearchServiceItr{
         this.entityManager = manager.createEntityManager();
     }
 
-
     @PostConstruct
     public void initializeHibernateSearch(){
         try {
@@ -36,7 +35,6 @@ public class SearchService implements SearchServiceItr{
             e.printStackTrace();
         }
     }
-
 
     @Transactional
     @Override

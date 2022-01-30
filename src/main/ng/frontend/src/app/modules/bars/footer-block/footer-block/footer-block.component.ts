@@ -28,7 +28,6 @@ export class FooterBlockComponent implements OnInit{
     }
   }
 
-
   @Input()
   isDarkMode = false;
 
