@@ -9,9 +9,6 @@ import {SelectionModel} from "@angular/cdk/collections";
 import {MatTableDataSource} from "@angular/material/table";
 import {AuthService} from "../../../../../service/auth/auth.service";
 
-
-
-
 @Component({
   selector: 'app-my-items',
   templateUrl: './my-items.component.html',
@@ -27,7 +24,6 @@ export class MyItemsComponent implements OnInit,AfterViewInit,OnChanges{
   selection = new SelectionModel<ItemModel>(true, []);
   item = new MatTableDataSource<ItemModel>()
   displayedColumns: string[] = ['select','id','name','tags'];
-
 
   constructor(private route: ActivatedRoute, private collectionsService: CollectionsService,
               private itemsService: ItemsService,private auth:AuthService,
@@ -66,16 +62,15 @@ export class MyItemsComponent implements OnInit,AfterViewInit,OnChanges{
       value!=null && key!='user' && key!='items' && key!='image' && key!='id' && key!='name' && key!='description' && key!='topic'
           ? this.displayedColumns.push(key): true;
     })
-      this.displayedColumns.push('button');
+    this.displayedColumns.push('button');
   }
-
 
   private getCollect(id): void {
     this.collectionsService.findCollectById(id).subscribe((data) =>{
-      data.user.id!=this.auth.user.id && this.auth.user.role.toString()!="ADMIN" ? this.rout.navigate(['/']) :
-      this.collection = data as CollectionModel;
-      this.delEmptyColumns(this.collection);
-    },
+          data.user.id!=this.auth.user.id && this.auth.user.role.toString()!="ADMIN" ? this.rout.navigate(['/']) :
+              this.collection = data as CollectionModel;
+          this.delEmptyColumns(this.collection);
+        },
         error=>console.log(error))
   };
 
@@ -91,9 +86,9 @@ export class MyItemsComponent implements OnInit,AfterViewInit,OnChanges{
     if (confirm('Delete item / items?')){
       this.selection.selected.forEach(id =>
           this.itemsService.delete(id.id).subscribe(()=>{
-            console.log("collection deleted");
-            this.getCollectItems(this.id);
-          },
+                console.log("collection deleted");
+                this.getCollectItems(this.id);
+              },
               error=> console.log(error)));
     }
   }

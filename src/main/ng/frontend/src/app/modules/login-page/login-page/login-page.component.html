@@ -17,7 +17,6 @@
                     [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
             </button>
         </mat-form-field>
-
         <h4 *ngIf="auth.authError" class="text-center wdi-red">{{'page.login.error' | translate}}</h4>
     </form>
     <button mat-raised-button color="primary"

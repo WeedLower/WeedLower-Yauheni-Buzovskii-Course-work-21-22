@@ -3,12 +3,12 @@
 <button mat-raised-button color="primary" *ngIf="updateMod==false" [disabled]="!formGroup.valid" (click)="create()">{{'page.newitem.create'|translate}}</button>
 <button mat-raised-button color="warn" *ngIf="updateMod==true" [disabled]="!formGroup.valid" (click)="edit()">{{'page.newitem.edit'|translate}}</button>
 <form class="example-form" [formGroup]="formGroup">
-<p>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>{{'page.newitem.name'|translate}}</mat-label>
-        <input matInput formControlName="name" name="name" [(ngModel)]="newItem.name" required>
-    </mat-form-field>
-</p>
+    <p>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>{{'page.newitem.name'|translate}}</mat-label>
+            <input matInput formControlName="name" name="name" [(ngModel)]="newItem.name" required>
+        </mat-form-field>
+    </p>
     <p>
         <mat-form-field class="example-full-width" appearance="fill" *ngIf="newItem.collection.numberName1!=null">
             <mat-label>{{newItem.collection.numberName1}}</mat-label>

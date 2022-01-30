@@ -8,16 +8,17 @@ import {TagModel} from "../../../model/tag";
 import {TagService} from "../../../service/tag/tag.service";
 import { AuthService } from 'src/app/service/auth/auth.service';
 
-
 @Component({
     selector: 'app-main-page',
     templateUrl: './main-page.component.html',
     styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit{
+
     collections:CollectionModel[];
     items:ItemModel[]=[];
     tags:TagModel[];
+
     constructor(private collect: CollectionsService,
                 private itm: ItemsService,private router:Router,
                 private tagService:TagService,private auth:AuthService) { }
@@ -56,5 +57,4 @@ export class MainPageComponent implements OnInit{
     searchByTag(id){
         this.router.navigate(['/search/tag/'+id])
     }
-
 }

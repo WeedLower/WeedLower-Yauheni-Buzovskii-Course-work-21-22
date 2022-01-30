@@ -18,8 +18,7 @@ export class AppComponent implements OnInit{
     private currentTheme='theme-light';
 
     constructor(private http:HttpClient,
-    @Inject(DOCUMENT)private docement: Document,private render: Renderer2,private auth: AuthService) {
-    }
+                @Inject(DOCUMENT)private docement: Document,private render: Renderer2,private auth: AuthService) { }
 
     ngOnInit():void {
         this.auth.check();

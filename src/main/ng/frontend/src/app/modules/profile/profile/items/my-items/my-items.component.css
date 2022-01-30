@@ -22,6 +22,7 @@ table {
   overflow: hidden;
   vertical-align: middle;
 }
+
 .mat-row,
 .mat-header-row {
   overflow-x: scroll;

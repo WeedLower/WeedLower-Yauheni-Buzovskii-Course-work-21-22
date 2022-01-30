@@ -3,7 +3,6 @@ import {HttpClient} from "@angular/common/http";
 import {ItemModel} from "../../model/item";
 import {Observable} from "rxjs";
 
-
 @Injectable({
   providedIn: 'root'
 })

@@ -10,13 +10,10 @@ import org.springframework.data.repository.query.Param;
 import javax.transaction.Transactional;
 import java.util.List;
 
-
 public interface CollectionRepository extends JpaRepository<CollectionsEntity,Integer>{
 
     CollectionsEntity findByName(String name);
-
     List<CollectionsEntity> findByUser_Id(Integer id);
-
 
     @Query(value = "select c.*,count(a.user_id) from postgres_db.collections c left join postgres_db.items a " +
             "on c.id=a.collection group by c.id order by count(a.user_id) DESC LIMIT 5",nativeQuery = true)

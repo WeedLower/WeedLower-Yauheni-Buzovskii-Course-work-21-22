@@ -1,7 +1,6 @@
 <title>{{'page.admin.title'| translate}}</title>
 <app-header-block></app-header-block>
 <h1>{{'page.admin.users'| translate}}</h1>
-
 <a mat-raised-button color="accent" (click)="block()">{{'page.admin.block'| translate}}</a>
 <a mat-raised-button color="primary" (click)="unblock()">{{'page.admin.unblock'| translate}}</a>
 <a mat-raised-button color="warn" (click)="delete()">{{'page.admin.delete'| translate}}</a>
@@ -22,32 +21,26 @@
             </mat-checkbox>
         </td>
     </ng-container>
-
     <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> No. </th>
         <td mat-cell *matCellDef="let i"> {{i.id}} </td>
     </ng-container>
-
     <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>{{'page.admin.name' | translate}}</th>
         <td mat-cell *matCellDef="let i"> {{i.name}} </td>
     </ng-container>
-
     <ng-container matColumnDef="email">
         <th mat-header-cell *matHeaderCellDef> Email </th>
         <td mat-cell *matCellDef="let i"> {{i.email}} </td>
     </ng-container>
-
     <ng-container matColumnDef="role">
         <th mat-header-cell *matHeaderCellDef>{{'page.admin.role' | translate}}</th>
         <td mat-cell *matCellDef="let i"> {{i.role}} </td>
     </ng-container>
-
     <ng-container matColumnDef="status">
         <th mat-header-cell *matHeaderCellDef>{{'page.admin.blocked' | translate}}</th>
         <td mat-cell *matCellDef="let i">{{i.status==true ? "✔" : "&#10006;"}}</td>
     </ng-container>
-
     <ng-container matColumnDef="view">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let i"><button id="view" mat-raised-button (click)="viewUser(i.id)">{{'page.admin.view'| translate}}</button></td>

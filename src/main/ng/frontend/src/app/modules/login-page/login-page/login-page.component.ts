@@ -17,11 +17,12 @@ export class LoginPageComponent implements OnInit {
   formControl: FormGroup;
 
   constructor(private http: HttpClient, private router: Router, public auth:AuthService, private userService: UserService,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.initReactForm()
   }
+
   private initReactForm():void{
     this.formControl = this.formBuilder.group({
       email: ['', Validators.email],
@@ -32,5 +33,4 @@ export class LoginPageComponent implements OnInit {
   onSubmit(){
     this.auth.signIn(this.user);
   }
-
 }

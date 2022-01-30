@@ -4,7 +4,6 @@ import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {AuthToken, UserModel} from "../../model/usermodel";
 import {Observable} from "rxjs";
-import {Role} from "../../model/role";
 
 @Injectable({
   providedIn: 'root'
@@ -40,8 +39,6 @@ export class AuthService {
   public userAuth():Observable<UserModel>{
     return this.http.get<UserModel>("/api/users/auth/user");
   }
-
-
 
   public signIn(authUser: UserModel):void{
     this.getToken(authUser).subscribe(data =>{
@@ -84,6 +81,6 @@ export class AuthService {
   }
 
   private getStatus(id):Observable<boolean> {
-   return this.http.get<boolean>("/api/users/check/"+id);
+    return this.http.get<boolean>("/api/users/check/"+id);
   }
 }

@@ -3,7 +3,6 @@ import {HttpClient} from "@angular/common/http";
 import {CollectionModel} from "../../model/collections";
 import {Observable} from "rxjs";
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -31,7 +30,7 @@ export class CollectionsService {
     return this.http.get("api/collections/"+id);
   }
 
-    editCollection(newColl: CollectionModel):any {
-        return this.http.post("/api/collections/edit/",newColl)
-    }
+  editCollection(newColl: CollectionModel):any {
+    return this.http.post("/api/collections/edit/",newColl)
+  }
 }

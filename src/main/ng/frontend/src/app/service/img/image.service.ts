@@ -21,6 +21,6 @@ export class ImageService {
   }
 
   public delete(id: number):Observable<any>{
-  return this.http.delete<any>("api/cloudinary/"+id);
+    return this.http.delete<any>("api/cloudinary/"+id);
   }
 }

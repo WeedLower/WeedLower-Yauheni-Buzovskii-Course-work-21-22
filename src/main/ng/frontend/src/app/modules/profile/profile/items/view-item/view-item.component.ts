@@ -9,8 +9,6 @@ import {MatDialog} from "@angular/material/dialog";
 import {CreateItemDialogComponent} from "./create-item-dialog/create-item-dialog.component";
 import {interval, startWith, Subscription, switchMap} from "rxjs";
 
-
-
 @Component({
   selector: 'app-view-item',
   templateUrl: './view-item.component.html',
@@ -37,8 +35,8 @@ export class ViewItemComponent implements OnInit,OnDestroy {
         startWith(0),
         switchMap(()=> this.comment.getAllCommentByItemId(this.id)))
         .subscribe(res=>{
-      this.comments=res;
-    } ,error => console.log(error));
+          this.comments=res;
+        } ,error => console.log(error));
     this.getItemById(this.id)
     if (this.auth.user != null) {
       this.statusUser = true;
@@ -52,10 +50,10 @@ export class ViewItemComponent implements OnInit,OnDestroy {
   like(){
     this.statusLikes=true;
     this.itm.like(this.itemMod.id).subscribe(()=>{
-      this.getItemById(this.id);
-    },
+          this.getItemById(this.id);
+        },
         error=> console.log(error)
-        );
+    );
   }
 
   getItemById(id: number): any {
@@ -88,5 +86,4 @@ export class ViewItemComponent implements OnInit,OnDestroy {
       }
     });
   }
-
 }

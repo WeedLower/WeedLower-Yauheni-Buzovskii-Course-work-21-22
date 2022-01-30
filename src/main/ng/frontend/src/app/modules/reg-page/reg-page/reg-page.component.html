@@ -34,11 +34,9 @@
         <div *ngIf="!formControl.valid">
             <hr>
             <p><b>{{'page.reg.error'|translate}}</b></p>
-
         </div>
     </form>
     <a mat-raised-button color="primary" [disabled]="!formControl.valid" (click)="ifExistsByEmail(newUser.email)">{{'page.reg.signup'|translate}}</a>
-
     <h4 *ngIf="this.notification" class="text-center wdi-red">{{'page.reg.error2'|translate}}</h4>
 </div>
 

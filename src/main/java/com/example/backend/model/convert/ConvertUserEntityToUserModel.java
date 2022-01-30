@@ -9,8 +9,8 @@ public class ConvertUserEntityToUserModel implements Converter<UserEntity, UserM
     public UserModel convert(UserEntity source) {
         UserModel user = UserModel.builder().id(source.getId()).name(source.getName())
                 .surname(source.getSurname()).email(source.getEmail())
-                        .role(source.getRole()).status(source.isStatus())
-                        .changed(source.isChanged()).build();
+                .role(source.getRole()).status(source.isStatus())
+                .changed(source.isChanged()).build();
         return user;
     }
 }

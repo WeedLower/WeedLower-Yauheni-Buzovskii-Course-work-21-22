@@ -28,7 +28,7 @@ public class ItemsService {
     }
 
     public List<ItemsEntity> getAllItems(){
-       return itemsRepository.findLastAdd();
+        return itemsRepository.findLastAdd();
     }
 
     public ItemsEntity saveItem(ItemModel items){
@@ -60,13 +60,12 @@ public class ItemsService {
     }
 
     public Optional<ItemModel> findItemById(Integer id){
-         return itemsRepository.findItemById(id);
+        return itemsRepository.findItemById(id);
     }
 
     public void delete(Integer id) {
         itemsRepository.deleteByItemId(id);
     }
-
 
     public Optional<ItemModel> findItemAuthUser(Integer id, Principal user) {
         UserEntity userEntity = usersRepository.findByEmail(user.getName());
@@ -89,7 +88,7 @@ public class ItemsService {
     }
 
     public List<ItemsEntity> findItemsByTagId(Integer id) {
-      return   itemsRepository.findItemsByTagsId(id);
+        return   itemsRepository.findItemsByTagsId(id);
     }
 
     public void updateItem(ItemModel item) throws Exception {

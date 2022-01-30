@@ -38,7 +38,6 @@ public class ItemModel {
     private Boolean optionalCheckboxField2;
     private Boolean optionalCheckboxField3;
 
-
     public ItemModel(ItemsEntity item){
         this.id = item.getId();
         this.name = item.getName();
@@ -84,7 +83,6 @@ public class ItemModel {
         this.optionalCheckboxField3=item.getOptionalCheckboxField3();
     }
 
-
     public ItemModel(ItemsEntity item, Long likes, Boolean meLiked) {
         this.id = item.getId();
         this.name = item.getName();
@@ -108,6 +106,4 @@ public class ItemModel {
         this.optionalCheckboxField2=item.getOptionalCheckboxField2();
         this.optionalCheckboxField3=item.getOptionalCheckboxField3();
     }
-
-
 }

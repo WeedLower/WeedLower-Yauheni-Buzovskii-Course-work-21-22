@@ -5,13 +5,13 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {CollectionsService} from "../../../service/collections/collections.service";
 import {CollectionModel} from "../../../model/collections";
 
-
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+
   currentId: any;
   currentUser: any;
   currentEmail:any;

@@ -8,7 +8,6 @@ import org.hibernate.search.annotations.Field;
 import javax.persistence.*;
 import java.util.List;
 
-
 @Builder
 @Getter
 @Setter

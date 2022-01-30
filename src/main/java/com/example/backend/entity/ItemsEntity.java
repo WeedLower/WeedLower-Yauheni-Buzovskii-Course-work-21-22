@@ -1,8 +1,6 @@
 package com.example.backend.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,10 +9,8 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.search.annotations.*;
 
-
 import javax.persistence.*;
 import java.util.*;
-
 
 @Indexed
 @Getter

@@ -10,7 +10,7 @@ describe('RegPageComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ RegPageComponent ]
     })
-    .compileComponents();
+        .compileComponents();
   });
 
   beforeEach(() => {

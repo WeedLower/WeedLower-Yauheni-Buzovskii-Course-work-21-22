@@ -6,20 +6,20 @@
 $mat-light-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 $mat-dark-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
 
-
 @include app-style-core();
 
-html, body { height: 100%;
-
+html, body {
+  height: 100%;
 }
+
 body {
   margin: 0;
 }
 
 .theme-dark {
   @include app-theme($mat-dark-theme);
-
 }
+
 .theme-light {
   @include app-theme($mat-light-theme);
 }

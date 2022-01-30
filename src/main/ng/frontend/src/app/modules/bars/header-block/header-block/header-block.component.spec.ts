@@ -10,7 +10,7 @@ describe('HeaderBlockComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ HeaderBlockComponent ]
     })
-    .compileComponents();
+        .compileComponents();
   });
 
   beforeEach(() => {

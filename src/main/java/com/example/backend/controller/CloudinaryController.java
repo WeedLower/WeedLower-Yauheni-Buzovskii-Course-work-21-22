@@ -1,6 +1,5 @@
 package com.example.backend.controller;
 
-
 import com.example.backend.entity.ImageEntity;
 import com.example.backend.model.MessageResponse;
 import com.example.backend.service.CloudinaryService;
@@ -23,7 +22,6 @@ public class CloudinaryController {
 
     private final CloudinaryService cloudinary;
     private final ImageService imageService;
-
 
     @Autowired
     public CloudinaryController(CloudinaryService cloudinary, ImageService imageService) {

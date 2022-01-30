@@ -26,7 +26,7 @@ export class HeaderBlockComponent implements OnInit{
       this.roleCurrent=true;
     }
     if (this.auth.user==null){
-    this.current=false;
+      this.current=false;
     }else{
       this.current=true;
       this.name=this.auth.user.name;

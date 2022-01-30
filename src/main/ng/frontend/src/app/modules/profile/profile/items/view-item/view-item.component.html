@@ -25,8 +25,8 @@
 <h1>{{'page.view.comments'|translate}}</h1>
 <button mat-raised-button  color="warn" *ngIf="statusUser==true" (click)="openDialog()">{{'page.view.com' | translate}}</button>
 <div class="comment-block">
-        <cdk-virtual-scroll-viewport itemSize="100" class="viewport" [scrollTop]="">
-           <mat-card class="example-card" *cdkVirtualFor="let c of comments" >
+    <cdk-virtual-scroll-viewport itemSize="100" class="viewport" [scrollTop]="">
+        <mat-card class="example-card" *cdkVirtualFor="let c of comments" >
             <mat-card-title>{{'page.view.comment'|translate}}{{c.comment}}</mat-card-title>
             <mat-divider inset></mat-divider>
             <mat-card-content>
@@ -36,7 +36,7 @@
                 <mat-progress-bar mode="determinate" value="100" color="accent"></mat-progress-bar>
             </mat-card-footer>
         </mat-card>
-        </cdk-virtual-scroll-viewport>
+    </cdk-virtual-scroll-viewport>
 </div>
 
 

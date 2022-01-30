@@ -26,7 +26,6 @@ public class UsersController {
         return usersServise.getAllUsers();
     }
 
-
     @RequestMapping(value = "/email/{email}",method = RequestMethod.GET)
     public ResponseEntity<UserModel> findUserByEmail(@PathVariable(name = "email") String email){
         UserModel user = usersServise.findByEmail(email);
@@ -63,7 +62,6 @@ public class UsersController {
     public void setRoleUser(@PathVariable(name = "id") Integer id){
         usersServise.setRoleUser(id);
     }
-
 
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     public ResponseEntity<UserEntity> findUserById(@PathVariable(name = "id")Integer id){

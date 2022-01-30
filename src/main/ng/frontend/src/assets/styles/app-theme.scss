@@ -1,6 +1,4 @@
 @import './../../app/app.component.scss-theme';
-
-// configured typography. Do not forget to include your custom typography there
 @import './_app-typography';
 
 @mixin app-style-core() {
@@ -9,7 +7,6 @@
   @include cdk-overlay();
   @include cdk-text-field();
   @include app-typography();
-
 }
 
 @mixin app-theme($theme) {
@@ -24,9 +21,5 @@
   @include mat-button-theme($theme);
   @include mat-autocomplete-theme($theme);
   @include mat-dialog-theme($theme);
-
-
-
-  // Costom themes for components
   @include app-root-theme($theme);
 }

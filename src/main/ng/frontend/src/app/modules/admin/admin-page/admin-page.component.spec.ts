@@ -10,7 +10,7 @@ describe('AdminPageComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ AdminPageComponent ]
     })
-    .compileComponents();
+        .compileComponents();
   });
 
   beforeEach(() => {

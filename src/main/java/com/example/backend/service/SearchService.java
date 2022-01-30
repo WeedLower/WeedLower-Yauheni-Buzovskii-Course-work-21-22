@@ -15,7 +15,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.NoResultException;
 import java.util.List;
 
-
 @Service
 public class SearchService implements SearchServiceItr{
 
@@ -40,9 +39,7 @@ public class SearchService implements SearchServiceItr{
     @Override
     public List<ItemsEntity> searchItems(String searchItm) {
         FullTextEntityManager fullTextEntityManager = Search.getFullTextEntityManager(entityManager);
-
         QueryBuilder qb = fullTextEntityManager.getSearchFactory().buildQueryBuilder().forEntity(ItemsEntity.class).get();
-
         Query luceneQuery = qb.keyword()
                 .fuzzy()
                 .withEditDistanceUpTo(2)
@@ -51,9 +48,7 @@ public class SearchService implements SearchServiceItr{
                         "optionalTextField1","optionalTextField2","optionalTextField3","comments.comment",
                         "collection.name","collection.description")
                 .matching(searchItm+"*").createQuery();
-
         javax.persistence.Query jpaQuery = fullTextEntityManager.createFullTextQuery(luceneQuery,ItemsEntity.class);
-
         List<ItemsEntity> itemList = null;
         try {
             itemList = jpaQuery.getResultList();

@@ -10,7 +10,7 @@ describe('NewCollectionComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ NewCollectionComponent ]
     })
-    .compileComponents();
+        .compileComponents();
   });
 
   beforeEach(() => {

@@ -17,15 +17,13 @@
                 <mat-progress-bar mode="determinate" value="100" color="accent"></mat-progress-bar>
             </mat-card-footer>
         </mat-card>
-
     </div>
     <h1>{{'page.main.big' | translate}}</h1>
 </div>
-
 <div class="biggest" *ngIf="collections!=null">
     <mat-card class="example-card2" *ngFor="let col of collections ">
         <mat-card-header>
-                <img *ngIf="col.image!=null" mat-card-avatar src="{{col.image.imageUrl}}">
+            <img *ngIf="col.image!=null" mat-card-avatar src="{{col.image.imageUrl}}">
         </mat-card-header>
         <mat-card-title-group>
             <mat-card-title>{{'page.main.card.name' | translate}}{{col.name}}</mat-card-title>
@@ -42,5 +40,5 @@
 </div>
 <h1>{{'page.main.tag' | translate}}</h1>
 <div class="tag-cloud" *ngFor="let i of tags">
-<a mat-button (click)="searchByTag(i.id)">{{i.tag}}</a>
+    <a mat-button (click)="searchByTag(i.id)">{{i.tag}}</a>
 </div>

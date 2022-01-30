@@ -10,7 +10,7 @@ describe('FooterBlockComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ FooterBlockComponent ]
     })
-    .compileComponents();
+        .compileComponents();
   });
 
   beforeEach(() => {

@@ -18,9 +18,9 @@ export class UserService {
     return this.http.get<UserModel[]>('/api/users');
   }
 
-    delete(id: string):Observable<any> {
+  delete(id: string):Observable<any> {
     return this.http.delete("/api/users/"+id);
-    }
+  }
 
   block(id: string):Observable<any> {
     return this.http.get("/api/users/block/"+id)
@@ -38,7 +38,7 @@ export class UserService {
     return this.http.get("/api/users/setuser/"+id)
   }
 
-    getUser(id: any):Observable<UserModel> {
-        return this.http.get<UserModel>("/api/users/"+id)
-    }
+  getUser(id: any):Observable<UserModel> {
+    return this.http.get<UserModel>("/api/users/"+id)
+  }
 }

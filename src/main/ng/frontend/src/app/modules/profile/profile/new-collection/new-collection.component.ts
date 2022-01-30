@@ -215,7 +215,6 @@ export class NewCollectionComponent implements OnInit {
         return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
     }
 
-
     private checkColumns() {
         this.newColl.numberName1!=null ? this.selectedFields.push("Number#1") : false;
         this.newColl.numberName2!=null ? this.selectedFields.push("Number#2") : false;
@@ -232,6 +231,5 @@ export class NewCollectionComponent implements OnInit {
         this.newColl.checkboxName1!=null ? this.selectedFields.push("Checkbox#1") : false;
         this.newColl.checkboxName2!=null ? this.selectedFields.push("Checkbox#2") : false;
         this.newColl.checkboxName3!=null ? this.selectedFields.push("Checkbox#3") : false;
-
     }
 }

@@ -27,6 +27,5 @@ public class ConvertItemModelToItemEntity implements Converter<ItemModel, ItemsE
         item.setOptionalCheckboxField2(source.getOptionalCheckboxField2());
         item.setOptionalCheckboxField3(source.getOptionalCheckboxField3());
         return item;
-
     }
 }

@@ -16,6 +16,7 @@ export class ThemeService {
     this.getColorTheme();
     this.render.addClass(document.body, this.colorTheme);
   }
+
   update(theme: 'dark-mode' | 'light-mode') {
     this.setColorTheme(theme);
     const previousColorTheme =
@@ -23,6 +24,7 @@ export class ThemeService {
     this.render.removeClass(document.body, previousColorTheme);
     this.render.addClass(document.body, theme);
   }
+
   isDarkMode() {
     return this.colorTheme === 'dark-mode';
   }
@@ -39,5 +41,4 @@ export class ThemeService {
       this.colorTheme = 'light-mode';
     }
   }
-
 }

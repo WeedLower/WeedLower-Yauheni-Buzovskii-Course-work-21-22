@@ -37,13 +37,11 @@ export class SearchPageComponent implements OnInit {
     }
   }
 
-
-
   private findItemsByTagId(id: number) {
-      this.itemService.findItemsByTagId(id).subscribe(data=>{
-        console.log(data);
-        this.items=data as ItemModel[];
-      });
+    this.itemService.findItemsByTagId(id).subscribe(data=>{
+      console.log(data);
+      this.items=data as ItemModel[];
+    });
   }
 
   viewItem(id) {
@@ -52,8 +50,8 @@ export class SearchPageComponent implements OnInit {
 
   private search() {
     this.searchService.search(this.searchString).subscribe(data=>{
-      this.items=data as ItemModel[];
-    },
+          this.items=data as ItemModel[];
+        },
         error=> console.log(error))
   }
 }

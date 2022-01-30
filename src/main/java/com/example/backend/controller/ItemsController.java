@@ -27,8 +27,6 @@ public class ItemsController {
         return itemsService.getAllItems();
     }
 
-
-
     @RequestMapping(value = "/save",method = RequestMethod.POST)
     public ItemsEntity saveItem(@RequestBody ItemModel item){
         return itemsService.saveItem(item);

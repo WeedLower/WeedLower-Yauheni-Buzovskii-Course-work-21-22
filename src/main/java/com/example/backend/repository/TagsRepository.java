@@ -9,8 +9,8 @@ import org.springframework.data.repository.query.Param;
 import javax.transaction.Transactional;
 import java.util.Set;
 
-
 public interface TagsRepository extends JpaRepository<TagsEntity,Integer> {
+
     TagsEntity findByTag(String name);
 
     @Modifying

@@ -4,7 +4,6 @@
     <h1 *ngIf="collection.name!=null">{{'page.item.col'|translate}}{{collection.name}}</h1>
     <h2 *ngIf="collection.description!=null">{{'page.item.desc'|translate}}{{collection.description}}</h2>
     <h2 *ngIf="collection.topic!=null">{{'page.item.topic'|translate}}{{collection.topic}}</h2>
-
     <button mat-raised-button color="primary" (click)="openDialog()">{{'page.item.create'|translate}}</button>
     <button mat-raised-button color="warn" *ngIf="item.data.length!=0" (click)="delete()">{{'page.item.del'|translate}}</button>
     <p></p>

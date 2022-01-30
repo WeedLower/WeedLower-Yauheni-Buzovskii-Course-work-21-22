@@ -13,8 +13,6 @@ import {map, Observable, startWith} from "rxjs";
 import {MatChipInputEvent} from "@angular/material/chips";
 import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
 
-
-
 @Component({
   selector: 'app-new-item',
   templateUrl: './new-item.component.html',
@@ -36,15 +34,11 @@ export class NewItemComponent implements OnInit {
   formControl = new FormControl();
   checkbox=[true,false];
 
-
-
   @ViewChild('tagInput') tagInput: ElementRef<HTMLInputElement>;
 
   constructor(private route: ActivatedRoute,private rout:Router,private auth:AuthService,
               private fB:FormBuilder,private item:ItemsService,private col: CollectionsService,
-              private tagService:TagService) {
-
-  }
+              private tagService:TagService) {}
 
   ngOnInit(): void {
     this.auth.check();
@@ -62,8 +56,6 @@ export class NewItemComponent implements OnInit {
       );
     }
   }
-
-
 
   private initReactForm() {
     this.formGroup = this.fB.group({
@@ -146,10 +138,9 @@ export class NewItemComponent implements OnInit {
 
   edit(): any {
     this.item.update(this.newItem).subscribe(()=>{
-      console.log('edit')
-      this.rout.navigate(['/profile/collect/'+this.id])
-    },
+          console.log('edit')
+          this.rout.navigate(['/profile/collect/'+this.id])
+        },
         error => console.log(error))
   }
-
 }

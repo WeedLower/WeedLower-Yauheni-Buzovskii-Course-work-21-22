@@ -10,7 +10,7 @@ describe('CreateItemDialogComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ CreateItemDialogComponent ]
     })
-    .compileComponents();
+        .compileComponents();
   });
 
   beforeEach(() => {
