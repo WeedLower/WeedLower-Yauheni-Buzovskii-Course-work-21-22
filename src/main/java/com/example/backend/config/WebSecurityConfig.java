@@ -54,7 +54,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     PasswordEncoder getPasswordEncoder(){ return new BCryptPasswordEncoder();}
 
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
@@ -65,9 +64,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/api/users/email/*","/api/users/auth/sign-up/","/api/comments/item/*","/api/search/*").permitAll()
                 .antMatchers("/admin","/admin/**").hasAnyRole("ADMIN")
                 .antMatchers("/profile","/profile/**").hasAnyRole("USER","ADMIN")
-                .anyRequest().authenticated()
-
-        ;
+                .anyRequest().authenticated();
         http.addFilterBefore(authenticationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 }

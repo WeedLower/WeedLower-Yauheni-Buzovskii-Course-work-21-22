@@ -10,12 +10,10 @@ import {UserService} from "../../../../service/user/user.service";
 import {ImageModel} from "../../../../model/Image";
 import {NgxSpinnerService} from "ngx-spinner";
 
-
 interface Topic {
     val: string;
     viewVal: string;
 }
-
 
 @Component({
     selector: 'app-new-collection',
@@ -66,7 +64,6 @@ export class NewCollectionComponent implements OnInit {
             this.status = true;
             this.edit=false;
             this.id = +this.activeRout.snapshot.params['id'];
-
             this.getOwner(this.id);
             this.currentId = this.auth.user.id;
         } else if (this.auth.user.role.toString() != "USER") {

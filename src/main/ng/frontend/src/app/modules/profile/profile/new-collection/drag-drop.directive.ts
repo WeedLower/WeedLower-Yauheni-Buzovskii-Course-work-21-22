@@ -1,6 +1,4 @@
 import {Directive, EventEmitter, HostBinding, HostListener, Output} from '@angular/core';
-import {FileHandle} from "fs/promises";
-import {DomSanitizer} from "@angular/platform-browser";
 
 @Directive({
   selector: '[appDrag]'

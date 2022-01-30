@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="last fix">
+    <list default="true" id="7aedb387-ef50-425f-8218-95dde49a43af" name="Changes" comment="latest fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/service/CloudinaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/service/CloudinaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/drag-drop.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/drag-drop.directive.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/new-collection.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ng/frontend/src/app/modules/profile/profile/new-collection/new-collection.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,14 +188,8 @@
       <workItem from="1643353174677" duration="3412000" />
       <workItem from="1643383943819" duration="2147000" />
       <workItem from="1643439657462" duration="7999000" />
-      <workItem from="1643457133982" duration="1698000" />
-    </task>
-    <task id="LOCAL-00003" summary="z">
-      <created>1642509363383</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1642509363383</updated>
+      <workItem from="1643457133982" duration="11370000" />
+      <workItem from="1643538470768" duration="8185000" />
     </task>
     <task id="LOCAL-00004" summary="z">
       <created>1642510462951</created>
@@ -529,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643469547889</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="latest fixes">
+      <created>1643470096752</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1643470096752</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -560,7 +565,8 @@
     <MESSAGE value="localization" />
     <MESSAGE value="sort" />
     <MESSAGE value="last fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="last fix" />
+    <MESSAGE value="latest fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="latest fixes" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
